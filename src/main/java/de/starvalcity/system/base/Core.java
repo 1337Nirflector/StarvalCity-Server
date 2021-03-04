@@ -3,18 +3,25 @@ package de.starvalcity.system.base;
 import de.starvalcity.system.base.commandhandler.CommandHandler;
 import de.starvalcity.system.base.messages.MessagesHandler;
 import de.starvalcity.system.database.mysql.MySQL;
+import de.starvalcity.system.database.mysql.mysqlhandler.MySQLHandler;
 import org.bukkit.Bukkit;
 import org.bukkit.command.ConsoleCommandSender;
+import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
+import org.bukkit.event.entity.EntityDeathEvent;
+import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.sql.SQLException;
 
-public final class Core extends JavaPlugin {
+public final class Core extends JavaPlugin implements Listener {
 
     public static Core coreInstance;
     public CommandHandler commandHandler;
     public MySQL mySQL;
+    public MySQLHandler mySQLHandler;
     private final ConsoleCommandSender consoleCommandSender = Bukkit.getConsoleSender();
     private final PluginManager pluginManager = Bukkit.getPluginManager();
 
@@ -22,6 +29,7 @@ public final class Core extends JavaPlugin {
     public void onEnable() {
         setCoreInstance(this);
         this.mySQL = new MySQL();
+        this.mySQLHandler = new MySQLHandler(this);
         MessagesHandler.loadErrorMessages();
         MessagesHandler.loadMySQLMessages();
         MessagesHandler.loadStaffMessages();
@@ -63,6 +71,7 @@ public final class Core extends JavaPlugin {
 
         if(mySQL.isConnected()) {
             consoleCommandSender.sendMessage(MessagesHandler.mySQLMessages.get(1));
+            mySQLHandler.createTable();
         }
     }
 
@@ -78,5 +87,24 @@ public final class Core extends JavaPlugin {
 
     private void printShutdownMessages() {
 
+    }
+
+    private void registerEvents() {
+        pluginManager.registerEvents(this, this);
+    }
+
+    @EventHandler
+    public void onPlayerJoin(PlayerJoinEvent playerJoinEvent) {
+        Player player = playerJoinEvent.getPlayer();
+        mySQLHandler.createPlayer(player);
+    }
+
+    @EventHandler
+    public void onEntityKill(EntityDeathEvent entityDeathEvent) {
+        if(entityDeathEvent.getEntity().getKiller() instanceof Player) {
+            Player player = (Player) entityDeathEvent.getEntity().getKiller();
+            mySQLHandler.addPoints(player.getUniqueId(), 1);
+            player.sendMessage("Neuer Punkt!");
+        }
     }
 }
