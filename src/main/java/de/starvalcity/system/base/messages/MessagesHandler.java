@@ -7,6 +7,7 @@ import java.util.HashMap;
 public class MessagesHandler {
 
     public static HashMap<Integer, String> errorMessages = new HashMap<>();
+    public static HashMap<Integer, String> mySQLMessages = new HashMap<>();
     public static HashMap<Integer, String> startupMessages = new HashMap<>();
     public static HashMap<Integer, String> systemMessages = new HashMap<>();
 
@@ -18,6 +19,14 @@ public class MessagesHandler {
         startupMessages.put(2, basicPrefix + "§2Loading StarvalCity-Server! Running on version: §e" + Core.getCoreInstance().getDescription().getVersion());
         startupMessages.put(3, basicPrefix + "§2API-Version:§e " + Core.getCoreInstance().getDescription().getAPIVersion());
         startupMessages.put(4, basicPrefix + "§2Authors: §e" + Core.getCoreInstance().getDescription().getAuthors());
+    }
+
+    public static void loadMySQLMessages() {
+        String basicPrefix = PrefixesHandler.prefixes.get(0);
+        String staffPrefix = PrefixesHandler.prefixes.get(1);
+        mySQLMessages.put(0, basicPrefix + "§4MySQL Error! Database is not connected: Login info is incorrect or" +
+                "no database is used!");
+        mySQLMessages.put(1, basicPrefix + "§2MySQL Success! Database successfully connected!");
     }
 
     public static void loadErrorMessages() {
