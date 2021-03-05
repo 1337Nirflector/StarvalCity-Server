@@ -1,7 +1,5 @@
 package de.starvalcity.system.base;
 
-import de.starvalcity.system.base.commandhandler.CommandHandler;
-import de.starvalcity.system.base.messages.MessagesHandler;
 import de.starvalcity.system.database.mysql.MySQL;
 import de.starvalcity.system.database.mysql.mysqlhandler.MySQLHandler;
 import org.bukkit.Bukkit;
@@ -19,7 +17,6 @@ import java.sql.SQLException;
 public final class Core extends JavaPlugin implements Listener {
 
     public static Core coreInstance;
-    public CommandHandler commandHandler;
     public MySQL mySQL;
     public MySQLHandler mySQLHandler;
     private final ConsoleCommandSender consoleCommandSender = Bukkit.getConsoleSender();
@@ -30,17 +27,10 @@ public final class Core extends JavaPlugin implements Listener {
         setCoreInstance(this);
         this.mySQL = new MySQL();
         this.mySQLHandler = new MySQLHandler(this);
-        MessagesHandler.loadErrorMessages();
-        MessagesHandler.loadMySQLMessages();
-        MessagesHandler.loadStaffMessages();
-        MessagesHandler.loadStartupMessages();
-        MessagesHandler.loadSystemMessages();
         connectDatabase();
 
         printStartupMessages();
 
-        commandHandler = new CommandHandler();
-        commandHandler.setCommands();
         pluginManager.enablePlugin(this);
     }
 
@@ -66,23 +56,14 @@ public final class Core extends JavaPlugin implements Listener {
         } catch (ClassNotFoundException | SQLException e) {
             //e.printStackTrace();
             // Login info is incorrect or no database is used
-            consoleCommandSender.sendMessage(MessagesHandler.mySQLMessages.get(0));
         }
 
         if(mySQL.isConnected()) {
-            consoleCommandSender.sendMessage(MessagesHandler.mySQLMessages.get(1));
             mySQLHandler.createTable();
         }
     }
 
     private void printStartupMessages() {
-        consoleCommandSender.sendMessage(MessagesHandler.startupMessages.get(0));
-        consoleCommandSender.sendMessage(MessagesHandler.startupMessages.get(1));
-        consoleCommandSender.sendMessage(MessagesHandler.startupMessages.get(2));
-        consoleCommandSender.sendMessage(MessagesHandler.startupMessages.get(3));
-        consoleCommandSender.sendMessage(MessagesHandler.startupMessages.get(4));
-        consoleCommandSender.sendMessage(MessagesHandler.startupMessages.get(0));
-        consoleCommandSender.sendMessage(MessagesHandler.startupMessages.get(1));
     }
 
     private void printShutdownMessages() {
@@ -101,7 +82,7 @@ public final class Core extends JavaPlugin implements Listener {
 
     @EventHandler
     public void onEntityKill(EntityDeathEvent entityDeathEvent) {
-        if(entityDeathEvent.getEntity().getKiller() instanceof Player) {
+        if(entityDeathEvent.getEntity().getKiller() != null) {
             Player player = (Player) entityDeathEvent.getEntity().getKiller();
             mySQLHandler.addPoints(player.getUniqueId(), 1);
             player.sendMessage("Neuer Punkt!");

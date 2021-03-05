@@ -1,0 +1,15 @@
+name: StarvalCityScript
+authors: [Nirflection, Donaris, Stormy_The_Fox, sYnTaX]
+main: de.starvalcity.system.base.Core
+version: 1.0.0
+api-version: 1.13
+description: StarvalCity ServerScript
+
+commands:
+  version:
+    usage: /version
+    aliases:
+      - pversion
+      - plversion
+      - pluginversion
+      - scriptversion
