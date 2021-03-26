@@ -1,19 +1,24 @@
 package de.starvalcity.system.basepackage;
 
+import de.starvalcity.system.configuration.ConfigurationHandler;
 import de.starvalcity.system.configuration.MessageHandler;
+import de.starvalcity.system.languages.LanguageHandler;
 import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class Core extends JavaPlugin {
 
-    public ConsoleCommandSender consoleCommandSender;
-    public PluginManager pluginManager;
+    public static ConfigurationHandler configurationHandler;
+    public static ConsoleCommandSender consoleCommandSender;
+    public static PluginManager pluginManager;
     public static Core plugin;
 
     @Override
     public void onEnable() {
         this.printStartupMessages();
+        LanguageHandler.initializeMessages();
+
         pluginManager.enablePlugin(this);
     }
 
