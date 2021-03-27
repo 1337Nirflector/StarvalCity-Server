@@ -1,15 +1,16 @@
 package de.starvalcity.system.basepackage;
 
-import de.starvalcity.system.configuration.ConfigurationHandler;
+import de.starvalcity.system.commands.Language;
 import de.starvalcity.system.configuration.MessageHandler;
 import de.starvalcity.system.languages.LanguageHandler;
 import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.util.Objects;
+
 public class Core extends JavaPlugin {
 
-    public static ConfigurationHandler configurationHandler;
     public static ConsoleCommandSender consoleCommandSender;
     public static PluginManager pluginManager;
     public static Core plugin;
@@ -17,7 +18,9 @@ public class Core extends JavaPlugin {
     @Override
     public void onEnable() {
         this.printStartupMessages();
+        loadConfig();
         LanguageHandler.initializeMessages();
+        Objects.requireNonNull(getCommand("language")).setExecutor(new Language());
 
         pluginManager.enablePlugin(this);
     }
@@ -25,7 +28,14 @@ public class Core extends JavaPlugin {
     @Override
     public void onDisable() {
         this.printShutdownMessages();
+
+
         pluginManager.disablePlugin(this);
+    }
+
+    public void loadConfig() {
+        getConfig().options().copyDefaults(false);
+        saveConfig();
     }
 
     public static Core getPlugin() {

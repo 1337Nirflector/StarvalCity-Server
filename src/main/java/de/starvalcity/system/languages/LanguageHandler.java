@@ -23,7 +23,7 @@ public class LanguageHandler {
     public static ConsoleCommandSender consoleCommandSender;
 
     public static String getMessage(String country, String messageName) {
-        return messages.getOrDefault(country, messages.get("en")).getOrDefault(messageName, "Message " +
+        return messages.getOrDefault(country, messages.get("enUK")).getOrDefault(messageName, "Message " +
                 messageName + " not set!");
     }
 
