@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="StarvalCity-Server:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/StarvalCity_Server_jar</output-path>
+    <root id="archive" name="StarvalCity-Server.jar">
+      <element id="module-output" name="StarvalCity-Server" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/jetbrains/annotations/20.1.0/annotations-20.1.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-stdlib-jdk7/1.5.0-M1/kotlin-stdlib-jdk7-1.5.0-M1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-stdlib-jdk8/1.5.0-M1/kotlin-stdlib-jdk8-1.5.0-M1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../../Plugin Testserver/paper.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-stdlib-common/1.5.0-M1/kotlin-stdlib-common-1.5.0-M1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-stdlib/1.5.0-M1/kotlin-stdlib-1.5.0-M1.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

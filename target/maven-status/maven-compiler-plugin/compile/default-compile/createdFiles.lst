@@ -1,7 +1,6 @@
-de\starvalcity\system\base\commandhandler\CommandHandler.class
-de\starvalcity\system\database\mysql\mysqlhandler\MySQLHandler.class
-de\starvalcity\system\base\commandhandler\SubCommand.class
-de\starvalcity\system\database\mysql\MySQL.class
-de\starvalcity\system\base\messages\PrefixesHandler.class
-de\starvalcity\system\commands\Version.class
-de\starvalcity\system\base\Core.class
+de\starvalcity\system\files\Configuration.class
+de\starvalcity\system\basepackage\FileValueManager.class
+de\starvalcity\system\basepackage\LanguageManager.class
+de\starvalcity\system\basepackage\Core.class
+de\starvalcity\system\basepackage\MessagesManager.class
+de\starvalcity\system\basepackage\FileStringManager.class
