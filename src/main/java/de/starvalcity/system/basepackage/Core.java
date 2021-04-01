@@ -1,5 +1,6 @@
 package de.starvalcity.system.basepackage;
 
+import de.starvalcity.system.commands.COMMAND_language;
 import de.starvalcity.system.files.Configuration;
 import de.starvalcity.system.files.de_GER;
 import de.starvalcity.system.files.en_ENG;
@@ -55,20 +56,20 @@ public final class Core extends JavaPlugin {
 
     public void loadEnglishMessages() {
         en_ENG.setupFile();
-        en_ENG.getFile().addDefault("Insufficient_permissions", "§4You are not allowed to execute this command!");
+        en_ENG.getFile().addDefault(FileStringManager.EN_insufficient_permissions_PATH, FileStringManager.EN_insufficient_permissions_CONTENT);
         en_ENG.getFile().options().copyDefaults(true);
         en_ENG.saveFile();
     }
 
     public void loadGermanMessages() {
         de_GER.setupFile();
-        de_GER.getFile().addDefault("Insufficient_permissions", "§4Das darfst Du nicht!");
+        de_GER.getFile().addDefault(FileStringManager.DE_insufficient_permissions_PATH, FileStringManager.DE_insufficient_permissions_CONTENT);
         de_GER.getFile().options().copyDefaults(true);
         de_GER.saveFile();
     }
 
     private void loadCommands() {
-
+        Objects.requireNonNull(this.getCommand("language")).setExecutor(new COMMAND_language());
     }
 
 }

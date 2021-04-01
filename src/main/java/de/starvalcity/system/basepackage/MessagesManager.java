@@ -21,4 +21,9 @@ public class MessagesManager {
     public static String DE_player_related_command = "§7[§6StarvalCity§7]§4 Dieser Befehl kann nur von einem Spieler " +
             "ausgeführt werden!";
 
+    /* -------------------------------------------------------------------------------------------------------------- */
+
+    public static String DE_language_command_usage = "§7[§6StarvalCity§7]§4 Nutzung: §7/language <info; set>";
+
+    public static String EN_language_command_usage = "§7[§6StarvalCity§7]§4 Usage: §7/language <info; set>";
 }
