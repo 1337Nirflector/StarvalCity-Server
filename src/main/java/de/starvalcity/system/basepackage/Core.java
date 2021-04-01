@@ -1,88 +1,74 @@
 package de.starvalcity.system.basepackage;
 
-import de.starvalcity.system.commands.Language;
-import de.starvalcity.system.configuration.MessageHandler;
-import de.starvalcity.system.languages.LanguageHandler;
-import org.bukkit.command.ConsoleCommandSender;
-import org.bukkit.plugin.PluginManager;
+import de.starvalcity.system.files.Configuration;
+import de.starvalcity.system.files.de_GER;
+import de.starvalcity.system.files.en_ENG;
+import org.bukkit.World;
+import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.Objects;
+import java.util.logging.Logger;
 
-public class Core extends JavaPlugin {
+public final class Core extends JavaPlugin {
 
-    public static ConsoleCommandSender consoleCommandSender;
-    public static PluginManager pluginManager;
+    private static Core instance;
     public static Core plugin;
+    public static Plugin pl;
 
     @Override
     public void onEnable() {
-        this.printStartupMessages();
-        loadConfig();
-        LanguageHandler.initializeMessages();
-        Objects.requireNonNull(getCommand("language")).setExecutor(new Language());
+        Logger system = getLogger();
+        plugin = this;
+        pl = this;
+        loadConfiguration();
+        loadEnglishMessages();
+        loadGermanMessages();
+        loadCommands();
 
-        pluginManager.enablePlugin(this);
     }
 
     @Override
     public void onDisable() {
-        this.printShutdownMessages();
 
-
-        pluginManager.disablePlugin(this);
     }
 
-    public void loadConfig() {
-        getConfig().options().copyDefaults(false);
-        saveConfig();
+    public static Core getInstance() {
+        return instance;
     }
 
     public static Core getPlugin() {
         return plugin;
     }
 
-    private void printStartupMessages() {
-        consoleCommandSender.sendMessage(MessageHandler.startupLine);
-        consoleCommandSender.sendMessage(MessageHandler.startupLine);
-        consoleCommandSender.sendMessage(MessageHandler.startupLine);
-        consoleCommandSender.sendMessage(MessageHandler.startupLine);
-        consoleCommandSender.sendMessage(MessageHandler.startupLine);
-        consoleCommandSender.sendMessage(MessageHandler.startupBlankLine);
-        consoleCommandSender.sendMessage(MessageHandler.startupBlankLine);
-        consoleCommandSender.sendMessage(MessageHandler.startupBlankLine);
-        consoleCommandSender.sendMessage(MessageHandler.startupAuthorsLine);
-        consoleCommandSender.sendMessage(MessageHandler.startupAPIVersionLine);
-        consoleCommandSender.sendMessage(MessageHandler.startupVersionLine);
-        consoleCommandSender.sendMessage(MessageHandler.startupBlankLine);
-        consoleCommandSender.sendMessage(MessageHandler.startupBlankLine);
-        consoleCommandSender.sendMessage(MessageHandler.startupBlankLine);
-        consoleCommandSender.sendMessage(MessageHandler.startupLine);
-        consoleCommandSender.sendMessage(MessageHandler.startupLine);
-        consoleCommandSender.sendMessage(MessageHandler.startupLine);
-        consoleCommandSender.sendMessage(MessageHandler.startupLine);
-        consoleCommandSender.sendMessage(MessageHandler.startupLine);
+    public static Plugin thisPlugin() {
+        return plugin;
     }
 
-    private void printShutdownMessages() {
-        consoleCommandSender.sendMessage(MessageHandler.shutdownLine);
-        consoleCommandSender.sendMessage(MessageHandler.shutdownLine);
-        consoleCommandSender.sendMessage(MessageHandler.shutdownLine);
-        consoleCommandSender.sendMessage(MessageHandler.shutdownLine);
-        consoleCommandSender.sendMessage(MessageHandler.shutdownLine);
-        consoleCommandSender.sendMessage(MessageHandler.shutdownBlankLine);
-        consoleCommandSender.sendMessage(MessageHandler.shutdownBlankLine);
-        consoleCommandSender.sendMessage(MessageHandler.shutdownBlankLine);
-        consoleCommandSender.sendMessage(MessageHandler.shutdownAuthorsLine);
-        consoleCommandSender.sendMessage(MessageHandler.shutdownAPIVersionLine);
-        consoleCommandSender.sendMessage(MessageHandler.shutdownVersionLine);
-        consoleCommandSender.sendMessage(MessageHandler.shutdownBlankLine);
-        consoleCommandSender.sendMessage(MessageHandler.shutdownBlankLine);
-        consoleCommandSender.sendMessage(MessageHandler.shutdownBlankLine);
-        consoleCommandSender.sendMessage(MessageHandler.shutdownLine);
-        consoleCommandSender.sendMessage(MessageHandler.shutdownLine);
-        consoleCommandSender.sendMessage(MessageHandler.shutdownLine);
-        consoleCommandSender.sendMessage(MessageHandler.shutdownLine);
-        consoleCommandSender.sendMessage(MessageHandler.shutdownLine);
+    public void loadConfiguration() {
+        try {
+            Configuration.loadConfiguration();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
+
+    public void loadEnglishMessages() {
+        en_ENG.setupFile();
+        en_ENG.getFile().addDefault("Insufficient_permissions", "§4You are not allowed to execute this command!");
+        en_ENG.getFile().options().copyDefaults(true);
+        en_ENG.saveFile();
+    }
+
+    public void loadGermanMessages() {
+        de_GER.setupFile();
+        de_GER.getFile().addDefault("Insufficient_permissions", "§4Das darfst Du nicht!");
+        de_GER.getFile().options().copyDefaults(true);
+        de_GER.saveFile();
+    }
+
+    private void loadCommands() {
+
+    }
+
 }

@@ -1,6 +1,10 @@
+de\starvalcity\system\commands\COMMAND_test.class
 de\starvalcity\system\files\Configuration.class
-de\starvalcity\system\basepackage\FileValueManager.class
+de\starvalcity\system\files\de_GER.class
 de\starvalcity\system\basepackage\LanguageManager.class
+de\starvalcity\system\files\en_ENG.class
 de\starvalcity\system\basepackage\Core.class
 de\starvalcity\system\basepackage\MessagesManager.class
+de\starvalcity\system\commands\COMMAND_language.class
 de\starvalcity\system\basepackage\FileStringManager.class
+de\starvalcity\system\basepackage\PermissionsManager.class

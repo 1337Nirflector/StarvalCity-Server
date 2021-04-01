@@ -1,12 +1,6 @@
 package de.starvalcity.system.basepackage;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class MessagesManager {
-
-    static Map<String, String> englishMessages = new HashMap<>();
-    static Map<String, String> germanMessages = new HashMap<>();
 
     /* -------------------------------------------------------------------------------------------------------------- */
 
@@ -14,5 +8,17 @@ public class MessagesManager {
 
     /* -------------------------------------------------------------------------------------------------------------- */
 
-    public static String loading_configuration_yml = defaultPrefix + "§2Loading resource configuration.yml...";
+    public static String loading_configuration_yml = defaultPrefix + "§2Loading resource §econfiguration.yml§2...";
+    public static String loading_enUK_yml = defaultPrefix + "§2Loading resource §eenUK.yml§2...";
+    public static String loading_deGER_yml = defaultPrefix + "§2Loading resource §edeGER.yml§2...";
+
+    /* -------------------------------------------------------------------------------------------------------------- */
+
+    public static String EN_player_related_command = "§7[§6StarvalCity§7]§4 This command can only be executed by a player!";
+
+    /* -------------------------------------------------------------------------------------------------------------- */
+
+    public static String DE_player_related_command = "§7[§6StarvalCity§7]§4 Dieser Befehl kann nur von einem Spieler " +
+            "ausgeführt werden!";
+
 }
