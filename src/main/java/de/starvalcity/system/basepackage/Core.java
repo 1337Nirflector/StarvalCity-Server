@@ -26,6 +26,7 @@ public final class Core extends JavaPlugin {
         loadEnglishMessages();
         loadGermanMessages();
         loadCommands();
+        loadEvents();
 
     }
 
@@ -56,20 +57,37 @@ public final class Core extends JavaPlugin {
 
     public void loadEnglishMessages() {
         en_ENG.setupFile();
+        Core.getPlugin().getLogger().severe(MessagesManager.loading_enUK_yml);
+        en_ENG.getFile().addDefault(FileStringManager.EN_prefix_PATH, FileStringManager.EN_prefix_CONTENT);
         en_ENG.getFile().addDefault(FileStringManager.EN_insufficient_permissions_PATH, FileStringManager.EN_insufficient_permissions_CONTENT);
+        en_ENG.getFile().addDefault(FileStringManager.EN_something_went_wrong_PATH, FileStringManager.EN_something_went_wrong_CONTENT);
+        en_ENG.getFile().addDefault(FileStringManager.EN_language_command_usage_PATH, FileStringManager.EN_language_command_usage_CONTENT);
+        en_ENG.getFile().addDefault(FileStringManager.EN_language_command_info_PATH, FileStringManager.EN_language_command_info_CONTENT);
+        en_ENG.getFile().addDefault(FileStringManager.EN_language_command_set_already_set_PATH, FileStringManager.EN_language_command_set_already_set_CONTENT);
         en_ENG.getFile().options().copyDefaults(true);
         en_ENG.saveFile();
     }
 
     public void loadGermanMessages() {
         de_GER.setupFile();
+        Core.getPlugin().getLogger().severe(MessagesManager.loading_deGER_yml);
+        de_GER.getFile().addDefault(FileStringManager.DE_prefix_PATH, FileStringManager.DE_prefix_CONTENT);
         de_GER.getFile().addDefault(FileStringManager.DE_insufficient_permissions_PATH, FileStringManager.DE_insufficient_permissions_CONTENT);
+        de_GER.getFile().addDefault(FileStringManager.DE_something_went_wrong_PATH, FileStringManager.DE_something_went_wrong_CONTENT);
+        de_GER.getFile().addDefault(FileStringManager.DE_language_command_usage_PATH, FileStringManager.DE_language_command_usage_CONTENT);
+        de_GER.getFile().addDefault(FileStringManager.DE_language_command_info_PATH, FileStringManager.DE_language_command_info_CONTENT);
+        de_GER.getFile().addDefault(FileStringManager.DE_language_command_set_already_set_PATH, FileStringManager.DE_language_command_set_already_set_CONTENT);
         de_GER.getFile().options().copyDefaults(true);
         de_GER.saveFile();
     }
 
     private void loadCommands() {
+        Core.getPlugin().getLogger().severe(MessagesManager.loading_commands);
         Objects.requireNonNull(this.getCommand("language")).setExecutor(new COMMAND_language());
+    }
+
+    private void loadEvents() {
+        Core.getPlugin().getLogger().severe(MessagesManager.loading_events);
     }
 
 }

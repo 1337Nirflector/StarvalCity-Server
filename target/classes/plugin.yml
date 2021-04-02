@@ -6,6 +6,14 @@ api-version: 1.13
 description: StarvalCity ServerScript
 
 commands:
-  test:
-    description: Test cmd
-    usage: /test
+  language:
+    description: Language command
+    usage: /language <info; set>
+
+permissions:
+  language.*:
+    description: Admin permission for language command
+    default: op
+    children:
+      - language.info
+      - language.set
