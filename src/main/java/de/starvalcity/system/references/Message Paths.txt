@@ -1,0 +1,28 @@
+
+------------------------------------------------------------------------------------------------------------------------
+File: en_ENG.yml
+File type: English messages configuration
+------------------------------------------------------------------------------------------------------------------------
+
+Prefixes:
+# System prefixes
+  Default_prefix: "§7[§6StarvalCity§7] "
+  Staff_prefix: "§7[§9Staff§7] "
+
+Frequent messages:
+# Messages that could be sent frequently to the players
+  Insufficient_permissions: "§4You are not allowed to execute this command!"
+  Something_went_wrong: "§4Critical error! Please report this error to a §bDeveloper§4 or an §cAdministrator§4!"
+
+Command messages:
+# COMMAND: Language
+  Language_command_usage: "§4Usage: §7/language  <info; set> [english ; german]"
+  Language_command_info: "§2Your current language is §e"
+  Language_command_set: "§2Your language has been set to §e"
+  Language_command_set_already_set: "§2Your current language is already§e english!"
+
+# COMMAND: Staff
+  Staff_command_usage: "§4Usage: §7/staff <info; join; leave>"
+  Staff_command_info: "§2Current players in §9Staff-Mode§7:§e "
+  Staff_command_join: "§2You successfully§a joined §9Staff-Mode§2!"
+  Staff_command_leave: "§2You successfully§c left §9Staff-Mode§2!"

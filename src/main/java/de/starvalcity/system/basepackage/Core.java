@@ -1,10 +1,12 @@
 package de.starvalcity.system.basepackage;
 
 import de.starvalcity.system.commands.COMMAND_language;
+import de.starvalcity.system.commands.COMMAND_staff;
+import de.starvalcity.system.files.ClientLanguages;
 import de.starvalcity.system.files.Configuration;
 import de.starvalcity.system.files.de_GER;
 import de.starvalcity.system.files.en_ENG;
-import org.bukkit.World;
+import org.bukkit.Bukkit;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -23,6 +25,7 @@ public final class Core extends JavaPlugin {
         plugin = this;
         pl = this;
         loadConfiguration();
+        loadClientLanguages();
         loadEnglishMessages();
         loadGermanMessages();
         loadCommands();
@@ -55,39 +58,39 @@ public final class Core extends JavaPlugin {
         }
     }
 
+    public void loadClientLanguages() {
+        ClientLanguages.setupFile();
+        Bukkit.getConsoleSender().sendMessage(SystemMessagesManager.loading_client_languages);
+        ClientLanguages.saveFile();
+    }
+
     public void loadEnglishMessages() {
         en_ENG.setupFile();
-        Core.getPlugin().getLogger().severe(MessagesManager.loading_enUK_yml);
-        en_ENG.getFile().addDefault(FileStringManager.EN_prefix_PATH, FileStringManager.EN_prefix_CONTENT);
-        en_ENG.getFile().addDefault(FileStringManager.EN_insufficient_permissions_PATH, FileStringManager.EN_insufficient_permissions_CONTENT);
-        en_ENG.getFile().addDefault(FileStringManager.EN_something_went_wrong_PATH, FileStringManager.EN_something_went_wrong_CONTENT);
-        en_ENG.getFile().addDefault(FileStringManager.EN_language_command_usage_PATH, FileStringManager.EN_language_command_usage_CONTENT);
-        en_ENG.getFile().addDefault(FileStringManager.EN_language_command_info_PATH, FileStringManager.EN_language_command_info_CONTENT);
-        en_ENG.getFile().addDefault(FileStringManager.EN_language_command_set_already_set_PATH, FileStringManager.EN_language_command_set_already_set_CONTENT);
+        Bukkit.getConsoleSender().sendMessage(SystemMessagesManager.loading_enUK_yml);
         en_ENG.getFile().options().copyDefaults(true);
         en_ENG.saveFile();
     }
 
     public void loadGermanMessages() {
         de_GER.setupFile();
-        Core.getPlugin().getLogger().severe(MessagesManager.loading_deGER_yml);
-        de_GER.getFile().addDefault(FileStringManager.DE_prefix_PATH, FileStringManager.DE_prefix_CONTENT);
-        de_GER.getFile().addDefault(FileStringManager.DE_insufficient_permissions_PATH, FileStringManager.DE_insufficient_permissions_CONTENT);
-        de_GER.getFile().addDefault(FileStringManager.DE_something_went_wrong_PATH, FileStringManager.DE_something_went_wrong_CONTENT);
-        de_GER.getFile().addDefault(FileStringManager.DE_language_command_usage_PATH, FileStringManager.DE_language_command_usage_CONTENT);
-        de_GER.getFile().addDefault(FileStringManager.DE_language_command_info_PATH, FileStringManager.DE_language_command_info_CONTENT);
-        de_GER.getFile().addDefault(FileStringManager.DE_language_command_set_already_set_PATH, FileStringManager.DE_language_command_set_already_set_CONTENT);
+        Bukkit.getConsoleSender().sendMessage(SystemMessagesManager.loading_deGER_yml);
+        de_GER.getFile().options().header(FileHeaderManager.DE_header);
+        de_GER.getFile().addDefault(FilePathManager.GER_prefixes_default_PATH, FileStringManager.GER_prefixes_default_CONTENT);
+        de_GER.getFile().addDefault(FilePathManager.GER_prefixes_staff_PATH, FileStringManager.GER_prefixes_staff_CONTENT);
+        de_GER.getFile().addDefault(FilePathManager.GER_frequent_messages_insufficient_permissions_PATH, FileStringManager.GER_frequent_messages_insufficient_permissions_CONTENT);
+        de_GER.getFile().addDefault(FilePathManager.GER_frequent_messages_something_went_wrong_PATH, FileStringManager.GER_frequent_messages_something_went_wrong_CONTENT);
         de_GER.getFile().options().copyDefaults(true);
         de_GER.saveFile();
     }
 
     private void loadCommands() {
-        Core.getPlugin().getLogger().severe(MessagesManager.loading_commands);
+        Bukkit.getConsoleSender().sendMessage(SystemMessagesManager.loading_commands);
         Objects.requireNonNull(this.getCommand("language")).setExecutor(new COMMAND_language());
+        Objects.requireNonNull(this.getCommand("staff")).setExecutor(new COMMAND_staff());
     }
 
     private void loadEvents() {
-        Core.getPlugin().getLogger().severe(MessagesManager.loading_events);
+        Bukkit.getConsoleSender().sendMessage(SystemMessagesManager.loading_events);
     }
 
 }

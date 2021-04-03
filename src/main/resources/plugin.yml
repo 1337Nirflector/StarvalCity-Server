@@ -9,6 +9,9 @@ commands:
   language:
     description: Language command
     usage: /language <info; set>
+  staff:
+    description: Staff command
+    usage: /staff <info; join; leave>
 
 permissions:
   language.*:
@@ -22,4 +25,24 @@ permissions:
     default: op
   language set:
     description: Sets the client language
+    default: op
+  staff.*:
+    description: Admin permission for staff command
+    default: op
+    children:
+      staff.general: true
+      staff.info: true
+      staff.join: true
+      staff.leave: true
+  staff.general:
+    description: General permission for staff command
+    default: op
+  staff.info:
+    description: Shows all current staff members
+    default: op
+  staff.join:
+    description: Sets oneself in staff mode
+    default: op
+  staff.leave:
+    description: Removes oneself from staff mode
     default: op
