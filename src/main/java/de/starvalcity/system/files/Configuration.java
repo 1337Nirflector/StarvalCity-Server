@@ -2,7 +2,7 @@ package de.starvalcity.system.files;
 
 import de.starvalcity.system.basepackage.Core;
 import de.starvalcity.system.basepackage.FileStringManager;
-import de.starvalcity.system.basepackage.MessagesManager;
+import de.starvalcity.system.basepackage.SystemMessagesManager;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.YamlConfiguration;
 
@@ -28,7 +28,7 @@ public class Configuration {
 
         File configurationYML = new File(Core.thisPlugin().getDataFolder().getPath(), "configuration.yml");
         YamlConfiguration yamlConfigurationConfigurationYML = YamlConfiguration.loadConfiguration(configurationYML);
-        Bukkit.getConsoleSender().sendMessage(MessagesManager.loading_configuration_yml);
+        Bukkit.getConsoleSender().sendMessage(SystemMessagesManager.loading_configuration_yml);
 
         if (!yamlConfigurationConfigurationYML.contains(creationPath)) {
             yamlConfigurationConfigurationYML.set(creationPath, creationPathContent);
