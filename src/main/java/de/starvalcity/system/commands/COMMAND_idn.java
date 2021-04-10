@@ -1,8 +1,10 @@
 package de.starvalcity.system.commands;
 
+import de.starvalcity.system.basepackage.FilePathManager;
 import de.starvalcity.system.basepackage.LanguageManager;
 import de.starvalcity.system.basepackage.PermissionsManager;
 import de.starvalcity.system.basepackage.SystemMessagesManager;
+import de.starvalcity.system.files.en_ENG;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -25,7 +27,7 @@ public class COMMAND_idn implements CommandExecutor {
             UUID playerUUID = player.getUniqueId();
             if (!player.hasPermission(PermissionsManager.idn_general)) {
                 if (LanguageManager.englishPlayers.contains(playerUUID)) {
-
+                    player.sendMessage(en_ENG.getFile().getString(FilePathManager.));
                 }
             }
         }
