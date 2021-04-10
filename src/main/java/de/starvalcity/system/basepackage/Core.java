@@ -6,6 +6,7 @@ import de.starvalcity.system.files.ClientLanguages;
 import de.starvalcity.system.files.Configuration;
 import de.starvalcity.system.files.de_GER;
 import de.starvalcity.system.files.en_ENG;
+import de.starvalcity.system.generations.Timer;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -18,6 +19,7 @@ public final class Core extends JavaPlugin {
     private static Core instance;
     public static Core plugin;
     public static Plugin pl;
+    private Timer timer;
 
 
     @Override
@@ -25,6 +27,7 @@ public final class Core extends JavaPlugin {
         Logger system = getLogger();
         plugin = this;
         pl = this;
+        timer = new Timer();
         loadConfiguration();
         loadClientLanguages();
         loadEnglishMessages();
@@ -36,7 +39,7 @@ public final class Core extends JavaPlugin {
 
     @Override
     public void onDisable() {
-
+        timer.saveTimer();
     }
 
     public static Core getInstance() {
@@ -113,6 +116,10 @@ public final class Core extends JavaPlugin {
 
     private void loadEvents() {
         Bukkit.getConsoleSender().sendMessage(SystemMessagesManager.loading_events);
+    }
+
+    public Timer getTimer() {
+        return timer;
     }
 
 }
