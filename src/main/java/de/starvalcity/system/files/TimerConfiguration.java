@@ -7,13 +7,13 @@ import org.bukkit.configuration.file.YamlConfiguration;
 import java.io.File;
 import java.io.IOException;
 
-public class IDN {
+public class TimerConfiguration {
 
     private static File file;
-    private static FileConfiguration idnFile;
+    private static FileConfiguration timerConfiguration;
 
     public static void setupFile() {
-        file = new File(Core.getPlugin().getDataFolder(), "idn.yml");
+        file = new File(Core.getPlugin().getDataFolder(), "timerConfiguration.yml");
 
         if (!file.exists()) {
             try {
@@ -22,22 +22,23 @@ public class IDN {
                 ioException.printStackTrace();
             }
         }
-        idnFile = YamlConfiguration.loadConfiguration(file);
+        timerConfiguration = YamlConfiguration.loadConfiguration(file);
     }
 
     public static FileConfiguration getFile() {
-        return idnFile;
+        return timerConfiguration;
     }
 
     public static void saveFile() {
         try {
-            idnFile.save(file);
+            timerConfiguration.save(file);
         } catch (IOException ioException) {
             ioException.printStackTrace();
         }
     }
 
     public static void reloadFile() {
-        idnFile = YamlConfiguration.loadConfiguration(file);
+        timerConfiguration = YamlConfiguration.loadConfiguration(file);
     }
+
 }
