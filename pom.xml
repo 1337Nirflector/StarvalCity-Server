@@ -95,44 +95,75 @@
     </build>
 
     <repositories>
+
+        <!-- Paper Repository -->
+
         <repository>
             <id>papermc-repo</id>
             <url>https://papermc.io/repo/repository/maven-public/</url>
         </repository>
+
+        <!-- DevOps Repository -->
+
         <repository>
             <id>sonatype</id>
             <url>https://oss.sonatype.org/content/groups/public/</url>
         </repository>
+
+        <!-- JVM Repository -->
+
         <repository>
             <id>jitpack.io</id>
             <url>https://jitpack.io</url>
         </repository>
+
+        <!-- HeadDatabase Repository -->
+
+        <repository>
+            <id>HeadDatabase-API</id>
+            <url>https://mvn.intellectualsites.com/content/repositories/thirdparty/</url>
+        </repository>
     </repositories>
 
     <dependencies>
+
+        <!-- HeadDatabase API -->
+
+        <dependency>
+            <groupId>me.arcaniax</groupId>
+            <artifactId>HeadDatabase-API</artifactId>
+            <version>1.1.0</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- Paper API -->
+
         <dependency>
             <groupId>com.destroystokyo.paper</groupId>
             <artifactId>paper-api</artifactId>
             <version>1.16.2-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
-        <dependency>
-            <groupId>com.github.milkbowl</groupId>
-            <artifactId>VaultAPI</artifactId>
-            <version>1.7</version>
-            <scope>provided</scope>
-        </dependency>
+
+        <!-- JetBrains Annotations -->
+
         <dependency>
             <groupId>org.jetbrains</groupId>
             <artifactId>annotations</artifactId>
             <version>RELEASE</version>
             <scope>compile</scope>
         </dependency>
+
+        <!-- Kotlin Default Library JDK 8 -->
+
         <dependency>
             <groupId>org.jetbrains.kotlin</groupId>
             <artifactId>kotlin-stdlib-jdk8</artifactId>
             <version>${kotlin.version}</version>
         </dependency>
+
+        <!-- Kotlin Test Dependency -->
+
         <dependency>
             <groupId>org.jetbrains.kotlin</groupId>
             <artifactId>kotlin-test</artifactId>

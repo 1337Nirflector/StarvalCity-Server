@@ -11,10 +11,6 @@ public class StaffMode {
         staffMembers.add(player);
     }
 
-    public static void removeStaffMember(UUID player) {
-        staffMembers.remove(player);
-    }
-
     /*
     public static boolean isInStaffMode(UUID player) {
         return staffMembers.contains(player);

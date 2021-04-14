@@ -1,10 +1,7 @@
 package de.starvalcity.system.commands;
 
 import de.starvalcity.system.arraylists.StaffMode;
-import de.starvalcity.system.basepackage.FileStringManager;
-import de.starvalcity.system.basepackage.LanguageManager;
-import de.starvalcity.system.basepackage.MessagesManager;
-import de.starvalcity.system.basepackage.PermissionsManager;
+import de.starvalcity.system.basepackage.*;
 import de.starvalcity.system.files.de_GER;
 import de.starvalcity.system.files.en_ENG;
 import org.bukkit.Bukkit;
@@ -23,8 +20,8 @@ public class COMMAND_staff implements CommandExecutor {
     @Override
     public boolean onCommand(@NotNull CommandSender commandSender, @NotNull Command command, @NotNull String s, @NotNull String[] strings) {
         if (!(commandSender instanceof Player)) {
-            Bukkit.getConsoleSender().sendMessage(MessagesManager.DE_player_related_command);
-            Bukkit.getConsoleSender().sendMessage(MessagesManager.EN_player_related_command);
+            Bukkit.getConsoleSender().sendMessage(SystemMessagesManager.DE_player_related_command);
+            Bukkit.getConsoleSender().sendMessage(SystemMessagesManager.EN_player_related_command);
         }
         if (commandSender instanceof Player) {
             Player player = (Player) commandSender;
@@ -33,18 +30,18 @@ public class COMMAND_staff implements CommandExecutor {
             if (strings.length == 0) {
                 if (!player.hasPermission(PermissionsManager.staff_general)) {
                     if (LanguageManager.englishPlayers.contains(playerUUID)) {
-                        player.sendMessage(en_ENG.getFile().getString(FileStringManager.EN_insufficient_permissions_PATH));
+                        player.sendMessage(en_ENG.getFile().getString(FilePathManager.ENG_frequent_messages_insufficient_permissions_PATH));
                         player.playSound(playerLocation, Sound.BLOCK_NOTE_BLOCK_BASS, 10, 1);
                     } else if (LanguageManager.germanPlayers.contains(playerUUID)) {
-                        player.sendMessage(de_GER.getFile().getString(FileStringManager.DE_insufficient_permissions_PATH));
+                        player.sendMessage(de_GER.getFile().getString(FilePathManager.GER_frequent_messages_insufficient_permissions_PATH));
                         player.playSound(playerLocation, Sound.BLOCK_NOTE_BLOCK_BASS, 10, 1);
                     }
                 } else {
                     if (LanguageManager.englishPlayers.contains(playerUUID)) {
-                        player.sendMessage(en_ENG.getFile().getString(FileStringManager.EN_staff_mode_command_usage_PATH));
+                        player.sendMessage(en_ENG.getFile().getString(FilePathManager.ENG_prefixes_staff_PATH));
                         player.playSound(playerLocation, Sound.BLOCK_NOTE_BLOCK_BASS, 10, 1);
                     } else if (LanguageManager.germanPlayers.contains(playerUUID)) {
-                        player.sendMessage(de_GER.getFile().getString(FileStringManager.DE_staff_mode_command_usage_PATH));
+                        player.sendMessage(de_GER.getFile().getString(FilePathManager.GER_prefixes_staff_PATH));
                         player.playSound(playerLocation, Sound.BLOCK_NOTE_BLOCK_BASS, 10, 1);
                     }
                 }
@@ -53,21 +50,21 @@ public class COMMAND_staff implements CommandExecutor {
                 if (strings[0].equalsIgnoreCase("info")) {
                     if (!player.hasPermission(PermissionsManager.staff_info)) {
                         if (LanguageManager.englishPlayers.contains(playerUUID)) {
-                            player.sendMessage(en_ENG.getFile().getString(FileStringManager.EN_insufficient_permissions_PATH));
+                            player.sendMessage(en_ENG.getFile().getString(FilePathManager.ENG_frequent_messages_insufficient_permissions_PATH));
                             player.playSound(playerLocation, Sound.BLOCK_NOTE_BLOCK_BASS, 10, 1);
                         } else if (LanguageManager.germanPlayers.contains(playerUUID)) {
-                            player.sendMessage(de_GER.getFile().getString(FileStringManager.DE_insufficient_permissions_PATH));
+                            player.sendMessage(de_GER.getFile().getString(FilePathManager.GER_frequent_messages_insufficient_permissions_PATH));
                             player.playSound(playerLocation, Sound.BLOCK_NOTE_BLOCK_BASS, 10, 1);
                         }
                     } else {
                         if (LanguageManager.englishPlayers.contains(playerUUID)) {
                             for (UUID staffMembers : StaffMode.staffMembers) {
-                                player.sendMessage(en_ENG.getFile().getString(FileStringManager.EN_staff_mode_command_info_PATH) + staffMembers.toString());
+                                player.sendMessage(en_ENG.getFile().getString(FilePathManager.ENG_prefixes_staff_PATH) + staffMembers.toString());
                                 player.playSound(playerLocation, Sound.BLOCK_NOTE_BLOCK_PLING, 10, 1);
                             }
                         } else if (LanguageManager.germanPlayers.contains(playerUUID)) {
                             for (UUID staffMembers : StaffMode.staffMembers) {
-                                player.sendMessage(de_GER.getFile().getString(FileStringManager.DE_staff_mode_command_info_PATH) + staffMembers.toString());
+                                player.sendMessage(de_GER.getFile().getString(FilePathManager.GER_prefixes_staff_PATH) + staffMembers.toString());
                                 player.playSound(playerLocation, Sound.BLOCK_NOTE_BLOCK_PLING, 10, 1);
                             }
                         }
@@ -75,17 +72,17 @@ public class COMMAND_staff implements CommandExecutor {
                 } else if (strings[0].equalsIgnoreCase("join")) {
                     if (!player.hasPermission(PermissionsManager.staff_join)) {
                         if (LanguageManager.englishPlayers.contains(playerUUID)) {
-                            player.sendMessage(en_ENG.getFile().getString(FileStringManager.EN_insufficient_permissions_PATH));
+                            player.sendMessage(en_ENG.getFile().getString(FilePathManager.ENG_frequent_messages_insufficient_permissions_PATH));
                             player.playSound(playerLocation, Sound.BLOCK_NOTE_BLOCK_BASS, 10, 1);
                         } else if (LanguageManager.germanPlayers.contains(playerUUID)) {
-                            player.sendMessage(de_GER.getFile().getString(FileStringManager.DE_insufficient_permissions_PATH));
+                            player.sendMessage(de_GER.getFile().getString(FilePathManager.GER_frequent_messages_insufficient_permissions_PATH));
                             player.playSound(playerLocation, Sound.BLOCK_NOTE_BLOCK_BASS, 10, 1);
                         }
                     } else {
                         if (LanguageManager.englishPlayers.contains(playerUUID)) {
                             if (!StaffMode.staffMembers.contains(playerUUID)) {
                                 StaffMode.setStaffMember(playerUUID);
-                                player.sendMessage(en_ENG.getFile().getString(FileStringManager.EN_staff_mode_command_join_PATH));
+                                player.sendMessage(en_ENG.getFile().getString(FilePathManager.ENG_prefixes_staff_PATH));
                                 player.playSound(playerLocation, Sound.BLOCK_NOTE_BLOCK_PLING, 10, 1);
                             } else {
 
@@ -95,10 +92,10 @@ public class COMMAND_staff implements CommandExecutor {
                 } else if (strings[0].equalsIgnoreCase("leave")) {
                     if (!player.hasPermission(PermissionsManager.staff_leave)) {
                         if (LanguageManager.englishPlayers.contains(playerUUID)) {
-                            player.sendMessage(en_ENG.getFile().getString(FileStringManager.EN_insufficient_permissions_PATH));
+                            player.sendMessage(en_ENG.getFile().getString(FilePathManager.ENG_frequent_messages_insufficient_permissions_PATH));
                             player.playSound(playerLocation, Sound.BLOCK_NOTE_BLOCK_BASS, 10, 1);
                         } else if (LanguageManager.germanPlayers.contains(playerUUID)) {
-                            player.sendMessage(de_GER.getFile().getString(FileStringManager.DE_insufficient_permissions_PATH));
+                            player.sendMessage(de_GER.getFile().getString(FilePathManager.GER_frequent_messages_insufficient_permissions_PATH));
                             player.playSound(playerLocation, Sound.BLOCK_NOTE_BLOCK_BASS, 10, 1);
                         }
                     }

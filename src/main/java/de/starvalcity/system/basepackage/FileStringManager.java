@@ -19,6 +19,8 @@ public class FileStringManager {
 
     // Befehlsnachrichten
     public static String GER_command_messages_idn_command_usage_CONTENT = "§4Nutzung: §7/idn <view; recreate>";
+    public static String GER_command_messages_idn_command_view_CONTENT = "§2Deine IDN lautet:§e ";
+    public static String GER_command_messages_idn_command_recreate_CONTENT = "§2Deine IDN wurde §aerfolgreich §2neu erstellt!";
     public static String GER_command_messages_language_command_usage_CONTENT = "§4Nutzung: §7/language <info; set>";
     public static String GER_command_messages_language_command_info_CONTENT = "§2Aktuelles Sprachpaket:§e German";
     public static String GER_command_messages_language_command_set_CONTENT = "§2Sprachpaket erfolgreich gesetzt!";
@@ -32,7 +34,7 @@ public class FileStringManager {
 
     // Prefixes
     public static String ENG_prefixes_default_CONTENT = "§7[§6StarvalCity§7] ";
-    public static String EN_prefixes_staff_CONTENT = "§7[§9Staff§7] ";
+    public static String ENG_prefixes_staff_CONTENT = "§7[§9Staff§7] ";
 
     // Frequent messages
     public static String ENG_frequent_messages_insufficient_permissions_CONTENT = "§4You are not allowed to do that!";

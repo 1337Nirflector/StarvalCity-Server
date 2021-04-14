@@ -1,11 +1,16 @@
 name: StarvalCityScript
 authors: [Nirflection, Donaris, Stormy_The_Fox, sYnTaX]
 main: de.starvalcity.system.basepackage.Core
-version: 1.0.0
+version: 1.1.1
 api-version: 1.13
+softdepend:
+  - HeadDatabase
 description: StarvalCity ServerScript
 
 commands:
+  idn:
+    description: IDN command
+    usage: /idn <view; recreate>
   language:
     description: Language command
     usage: /language <info; set>
@@ -14,6 +19,22 @@ commands:
     usage: /staff <info; join; leave>
 
 permissions:
+  idn.*:
+    description: Admin permission for idn command
+    default: op
+    children:
+      idn.general: true
+      idn.recreate: true
+      idn.view: true
+  idn.general:
+    description: Default permission for idn command
+    default: not op
+  idn.recreate:
+    description: Recreates an IDN
+    default: op
+  idn.view:
+    description: Shows an IDN
+    default: op
   language.*:
     description: Admin permission for language command
     default: op

@@ -13,7 +13,6 @@ import org.bukkit.Sound;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
-import org.bukkit.craftbukkit.libs.org.apache.commons.codec.language.bm.Lang;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
@@ -41,16 +40,19 @@ public class COMMAND_idn implements CommandExecutor {
                 }
             } else {
                 if (strings.length == 0) {
+                    if (player.hasPermission(PermissionsManager.idn_general)) {
                     if (LanguageManager.englishPlayers.contains(playerUUID)) {
                         player.sendMessage(en_ENG.getFile().getString(FilePathManager.ENG_command_messages_idn_command_usage_PATH));
                         player.playSound(playerLocation, Sound.BLOCK_NOTE_BLOCK_BASS, 10, 1);
                     } else if (LanguageManager.germanPlayers.contains(playerUUID)) {
-                        player.sendMessage(de_GER.getFile().getString(FilePathManager.ENG_command_messages_idn_command_usage_PATH));
+                        player.sendMessage(de_GER.getFile().getString(FilePathManager.GER_command_messages_idn_command_usage_PATH));
                         player.playSound(playerLocation, Sound.BLOCK_NOTE_BLOCK_BASS, 10, 1);
+                        }
                     }
                 }
                 if (strings.length == 1) {
                     if (strings[0].equalsIgnoreCase("view")) {
+                        if (player.hasPermission(PermissionsManager.idn_view)) {
                         if (LanguageManager.englishPlayers.contains(playerUUID)) {
                             player.sendMessage(en_ENG.getFile().getString(FilePathManager.ENG_command_messages_idn_command_view_PATH) + IDN.getIDN(playerUUID));
                             player.playSound(playerLocation, Sound.BLOCK_NOTE_BLOCK_PLING, 10, 1);
@@ -60,6 +62,19 @@ public class COMMAND_idn implements CommandExecutor {
                         }
                     }
                     if (strings[0].equalsIgnoreCase("recreate")) {
+                        if (player.hasPermission(PermissionsManager.idn_recreate)) {
+                        if (LanguageManager.englishPlayers.contains(playerUUID)) {
+                            IDN.getFile().set(player.toString(), IDN.createIDN());
+                            player.sendMessage(en_ENG.getFile().getString(FilePathManager.ENG_command_messages_idn_command_recreate_PATH));
+                            player.playSound(playerLocation, Sound.BLOCK_NOTE_BLOCK_PLING, 10, 1);
+                        } else if (LanguageManager.germanPlayers.contains(playerUUID)) {
+                            IDN.getFile().set(player.toString(), IDN.createIDN());
+                            player.sendMessage(de_GER.getFile().getString(FilePathManager.GER_command_messages_idn_command_recreate_PATH));
+                            player.playSound(playerLocation, Sound.BLOCK_NOTE_BLOCK_PLING, 10, 1);
+                        }
+                            }
+                        }
+                    }
                 }
             }
         }

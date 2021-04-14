@@ -14,6 +14,9 @@ public class SystemMessagesManager {
     public static String loading_deGER_yml = defaultPrefix + "§2Loading resource §edeGER.yml§2...";
     public static String loading_commands = defaultPrefix + "§2Loading §ecommands§2...";
     public static String loading_events = defaultPrefix + "§2Loading §eevents §2and §elisteners§2...";
+    public static String loading_apis = defaultPrefix + "§2Loading §eAPIs §2and similar §edependencies§2...";
+
+    public static String head_database_error = defaultPrefix + "§4Could not find the head you were looking for!";
 
     /* -------------------------------------------------------------------------------------------------------------- */
 
