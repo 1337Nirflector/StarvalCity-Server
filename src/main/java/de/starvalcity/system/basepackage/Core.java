@@ -4,6 +4,7 @@ import de.starvalcity.system.api.HeadDatabaseAPI;
 import de.starvalcity.system.commands.COMMAND_idn;
 import de.starvalcity.system.commands.COMMAND_language;
 import de.starvalcity.system.commands.COMMAND_staff;
+import de.starvalcity.system.events.PlayerFirstJoinEvent;
 import de.starvalcity.system.files.ClientLanguages;
 import de.starvalcity.system.files.de_GER;
 import de.starvalcity.system.files.en_ENG;
@@ -22,7 +23,6 @@ public final class Core extends JavaPlugin {
     public static Core plugin;
     public static Plugin pl;
     private Timer timer;
-
 
     @Override
     public void onEnable() {
@@ -154,6 +154,7 @@ public final class Core extends JavaPlugin {
     private void loadEvents() {
         Bukkit.getConsoleSender().sendMessage(SystemMessagesManager.loading_events);
         Bukkit.getPluginManager().registerEvents(new IDN(), this);
+        Bukkit.getPluginManager().registerEvents(new PlayerFirstJoinEvent(), this);
     }
 
     private void loadAPIs() {
