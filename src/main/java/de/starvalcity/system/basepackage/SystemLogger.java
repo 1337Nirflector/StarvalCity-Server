@@ -16,4 +16,11 @@ public class SystemLogger {
         Core.getPlugin().getLogger().severe("§2The player§e " + commandSender.getName() + "§2 tried to execute a command" +
                 " but failed with: §cError code 1 - Insufficient permissions");
     }
+
+    public static void logInvalidUsage(CommandSender commandSender) {
+        Core.getPlugin().getLogger().severe("§2Der Spieler§e " + commandSender.getName() + "§2 versuchte einen Befehl " +
+                "auszuführen, aber scheiterte an:§c Fehlerzahl 2 - Falsche Nutzung");
+        Core.getPlugin().getLogger().severe("§2The player§e " + commandSender.getName() + "§2 tried to execute a command " +
+                "but failed with: §cError code 2 - Invalid usage");
+    }
 }
