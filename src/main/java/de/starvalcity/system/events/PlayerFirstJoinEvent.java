@@ -1,5 +1,6 @@
 package de.starvalcity.system.events;
 
+import de.starvalcity.system.basepackage.LanguageManager;
 import de.starvalcity.system.files.ClientLanguages;
 import me.arcaniax.hdb.api.HeadDatabaseAPI;
 import org.bukkit.Bukkit;
@@ -80,12 +81,14 @@ public class PlayerFirstJoinEvent implements Listener {
                 inventoryClickEvent.setCancelled(true);
                 ClientLanguages.getFile().set(player.getUniqueId().toString(), "enENG");
                 ClientLanguages.saveFile();
+                LanguageManager.englishPlayers.add(player.getUniqueId());
                 player.closeInventory();
             }
             if (deGERLore.get(0).equals("§eKlicken, um Sprache zu setzen")) {
                 inventoryClickEvent.setCancelled(true);
                 ClientLanguages.getFile().set(player.getUniqueId().toString(), "deGER");
                 ClientLanguages.saveFile();
+                LanguageManager.germanPlayers.add(player.getUniqueId());
                 player.closeInventory();
             }
         }

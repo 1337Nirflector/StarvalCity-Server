@@ -26,6 +26,7 @@ public class FilePathManager {
     public static String GER_command_messages_language_command_info_PATH = "Befehlsnachrichten.Language_Info";
     public static String GER_command_messages_language_command_set_PATH = "Befehlsnachrichten.Language_Set";
     public static String GER_command_messages_language_already_set_PATH = "Befehlsnachrichten.Language_Sprache_bereits_gesetzt";
+    public static String GER_command_messages_staffchat_usage_PATH = "Befehlsnachrichten.TeamChat_Nutzung";
 
     //----------------------------------------------------------------------------------------------------------------//
     /* File: en_ENG */
@@ -46,5 +47,8 @@ public class FilePathManager {
     public static String ENG_command_messages_language_command_info_PATH = "Command_messages.Language_info";
     public static String ENG_command_messages_language_command_set_PATH = "Command_messages.Language_set";
     public static String ENG_command_messages_language_already_set_PATH = "Command_messages.Language_already_set";
+    public static String ENG_command_messages_staffchat_usage_PATH = "Command_messages.StaffChat_usage";
+
+    //----------------------------------------------------------------------------------------------------------------//
 
 }

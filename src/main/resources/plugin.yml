@@ -17,6 +17,9 @@ commands:
   staff:
     description: Staff command
     usage: /staff <info; join; leave>
+  staffchat:
+    description: Staff chat command
+    usage: /staffchat <message>
 
 permissions:
   idn.*:
@@ -66,4 +69,7 @@ permissions:
     default: op
   staff.leave:
     description: Removes oneself from staff mode
+    default: op
+  staffchat.general:
+    description: General permission for staff chat command
     default: op

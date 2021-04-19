@@ -4,6 +4,7 @@ import de.starvalcity.system.api.HeadDatabaseAPI;
 import de.starvalcity.system.commands.COMMAND_idn;
 import de.starvalcity.system.commands.COMMAND_language;
 import de.starvalcity.system.commands.COMMAND_staff;
+import de.starvalcity.system.commands.COMMAND_staffchat;
 import de.starvalcity.system.events.PlayerFirstJoinEvent;
 import de.starvalcity.system.files.ClientLanguages;
 import de.starvalcity.system.files.de_GER;
@@ -86,6 +87,8 @@ public final class Core extends JavaPlugin {
         String language_command_set_CONTENT = FileStringManager.ENG_command_messages_language_command_set_CONTENT;
         String language_already_set_PATH = FilePathManager.ENG_command_messages_language_already_set_PATH;
         String language_already_set_CONTENT = FileStringManager.ENG_command_messages_language_already_set_CONTENT;
+        String staffchat_usage_PATH = FilePathManager.ENG_command_messages_staffchat_usage_PATH;
+        String staffchat_usage_CONTENT = FileStringManager.ENG_command_messages_staffchat_usage_CONTENT;
         en_ENG.getFile().addDefault(default_prefix_PATH, default_prefix_CONTENT);
         en_ENG.getFile().addDefault(staff_prefix_PATH, staff_prefix_CONTENT);
         en_ENG.getFile().addDefault(insufficient_permissions_PATH, insufficient_permissions_CONTENT);
@@ -97,6 +100,7 @@ public final class Core extends JavaPlugin {
         en_ENG.getFile().addDefault(language_command_info_PATH, language_command_info_CONTENT);
         en_ENG.getFile().addDefault(language_command_set_PATH, language_command_set_CONTENT);
         en_ENG.getFile().addDefault(language_already_set_PATH, language_already_set_CONTENT);
+        en_ENG.getFile().addDefault(staffchat_usage_PATH, staffchat_usage_CONTENT);
         en_ENG.setupFile();
         Bukkit.getConsoleSender().sendMessage(SystemMessagesManager.loading_enUK_yml);
         en_ENG.getFile().options().copyDefaults(true);
@@ -126,6 +130,8 @@ public final class Core extends JavaPlugin {
         String language_command_set_CONTENT = FileStringManager.GER_command_messages_language_command_set_CONTENT;
         String language_already_set_PATH = FilePathManager.GER_command_messages_language_already_set_PATH;
         String language_already_set_CONTENT = FileStringManager.GER_command_messages_language_already_set_CONTENT;
+        String teamchat_usage_PATH = FilePathManager.GER_command_messages_staffchat_usage_PATH;
+        String teamchat_usage_CONTENT = FileStringManager.GER_command_messages_staffchat_usage_CONTENT;
         de_GER.setupFile();
         Bukkit.getConsoleSender().sendMessage(SystemMessagesManager.loading_deGER_yml);
         de_GER.getFile().options().header(FileHeaderManager.DE_header);
@@ -140,6 +146,7 @@ public final class Core extends JavaPlugin {
         de_GER.getFile().addDefault(language_command_info_PATH, language_command_info_CONTENT);
         de_GER.getFile().addDefault(language_command_set_PATH, language_command_set_CONTENT);
         de_GER.getFile().addDefault(language_already_set_PATH, language_already_set_CONTENT);
+        de_GER.getFile().addDefault(teamchat_usage_PATH, teamchat_usage_CONTENT);
         de_GER.getFile().options().copyDefaults(true);
         de_GER.saveFile();
     }
@@ -149,6 +156,7 @@ public final class Core extends JavaPlugin {
         Objects.requireNonNull(this.getCommand("idn")).setExecutor(new COMMAND_idn());
         Objects.requireNonNull(this.getCommand("language")).setExecutor(new COMMAND_language());
         Objects.requireNonNull(this.getCommand("staff")).setExecutor(new COMMAND_staff());
+        Objects.requireNonNull(this.getCommand("staffchat")).setExecutor(new COMMAND_staffchat());
     }
 
     private void loadEvents() {

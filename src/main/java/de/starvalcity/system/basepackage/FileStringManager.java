@@ -25,6 +25,7 @@ public class FileStringManager {
     public static String GER_command_messages_language_command_info_CONTENT = "§2Aktuelles Sprachpaket:§e German";
     public static String GER_command_messages_language_command_set_CONTENT = "§2Sprachpaket erfolgreich gesetzt!";
     public static String GER_command_messages_language_already_set_CONTENT = "§4Sprachpaket bereits gesetzt!";
+    public static String GER_command_messages_staffchat_usage_CONTENT = "§4Nutzung: §7/teamchat <Nachricht>";
 
     //----------------------------------------------------------------------------------------------------------------//
     /* File: en_ENG.yml */
@@ -49,6 +50,7 @@ public class FileStringManager {
     public static String ENG_command_messages_language_command_info_CONTENT = "§2Current language:§e English";
     public static String ENG_command_messages_language_command_set_CONTENT = "§2Language successfully set!";
     public static String ENG_command_messages_language_already_set_CONTENT = "§4Language already set!";
+    public static String ENG_command_messages_staffchat_usage_CONTENT = "§4Usage: §7/staffchat <Message>";
 
     //----------------------------------------------------------------------------------------------------------------//
 
