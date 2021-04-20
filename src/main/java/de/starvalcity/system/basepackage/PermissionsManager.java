@@ -1,6 +1,17 @@
 package de.starvalcity.system.basepackage;
 
+import me.lucko.luckperms.common.model.User;
+import net.luckperms.api.LuckPerms;
+import net.luckperms.api.model.group.Group;
+import org.bukkit.entity.Player;
+
+import java.util.Collection;
+import java.util.UUID;
+import java.util.concurrent.CompletableFuture;
+
 public class PermissionsManager {
+
+    static LuckPerms luckPerms;
 
     /* -------------------------------------------------------------------------------------------------------------- */
 
@@ -17,6 +28,26 @@ public class PermissionsManager {
     public static String staffchat_general = "staffchat.general";
 
     /* -------------------------------------------------------------------------------------------------------------- */
+
+    public CompletableFuture<Boolean> isAdmin(UUID player) {
+        return luckPerms.getUserManager().loadUser(player).thenApplyAsync(user -> {
+            Collection<Group> inheritedGroups = user.getInheritedGroups(user.getQueryOptions());
+            return inheritedGroups.stream().anyMatch(g -> g.getName().equals("admin"));
+        });
+    }
+
+    public static boolean isPlayerInGroup(Player player, String group) {
+        return player.hasPermission("group." + group);
+    }
+
+    public static String getPlayerGroup(Player player, Collection<String> possibleGroups) {
+        for (String group : possibleGroups) {
+            if (player.hasPermission("group." + group)) {
+                return group;
+            }
+        }
+        return null;
+    }
 
 
 
