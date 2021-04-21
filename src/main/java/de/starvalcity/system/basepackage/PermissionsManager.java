@@ -1,8 +1,10 @@
 package de.starvalcity.system.basepackage;
 
-import me.lucko.luckperms.common.model.User;
 import net.luckperms.api.LuckPerms;
 import net.luckperms.api.model.group.Group;
+import net.luckperms.api.model.user.User;
+import net.luckperms.api.node.Node;
+import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import java.util.Collection;
@@ -49,6 +51,22 @@ public class PermissionsManager {
         return null;
     }
 
+    public void informIfAdmin(CommandSender commandSender, UUID player) {
+        isAdmin(player).thenAcceptAsync(result -> {
+            if (result) {
+                commandSender.sendMessage("This player is an admin!");
+            } else {
+                commandSender.sendMessage("This player is not an admin!");
+            }
+        });
+    }
 
+    public void addPermission(User user, String permission) {
+        user.data().add(Node.builder(permission).build());
+        luckPerms.getUserManager().saveUser(user);
+    }
 
+    public boolean hasPermission(User user, String permission) {
+        return user.getCachedData().getPermissionData().checkPermission(permission).asBoolean();
+    }
 }

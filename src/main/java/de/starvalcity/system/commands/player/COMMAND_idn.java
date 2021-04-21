@@ -1,4 +1,4 @@
-package de.starvalcity.system.commands;
+package de.starvalcity.system.commands.player;
 
 import de.starvalcity.system.basepackage.FilePathManager;
 import de.starvalcity.system.basepackage.LanguageManager;

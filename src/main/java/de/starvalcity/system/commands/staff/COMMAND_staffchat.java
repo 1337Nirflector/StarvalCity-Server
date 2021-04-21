@@ -1,4 +1,4 @@
-package de.starvalcity.system.commands;
+package de.starvalcity.system.commands.staff;
 
 import de.starvalcity.system.basepackage.*;
 import org.bukkit.Bukkit;

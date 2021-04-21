@@ -1,12 +1,13 @@
 package de.starvalcity.system.basepackage;
 
 import de.starvalcity.system.api.HeadDatabaseAPI;
-import de.starvalcity.system.commands.COMMAND_idn;
-import de.starvalcity.system.commands.COMMAND_language;
-import de.starvalcity.system.commands.COMMAND_staff;
-import de.starvalcity.system.commands.COMMAND_staffchat;
+import de.starvalcity.system.commands.player.COMMAND_idn;
+import de.starvalcity.system.commands.player.COMMAND_language;
+import de.starvalcity.system.commands.staff.COMMAND_staff;
+import de.starvalcity.system.commands.staff.COMMAND_staffchat;
 import de.starvalcity.system.events.PlayerFirstJoinEvent;
 import de.starvalcity.system.files.ClientLanguages;
+import de.starvalcity.system.files.Economy;
 import de.starvalcity.system.files.de_GER;
 import de.starvalcity.system.files.en_ENG;
 import de.starvalcity.system.generations.IDN;
@@ -37,6 +38,8 @@ public final class Core extends JavaPlugin {
         loadGermanMessages();
         loadCommands();
         loadEvents();
+        loadAPIs();
+        loadEconomy();
 
     }
 
@@ -168,6 +171,12 @@ public final class Core extends JavaPlugin {
     private void loadAPIs() {
         Bukkit.getConsoleSender().sendMessage(SystemMessagesManager.loading_apis);
         Bukkit.getPluginManager().registerEvents(new HeadDatabaseAPI(), this);
+    }
+
+    private void loadEconomy() {
+        Economy.setupFile();
+        Bukkit.getConsoleSender().sendMessage(SystemMessagesManager.loading_economy);
+        Economy.saveFile();
     }
 
     public Timer getTimer() {
