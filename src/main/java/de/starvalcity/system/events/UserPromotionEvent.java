@@ -6,7 +6,6 @@ import net.luckperms.api.LuckPerms;
 import net.luckperms.api.event.EventBus;
 import net.luckperms.api.event.user.track.UserPromoteEvent;
 import net.luckperms.api.model.user.User;
-import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
 import java.util.Collection;
@@ -26,7 +25,13 @@ public class UserPromotionEvent {
         Collection<Player> onlineEngPlayers = LanguageManager.engPlayers;
         Collection<Player> onlineGerPlayers = LanguageManager.gerPlayers;
 
+        for (Player onlineEnglishPlayer : onlineEngPlayers) {
+            onlineEnglishPlayer.sendMessage();
+        }
 
+        for (Player onlineGermanPlayer : onlineGerPlayers) {
+            onlineGermanPlayer.sendMessage();
+        }
     }
 
 }
