@@ -12,6 +12,7 @@ public class FilePathManager {
 
     // Prefixes
     public static String GER_prefixes_default_PATH = "Prefixes.Standard";
+    public static String GER_prefixes_promotion_PATH = "Prefixes.Befoerderung";
     public static String GER_prefixes_staff_PATH = "Prefixes.Team";
 
     // Vielmalige Nachrichten
@@ -33,6 +34,7 @@ public class FilePathManager {
 
     // Prefixes
     public static String ENG_prefixes_default_PATH = "Prefixes.Default";
+    public static String ENG_prefixes_promotion_PATH = "Prefixes.Promotion";
     public static String ENG_prefixes_staff_PATH = "Prefixes.Staff";
 
     // Frequent messages

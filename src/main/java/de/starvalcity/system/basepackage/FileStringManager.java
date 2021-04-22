@@ -10,6 +10,7 @@ public class FileStringManager {
 
     // Prefixes
     public static String GER_prefixes_default_CONTENT = "§7[§6StarvalCity§7] ";
+    public static String GER_prefixes_promotion_CONTENT = "§7[§aBeförderung§7 ]";
     public static String GER_prefixes_staff_CONTENT = "§7[§9Team§7] ";
 
     // Vielmalige Nachrichten
@@ -35,6 +36,7 @@ public class FileStringManager {
 
     // Prefixes
     public static String ENG_prefixes_default_CONTENT = "§7[§6StarvalCity§7] ";
+    public static String ENG_prefixes_promotion_CONTENT = "§7[§aPromotion§7] ";
     public static String ENG_prefixes_staff_CONTENT = "§7[§9Staff§7] ";
 
     // Frequent messages
