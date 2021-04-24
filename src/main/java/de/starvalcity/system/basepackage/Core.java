@@ -1,19 +1,15 @@
 package de.starvalcity.system.basepackage;
 
 import de.starvalcity.system.api.HeadDatabaseAPI;
+import de.starvalcity.system.api.LuckPermsAPI;
 import de.starvalcity.system.commands.player.COMMAND_idn;
 import de.starvalcity.system.commands.player.COMMAND_language;
 import de.starvalcity.system.commands.staff.COMMAND_staff;
 import de.starvalcity.system.commands.staff.COMMAND_staffchat;
 import de.starvalcity.system.events.PlayerFirstJoinEvent;
-import de.starvalcity.system.events.UserPromotionEvent;
-import de.starvalcity.system.files.ClientLanguages;
-import de.starvalcity.system.files.Economy;
-import de.starvalcity.system.files.de_GER;
-import de.starvalcity.system.files.en_ENG;
+import de.starvalcity.system.files.*;
 import de.starvalcity.system.generations.IDN;
 import de.starvalcity.system.generations.Timer;
-import net.luckperms.api.LuckPerms;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -26,6 +22,7 @@ public final class Core extends JavaPlugin {
     private static Core instance;
     public static Core plugin;
     public static Plugin pl;
+    public static PermissionsManager permissionsManager;
     private Timer timer;
 
     @Override
@@ -42,6 +39,7 @@ public final class Core extends JavaPlugin {
         loadEvents();
         loadAPIs();
         loadEconomy();
+        loadPermissions();
 
     }
 
@@ -168,18 +166,24 @@ public final class Core extends JavaPlugin {
         Bukkit.getConsoleSender().sendMessage(SystemMessagesManager.loading_events);
         Bukkit.getPluginManager().registerEvents(new IDN(), this);
         Bukkit.getPluginManager().registerEvents(new PlayerFirstJoinEvent(), this);
-        Bukkit.getPluginManager().registerEvents(new UserPromotionEvent(), this);
     }
 
     private void loadAPIs() {
         Bukkit.getConsoleSender().sendMessage(SystemMessagesManager.loading_apis);
         Bukkit.getPluginManager().registerEvents(new HeadDatabaseAPI(), this);
+        LuckPermsAPI.loadLuckPermsAPI();
     }
 
     private void loadEconomy() {
         Economy.setupFile();
         Bukkit.getConsoleSender().sendMessage(SystemMessagesManager.loading_economy);
         Economy.saveFile();
+    }
+
+    private void loadPermissions() {
+        Permissions.setupFile();
+        Bukkit.getConsoleSender().sendMessage(SystemMessagesManager.loading_permissions);
+        Permissions.saveFile();
     }
 
     public Timer getTimer() {

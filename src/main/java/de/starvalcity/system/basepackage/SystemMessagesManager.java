@@ -16,8 +16,11 @@ public class SystemMessagesManager {
     public static String loading_events = defaultPrefix + "§2Loading §eevents §2and §elisteners§2...";
     public static String loading_apis = defaultPrefix + "§2Loading §eAPIs §2and similar §edependencies§2...";
     public static String loading_economy = defaultPrefix + "§2Loading §eeconomy system§2...";
+    public static String loading_permissions = defaultPrefix + "§2Loading §epermissions§2...";
 
     public static String head_database_error = defaultPrefix + "§4Could not find the head you were looking for!";
+    public static String luckperms_api_error = defaultPrefix + "§4Something went wrong while connecting to the " +
+            "LuckPerms API dependency!";
 
     /* -------------------------------------------------------------------------------------------------------------- */
 

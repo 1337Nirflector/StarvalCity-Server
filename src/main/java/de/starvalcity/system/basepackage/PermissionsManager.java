@@ -7,13 +7,23 @@ import net.luckperms.api.node.Node;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.CompletableFuture;
 
 public class PermissionsManager {
 
     static LuckPerms luckPerms;
+
+    public static List<String> adminPermissions = new ArrayList<>();
+    public static List<String> developerPermissions = new ArrayList<>();
+    public static List<String> seniorModeratorPermissions = new ArrayList<>();
+    public static List<String> moderatorPermissions = new ArrayList<>();
+    public static List<String> supporterPlusPermissions = new ArrayList<>();
+    public static List<String> supporterPermissions = new ArrayList<>();
+    public static List<String> testSupporterPermissions = new ArrayList<>();
 
     /* -------------------------------------------------------------------------------------------------------------- */
 
@@ -68,5 +78,33 @@ public class PermissionsManager {
 
     public boolean hasPermission(User user, String permission) {
         return user.getCachedData().getPermissionData().checkPermission(permission).asBoolean();
+    }
+
+    public static List<String> getTestSupporterPermissions() {
+        return testSupporterPermissions;
+    }
+
+    public static List<String> getSupporterPermissions() {
+        return supporterPermissions;
+    }
+
+    public static List<String> getSupporterPlusPermissions() {
+        return supporterPlusPermissions;
+    }
+
+    public static List<String> getModeratorPermissions() {
+        return moderatorPermissions;
+    }
+
+    public static List<String> getSeniorModeratorPermissions() {
+        return seniorModeratorPermissions;
+    }
+
+    public static List<String> getDeveloperPermissions() {
+        return developerPermissions;
+    }
+
+    public static List<String> getAdminPermissions() {
+        return adminPermissions;
     }
 }
