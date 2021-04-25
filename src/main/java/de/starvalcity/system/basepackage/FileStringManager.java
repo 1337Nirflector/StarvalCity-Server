@@ -28,6 +28,10 @@ public class FileStringManager {
     public static String GER_command_messages_language_already_set_CONTENT = "§4Sprachpaket bereits gesetzt!";
     public static String GER_command_messages_staffchat_usage_CONTENT = "§4Nutzung: §7/teamchat <Nachricht>";
 
+    // Wirtschaftsnachrichten
+    public static String GER_economy_messages_not_enough_money_CONTENT = "§4Du hast nicht genug Geld um dies zu tun!";
+    public static String GER_economy_messages_bank_account_creation_CONTENT = "§2Konto erfolgreich erstellt!";
+
     //----------------------------------------------------------------------------------------------------------------//
     /* File: en_ENG.yml */
 
@@ -53,6 +57,10 @@ public class FileStringManager {
     public static String ENG_command_messages_language_command_set_CONTENT = "§2Language successfully set!";
     public static String ENG_command_messages_language_already_set_CONTENT = "§4Language already set!";
     public static String ENG_command_messages_staffchat_usage_CONTENT = "§4Usage: §7/staffchat <Message>";
+
+    // Economy messages
+    public static String ENG_economy_messages_not_enough_money_CONTENT = "§4You do not have enough money to do that!";
+    public static String ENG_economy_messages_bank_account_creation_CONTENT = "§2Bank account successfully created!";
 
     //----------------------------------------------------------------------------------------------------------------//
     /* File: economy.yml */

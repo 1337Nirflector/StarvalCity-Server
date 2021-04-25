@@ -14,6 +14,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.io.File;
 import java.util.Objects;
 import java.util.logging.Logger;
 
@@ -92,6 +93,10 @@ public final class Core extends JavaPlugin {
         String language_already_set_CONTENT = FileStringManager.ENG_command_messages_language_already_set_CONTENT;
         String staffchat_usage_PATH = FilePathManager.ENG_command_messages_staffchat_usage_PATH;
         String staffchat_usage_CONTENT = FileStringManager.ENG_command_messages_staffchat_usage_CONTENT;
+        String economy_not_enough_money_PATH = FilePathManager.ENG_economy_messages_not_enough_money_PATH;
+        String economy_not_enough_money_CONTENT = FileStringManager.ENG_economy_messages_not_enough_money_CONTENT;
+        String economy_bank_account_creation_PATH = FilePathManager.ENG_economy_messages_bank_account_creation_PATH;
+        String economy_bank_account_creation_CONTENT = FileStringManager.ENG_economy_messages_bank_account_creation_CONTENT;
         en_ENG.getFile().addDefault(default_prefix_PATH, default_prefix_CONTENT);
         en_ENG.getFile().addDefault(staff_prefix_PATH, staff_prefix_CONTENT);
         en_ENG.getFile().addDefault(insufficient_permissions_PATH, insufficient_permissions_CONTENT);
@@ -104,6 +109,8 @@ public final class Core extends JavaPlugin {
         en_ENG.getFile().addDefault(language_command_set_PATH, language_command_set_CONTENT);
         en_ENG.getFile().addDefault(language_already_set_PATH, language_already_set_CONTENT);
         en_ENG.getFile().addDefault(staffchat_usage_PATH, staffchat_usage_CONTENT);
+        en_ENG.getFile().addDefault(economy_not_enough_money_PATH, economy_not_enough_money_CONTENT);
+        en_ENG.getFile().addDefault(economy_bank_account_creation_PATH, economy_bank_account_creation_CONTENT);
         en_ENG.setupFile();
         system.info(SystemMessagesManager.loading_enUK_yml);
         en_ENG.getFile().options().copyDefaults(true);
@@ -135,6 +142,10 @@ public final class Core extends JavaPlugin {
         String language_already_set_CONTENT = FileStringManager.GER_command_messages_language_already_set_CONTENT;
         String teamchat_usage_PATH = FilePathManager.GER_command_messages_staffchat_usage_PATH;
         String teamchat_usage_CONTENT = FileStringManager.GER_command_messages_staffchat_usage_CONTENT;
+        String economy_not_enough_money_PATH = FilePathManager.GER_economy_messages_not_enough_money_PATH;
+        String economy_not_enough_money_CONTENT = FileStringManager.GER_economy_messages_not_enough_money_CONTENT;
+        String economy_bank_account_creation_PATH = FilePathManager.GER_economy_messages_bank_account_creation_PATH;
+        String economy_bank_account_creation_CONTENT = FileStringManager.GER_economy_messages_bank_account_creation_CONTENT;
         de_GER.setupFile();
         system.info(SystemMessagesManager.loading_deGER_yml);
         de_GER.getFile().options().header(FileHeaderManager.DE_header);
@@ -150,6 +161,8 @@ public final class Core extends JavaPlugin {
         de_GER.getFile().addDefault(language_command_set_PATH, language_command_set_CONTENT);
         de_GER.getFile().addDefault(language_already_set_PATH, language_already_set_CONTENT);
         de_GER.getFile().addDefault(teamchat_usage_PATH, teamchat_usage_CONTENT);
+        de_GER.getFile().addDefault(economy_not_enough_money_PATH, economy_not_enough_money_CONTENT);
+        de_GER.getFile().addDefault(economy_bank_account_creation_PATH, economy_bank_account_creation_CONTENT);
         de_GER.getFile().options().copyDefaults(true);
         de_GER.saveFile();
     }

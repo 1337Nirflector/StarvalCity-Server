@@ -29,6 +29,10 @@ public class FilePathManager {
     public static String GER_command_messages_language_already_set_PATH = "Befehlsnachrichten.Language_Sprache_bereits_gesetzt";
     public static String GER_command_messages_staffchat_usage_PATH = "Befehlsnachrichten.TeamChat_Nutzung";
 
+    // Wirtschaftsnachrichten
+    public static String GER_economy_messages_not_enough_money_PATH = "Wirtschaftsnachrichten.Nicht_ausreichend_Geld";
+    public static String GER_economy_messages_bank_account_creation_PATH = "Wirtschaftsnachrichten.Konto_erfolgreich_erstellt";
+
     //----------------------------------------------------------------------------------------------------------------//
     /* File: en_ENG.yml */
 
@@ -50,6 +54,10 @@ public class FilePathManager {
     public static String ENG_command_messages_language_command_set_PATH = "Command_messages.Language_set";
     public static String ENG_command_messages_language_already_set_PATH = "Command_messages.Language_already_set";
     public static String ENG_command_messages_staffchat_usage_PATH = "Command_messages.StaffChat_usage";
+
+    // Economy messages
+    public static String ENG_economy_messages_not_enough_money_PATH = "Economy_messages.Not_enough_money";
+    public static String ENG_economy_messages_bank_account_creation_PATH = "Economy_messages.Bank_account_successfully_created";
 
     //----------------------------------------------------------------------------------------------------------------//
     /* File: economy.yml */
