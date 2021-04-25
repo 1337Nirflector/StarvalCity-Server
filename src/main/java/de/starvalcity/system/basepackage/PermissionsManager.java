@@ -1,5 +1,6 @@
 package de.starvalcity.system.basepackage;
 
+import de.starvalcity.system.files.Permissions;
 import net.luckperms.api.LuckPerms;
 import net.luckperms.api.model.group.Group;
 import net.luckperms.api.model.user.User;
@@ -37,7 +38,6 @@ public class PermissionsManager {
     public static String staff_info = "staff.info";
     public static String staff_join = "staff.join";
     public static String staff_leave = "staff.leave";
-    public static String staffchat_general = "staffchat.general";
 
     /* -------------------------------------------------------------------------------------------------------------- */
 
@@ -73,6 +73,7 @@ public class PermissionsManager {
 
     public void addPermission(User user, String permission) {
         user.data().add(Node.builder(permission).build());
+        Permissions.getFile().set(user.getUsername(), permission);
         luckPerms.getUserManager().saveUser(user);
     }
 

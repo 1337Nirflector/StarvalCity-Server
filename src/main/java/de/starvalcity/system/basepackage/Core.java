@@ -20,6 +20,7 @@ import java.util.logging.Logger;
 public final class Core extends JavaPlugin {
 
     private static Core instance;
+    private static Logger system;
     public static Core plugin;
     public static Plugin pl;
     public static PermissionsManager permissionsManager;
@@ -27,11 +28,10 @@ public final class Core extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        Logger system = getLogger();
         plugin = this;
         pl = this;
         timer = new Timer();
-        Bukkit.getConsoleSender().sendMessage("§2Enabling StarvalCity System...");
+        system.info("§2Enabling StarvalCity System...");
         loadClientLanguages();
         loadEnglishMessages();
         loadGermanMessages();
@@ -46,7 +46,7 @@ public final class Core extends JavaPlugin {
     @Override
     public void onDisable() {
         timer.saveTimer();
-        Bukkit.getConsoleSender().sendMessage("§4Disabling StarvalCity System...");
+        system.info("§4Disabling StarvalCity System...");
     }
 
     public static Core getInstance() {
@@ -63,7 +63,7 @@ public final class Core extends JavaPlugin {
 
     public void loadClientLanguages() {
         ClientLanguages.setupFile();
-        Bukkit.getConsoleSender().sendMessage(SystemMessagesManager.loading_client_languages);
+        system.info(SystemMessagesManager.loading_client_languages);
         ClientLanguages.saveFile();
     }
 
@@ -105,7 +105,7 @@ public final class Core extends JavaPlugin {
         en_ENG.getFile().addDefault(language_already_set_PATH, language_already_set_CONTENT);
         en_ENG.getFile().addDefault(staffchat_usage_PATH, staffchat_usage_CONTENT);
         en_ENG.setupFile();
-        Bukkit.getConsoleSender().sendMessage(SystemMessagesManager.loading_enUK_yml);
+        system.info(SystemMessagesManager.loading_enUK_yml);
         en_ENG.getFile().options().copyDefaults(true);
         en_ENG.saveFile();
     }
@@ -136,7 +136,7 @@ public final class Core extends JavaPlugin {
         String teamchat_usage_PATH = FilePathManager.GER_command_messages_staffchat_usage_PATH;
         String teamchat_usage_CONTENT = FileStringManager.GER_command_messages_staffchat_usage_CONTENT;
         de_GER.setupFile();
-        Bukkit.getConsoleSender().sendMessage(SystemMessagesManager.loading_deGER_yml);
+        system.info(SystemMessagesManager.loading_deGER_yml);
         de_GER.getFile().options().header(FileHeaderManager.DE_header);
         de_GER.getFile().addDefault(default_prefix_PATH, default_prefix_CONTENT);
         de_GER.getFile().addDefault(staff_prefix_PATH, staff_prefix_CONTENT);
@@ -155,7 +155,7 @@ public final class Core extends JavaPlugin {
     }
 
     private void loadCommands() {
-        Bukkit.getConsoleSender().sendMessage(SystemMessagesManager.loading_commands);
+        system.info(SystemMessagesManager.loading_commands);
         Objects.requireNonNull(this.getCommand("idn")).setExecutor(new COMMAND_idn());
         Objects.requireNonNull(this.getCommand("language")).setExecutor(new COMMAND_language());
         Objects.requireNonNull(this.getCommand("staff")).setExecutor(new COMMAND_staff());
@@ -163,26 +163,29 @@ public final class Core extends JavaPlugin {
     }
 
     private void loadEvents() {
-        Bukkit.getConsoleSender().sendMessage(SystemMessagesManager.loading_events);
+        system.info(SystemMessagesManager.loading_events);
         Bukkit.getPluginManager().registerEvents(new IDN(), this);
         Bukkit.getPluginManager().registerEvents(new PlayerFirstJoinEvent(), this);
     }
 
     private void loadAPIs() {
-        Bukkit.getConsoleSender().sendMessage(SystemMessagesManager.loading_apis);
+        system.info(SystemMessagesManager.loading_apis);
         Bukkit.getPluginManager().registerEvents(new HeadDatabaseAPI(), this);
         LuckPermsAPI.loadLuckPermsAPI();
     }
 
     private void loadEconomy() {
+        String ECO_bank_account_creation_PATH = FilePathManager.ECO_bank_account_creation_PATH;
+        Double ECO_bank_account_creation_CONTENT = FileStringManager.ECO_bank_creation_price_CONTENT;
         Economy.setupFile();
-        Bukkit.getConsoleSender().sendMessage(SystemMessagesManager.loading_economy);
+        system.info(SystemMessagesManager.loading_economy);
+        Economy.getFile().addDefault(ECO_bank_account_creation_PATH, ECO_bank_account_creation_CONTENT);
         Economy.saveFile();
     }
 
     private void loadPermissions() {
         Permissions.setupFile();
-        Bukkit.getConsoleSender().sendMessage(SystemMessagesManager.loading_permissions);
+        system.info(SystemMessagesManager.loading_permissions);
         Permissions.saveFile();
     }
 

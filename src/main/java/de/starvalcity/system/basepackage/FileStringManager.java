@@ -55,5 +55,9 @@ public class FileStringManager {
     public static String ENG_command_messages_staffchat_usage_CONTENT = "§4Usage: §7/staffchat <Message>";
 
     //----------------------------------------------------------------------------------------------------------------//
+    /* File: economy.yml */
+
+    // Default values
+    public static Double ECO_bank_creation_price_CONTENT = 100.00;
 
 }

@@ -30,7 +30,7 @@ public class FilePathManager {
     public static String GER_command_messages_staffchat_usage_PATH = "Befehlsnachrichten.TeamChat_Nutzung";
 
     //----------------------------------------------------------------------------------------------------------------//
-    /* File: en_ENG */
+    /* File: en_ENG.yml */
 
     // Prefixes
     public static String ENG_prefixes_default_PATH = "Prefixes.Default";
@@ -52,5 +52,9 @@ public class FilePathManager {
     public static String ENG_command_messages_staffchat_usage_PATH = "Command_messages.StaffChat_usage";
 
     //----------------------------------------------------------------------------------------------------------------//
+    /* File: economy.yml */
+
+    // Default values
+    public static String ECO_bank_account_creation_PATH = "Bank_creation_price";
 
 }
