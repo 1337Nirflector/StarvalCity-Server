@@ -27,8 +27,7 @@ public class COMMAND_money  implements CommandExecutor {
     @Override
     public boolean onCommand(@NotNull CommandSender commandSender, @NotNull Command command, @NotNull String s, @NotNull String[] strings) {
         if (commandSender instanceof ConsoleCommandSender) {
-            Core.getPlugin().getLogger().severe(SystemMessagesManager.DE_player_related_command);
-            Core.getPlugin().getLogger().severe(SystemMessagesManager.EN_player_related_command);
+            SystemLogger.logPlayerRelatedCommand();
         }
         if (commandSender instanceof Player) {
             Player player = (Player) commandSender;
@@ -45,9 +44,11 @@ public class COMMAND_money  implements CommandExecutor {
                     if (LanguageManager.englishPlayers.contains(player.getUniqueId())) {
                         player.sendMessage(ENG_insufficient_permissions_MSG);
                         player.playSound(player.getLocation(), Sound.BLOCK_NOTE_BLOCK_BASS, 10, 1);
+                        SystemLogger.logPlayerNoPermissions(player);
                     } else if (LanguageManager.germanPlayers.contains(player.getUniqueId())) {
                         player.sendMessage(GER_insufficient_permissions_MSG);
                         player.playSound(player.getLocation(), Sound.BLOCK_NOTE_BLOCK_BASS, 10, 1);
+                        SystemLogger.logPlayerNoPermissions(player);
                     }
                 }
             }

@@ -8,6 +8,7 @@ import de.starvalcity.system.commands.player.COMMAND_language;
 import de.starvalcity.system.commands.staff.COMMAND_staff;
 import de.starvalcity.system.commands.staff.COMMAND_staffchat;
 import de.starvalcity.system.events.PlayerFirstJoinEvent;
+import de.starvalcity.system.features.EconomyManager;
 import de.starvalcity.system.files.*;
 import de.starvalcity.system.generations.IDN;
 import de.starvalcity.system.generations.Timer;
@@ -15,7 +16,6 @@ import org.bukkit.Bukkit;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import java.io.File;
 import java.util.Objects;
 import java.util.logging.Logger;
 
@@ -26,6 +26,7 @@ public final class Core extends JavaPlugin {
     public static Core plugin;
     public static Plugin pl;
     public static PermissionsManager permissionsManager;
+    public static EconomyManager economyManager;
     private Timer timer;
 
     @Override

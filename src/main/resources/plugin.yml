@@ -1,7 +1,7 @@
 name: StarvalCityScript
 authors: [Nirflection, Donaris, Stormy_The_Fox, sYnTaX]
 main: de.starvalcity.system.basepackage.Core
-version: 1.1.1
+version: 1.1.2
 api-version: 1.13
 softdepend:
   - HeadDatabase
@@ -15,6 +15,9 @@ commands:
   language:
     description: Language command
     usage: /language <info; set>
+  money:
+    description: Money command
+    usage: /money [add; remove; set] [Username]
   staff:
     description: Staff command
     usage: /staff <info; join; leave>
@@ -23,6 +26,17 @@ commands:
     usage: /staffchat <message>
 
 permissions:
+  economy.*:
+    description: Admin permission for economy
+    default: op
+    children:
+      economy.money.view: true
+      economy.money.add: true
+      economy.money.remove: true
+      economy.money.set: true
+  economy.money.view:
+    description: Shows the current balance
+    default: op
   idn.*:
     description: Admin permission for idn command
     default: op
