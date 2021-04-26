@@ -8,7 +8,6 @@ import org.bukkit.entity.Player;
 
 public class EconomyManager {
 
-    static Player player;
     double money;
     static String bank_account_creation_PATH = FilePathManager.ECO_bank_account_creation_PATH;
     static String ENG_not_enough_money_PATH = FilePathManager.ENG_economy_messages_not_enough_money_PATH;

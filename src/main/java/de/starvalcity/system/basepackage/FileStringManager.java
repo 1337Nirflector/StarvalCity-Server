@@ -19,6 +19,7 @@ public class FileStringManager {
             "kontaktiere einen §bDeveloper§4 oder einen §cAdministrator§4!";
 
     // Befehlsnachrichten
+    public static String GER_command_messages_money_command_CONTENT = "§2Dein Bargeld§7:§f ";
     public static String GER_command_messages_idn_command_usage_CONTENT = "§4Nutzung: §7/idn <view; recreate>";
     public static String GER_command_messages_idn_command_view_CONTENT = "§2Deine IDN lautet:§e ";
     public static String GER_command_messages_idn_command_recreate_CONTENT = "§2Deine IDN wurde §aerfolgreich §2neu erstellt!";
@@ -49,6 +50,7 @@ public class FileStringManager {
             "error to a §bDeveloper§4 or an §cAdministrator§4!";
 
     // Command messages
+    public static String ENG_command_messages_money_command_CONTENT = "§2Your balance§7:§f ";
     public static String ENG_command_messages_idn_command_usage_CONTENT = "§4Usage: §7/idn <view; recreate>";
     public static String ENG_command_messages_idn_command_view_CONTENT = "§2Your IDN is:§e ";
     public static String ENG_command_messages_idn_command_recreate_CONTENT = "§2Your IDN has been §asuccessfully§2 recreated!";

@@ -28,6 +28,7 @@ public class PermissionsManager {
 
     /* -------------------------------------------------------------------------------------------------------------- */
 
+    public static String economy_client_money = "economy.client.money";
     public static String idn_general = "idn.general";
     public static String idn_view = "idn.view";
     public static String idn_recreate = "idn.recreate";

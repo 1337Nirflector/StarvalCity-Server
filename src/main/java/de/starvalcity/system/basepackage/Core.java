@@ -2,6 +2,7 @@ package de.starvalcity.system.basepackage;
 
 import de.starvalcity.system.api.HeadDatabaseAPI;
 import de.starvalcity.system.api.LuckPermsAPI;
+import de.starvalcity.system.commands.economy.COMMAND_money;
 import de.starvalcity.system.commands.player.COMMAND_idn;
 import de.starvalcity.system.commands.player.COMMAND_language;
 import de.starvalcity.system.commands.staff.COMMAND_staff;
@@ -77,6 +78,8 @@ public final class Core extends JavaPlugin {
         String insufficient_permissions_CONTENT = FileStringManager.ENG_frequent_messages_insufficient_permissions_CONTENT;
         String something_went_wrong_PATH = FilePathManager.ENG_frequent_messages_something_went_wrong_PATH;
         String something_went_wrong_CONTENT = FileStringManager.ENG_frequent_messages_something_went_wrong_CONTENT;
+        String economy_money_PATH = FilePathManager.ENG_command_messages_money_command_PATH;
+        String economy_money_CONTENT = FileStringManager.ENG_command_messages_money_command_CONTENT;
         String idn_command_usage_PATH = FilePathManager.ENG_command_messages_idn_command_usage_PATH;
         String idn_command_usage_CONTENT = FileStringManager.ENG_command_messages_idn_command_usage_CONTENT;
         String idn_command_view_PATH = FilePathManager.ENG_command_messages_idn_command_view_PATH;
@@ -101,6 +104,7 @@ public final class Core extends JavaPlugin {
         en_ENG.getFile().addDefault(staff_prefix_PATH, staff_prefix_CONTENT);
         en_ENG.getFile().addDefault(insufficient_permissions_PATH, insufficient_permissions_CONTENT);
         en_ENG.getFile().addDefault(something_went_wrong_PATH, something_went_wrong_CONTENT);
+        en_ENG.getFile().addDefault(economy_money_PATH, economy_money_CONTENT);
         en_ENG.getFile().addDefault(idn_command_usage_PATH, idn_command_usage_CONTENT);
         en_ENG.getFile().addDefault(idn_command_view_PATH, idn_command_view_CONTENT);
         en_ENG.getFile().addDefault(idn_command_recreate_PATH, idn_command_recreate_CONTENT);
@@ -126,6 +130,8 @@ public final class Core extends JavaPlugin {
         String insufficient_permissions_CONTENT = FileStringManager.GER_frequent_messages_insufficient_permissions_CONTENT;
         String something_went_wrong_PATH = FilePathManager.GER_frequent_messages_something_went_wrong_PATH;
         String something_went_wrong_CONTENT = FileStringManager.GER_frequent_messages_something_went_wrong_CONTENT;
+        String economy_money_PATH = FilePathManager.GER_command_messages_money_command_PATH;
+        String economy_money_CONTENT = FileStringManager.GER_command_messages_money_command_CONTENT;
         String idn_command_usage_PATH = FilePathManager.GER_command_messages_idn_command_usage_PATH;
         String idn_command_usage_CONTENT = FileStringManager.GER_command_messages_idn_command_usage_CONTENT;
         String idn_command_view_PATH = FilePathManager.GER_command_messages_idn_command_view_PATH;
@@ -153,6 +159,7 @@ public final class Core extends JavaPlugin {
         de_GER.getFile().addDefault(staff_prefix_PATH, staff_prefix_CONTENT);
         de_GER.getFile().addDefault(insufficient_permissions_PATH, insufficient_permissions_CONTENT);
         de_GER.getFile().addDefault(something_went_wrong_PATH, something_went_wrong_CONTENT);
+        de_GER.getFile().addDefault(economy_money_PATH, economy_money_CONTENT);
         de_GER.getFile().addDefault(idn_command_usage_PATH, idn_command_usage_CONTENT);
         de_GER.getFile().addDefault(idn_command_view_PATH, idn_command_view_CONTENT);
         de_GER.getFile().addDefault(idn_command_recreate_PATH, idn_command_recreate_CONTENT);
@@ -173,6 +180,8 @@ public final class Core extends JavaPlugin {
         Objects.requireNonNull(this.getCommand("language")).setExecutor(new COMMAND_language());
         Objects.requireNonNull(this.getCommand("staff")).setExecutor(new COMMAND_staff());
         Objects.requireNonNull(this.getCommand("staffchat")).setExecutor(new COMMAND_staffchat());
+
+        Objects.requireNonNull(this.getCommand("money")).setExecutor(new COMMAND_money());
     }
 
     private void loadEvents() {
