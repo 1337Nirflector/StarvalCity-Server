@@ -11,7 +11,6 @@ import de.starvalcity.system.events.PlayerFirstJoinEvent;
 import de.starvalcity.system.features.EconomyManager;
 import de.starvalcity.system.files.*;
 import de.starvalcity.system.generations.IDN;
-import de.starvalcity.system.generations.Timer;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -22,34 +21,30 @@ import java.util.logging.Logger;
 public final class Core extends JavaPlugin {
 
     private static Core instance;
-    private static Logger system;
     public static Core plugin;
     public static Plugin pl;
     public static PermissionsManager permissionsManager;
     public static EconomyManager economyManager;
-    private Timer timer;
 
     @Override
     public void onEnable() {
         plugin = this;
         pl = this;
-        timer = new Timer();
-        system.info("§2Enabling StarvalCity System...");
-        loadClientLanguages();
-        loadEnglishMessages();
-        loadGermanMessages();
-        loadCommands();
-        loadEvents();
-        loadAPIs();
-        loadEconomy();
-        loadPermissions();
+        this.getLogger().info("Enabling StarvalCity system...");
+        this.loadClientLanguages();
+        this.loadEnglishMessages();
+        this.loadGermanMessages();
+        this.loadCommands();
+        this.loadEvents();
+        this.loadAPIs();
+        this.loadEconomy();
+        this.loadPermissions();
 
     }
 
     @Override
     public void onDisable() {
-        timer.saveTimer();
-        system.info("§4Disabling StarvalCity System...");
+        this.getLogger().info("§4Disabling StarvalCity System...");
     }
 
     public static Core getInstance() {
@@ -64,13 +59,13 @@ public final class Core extends JavaPlugin {
         return plugin;
     }
 
-    public void loadClientLanguages() {
+    private void loadClientLanguages() {
         ClientLanguages.setupFile();
-        system.info(SystemMessagesManager.loading_client_languages);
+        this.getLogger().info(SystemMessagesManager.loading_client_languages);
         ClientLanguages.saveFile();
     }
 
-    public void loadEnglishMessages() {
+    private void loadEnglishMessages() {
         String default_prefix_PATH = FilePathManager.ENG_prefixes_default_PATH;
         String default_prefix_CONTENT = FileStringManager.ENG_prefixes_default_CONTENT;
         String staff_prefix_PATH = FilePathManager.ENG_prefixes_staff_PATH;
@@ -101,28 +96,28 @@ public final class Core extends JavaPlugin {
         String economy_not_enough_money_CONTENT = FileStringManager.ENG_economy_messages_not_enough_money_CONTENT;
         String economy_bank_account_creation_PATH = FilePathManager.ENG_economy_messages_bank_account_creation_PATH;
         String economy_bank_account_creation_CONTENT = FileStringManager.ENG_economy_messages_bank_account_creation_CONTENT;
-        en_ENG.getFile().addDefault(default_prefix_PATH, default_prefix_CONTENT);
-        en_ENG.getFile().addDefault(staff_prefix_PATH, staff_prefix_CONTENT);
-        en_ENG.getFile().addDefault(insufficient_permissions_PATH, insufficient_permissions_CONTENT);
-        en_ENG.getFile().addDefault(something_went_wrong_PATH, something_went_wrong_CONTENT);
-        en_ENG.getFile().addDefault(economy_money_PATH, economy_money_CONTENT);
-        en_ENG.getFile().addDefault(idn_command_usage_PATH, idn_command_usage_CONTENT);
-        en_ENG.getFile().addDefault(idn_command_view_PATH, idn_command_view_CONTENT);
-        en_ENG.getFile().addDefault(idn_command_recreate_PATH, idn_command_recreate_CONTENT);
-        en_ENG.getFile().addDefault(language_command_usage_PATH, language_command_usage_CONTENT);
-        en_ENG.getFile().addDefault(language_command_info_PATH, language_command_info_CONTENT);
-        en_ENG.getFile().addDefault(language_command_set_PATH, language_command_set_CONTENT);
-        en_ENG.getFile().addDefault(language_already_set_PATH, language_already_set_CONTENT);
-        en_ENG.getFile().addDefault(staffchat_usage_PATH, staffchat_usage_CONTENT);
-        en_ENG.getFile().addDefault(economy_not_enough_money_PATH, economy_not_enough_money_CONTENT);
-        en_ENG.getFile().addDefault(economy_bank_account_creation_PATH, economy_bank_account_creation_CONTENT);
-        en_ENG.setupFile();
-        system.info(SystemMessagesManager.loading_enUK_yml);
-        en_ENG.getFile().options().copyDefaults(true);
-        en_ENG.saveFile();
+        enENG.setupFile();
+        this.getLogger().info(SystemMessagesManager.loading_enUK_yml);
+        enENG.getFile().addDefault(default_prefix_PATH, default_prefix_CONTENT);
+        enENG.getFile().addDefault(staff_prefix_PATH, staff_prefix_CONTENT);
+        enENG.getFile().addDefault(insufficient_permissions_PATH, insufficient_permissions_CONTENT);
+        enENG.getFile().addDefault(something_went_wrong_PATH, something_went_wrong_CONTENT);
+        enENG.getFile().addDefault(economy_money_PATH, economy_money_CONTENT);
+        enENG.getFile().addDefault(idn_command_usage_PATH, idn_command_usage_CONTENT);
+        enENG.getFile().addDefault(idn_command_view_PATH, idn_command_view_CONTENT);
+        enENG.getFile().addDefault(idn_command_recreate_PATH, idn_command_recreate_CONTENT);
+        enENG.getFile().addDefault(language_command_usage_PATH, language_command_usage_CONTENT);
+        enENG.getFile().addDefault(language_command_info_PATH, language_command_info_CONTENT);
+        enENG.getFile().addDefault(language_command_set_PATH, language_command_set_CONTENT);
+        enENG.getFile().addDefault(language_already_set_PATH, language_already_set_CONTENT);
+        enENG.getFile().addDefault(staffchat_usage_PATH, staffchat_usage_CONTENT);
+        enENG.getFile().addDefault(economy_not_enough_money_PATH, economy_not_enough_money_CONTENT);
+        enENG.getFile().addDefault(economy_bank_account_creation_PATH, economy_bank_account_creation_CONTENT);
+        enENG.getFile().options().copyDefaults(true);
+        enENG.saveFile();
     }
 
-    public void loadGermanMessages() {
+    private void loadGermanMessages() {
         String default_prefix_PATH = FilePathManager.GER_prefixes_default_PATH;
         String default_prefix_CONTENT = FileStringManager.GER_prefixes_default_CONTENT;
         String staff_prefix_PATH = FilePathManager.GER_prefixes_staff_PATH;
@@ -153,30 +148,30 @@ public final class Core extends JavaPlugin {
         String economy_not_enough_money_CONTENT = FileStringManager.GER_economy_messages_not_enough_money_CONTENT;
         String economy_bank_account_creation_PATH = FilePathManager.GER_economy_messages_bank_account_creation_PATH;
         String economy_bank_account_creation_CONTENT = FileStringManager.GER_economy_messages_bank_account_creation_CONTENT;
-        de_GER.setupFile();
-        system.info(SystemMessagesManager.loading_deGER_yml);
-        de_GER.getFile().options().header(FileHeaderManager.DE_header);
-        de_GER.getFile().addDefault(default_prefix_PATH, default_prefix_CONTENT);
-        de_GER.getFile().addDefault(staff_prefix_PATH, staff_prefix_CONTENT);
-        de_GER.getFile().addDefault(insufficient_permissions_PATH, insufficient_permissions_CONTENT);
-        de_GER.getFile().addDefault(something_went_wrong_PATH, something_went_wrong_CONTENT);
-        de_GER.getFile().addDefault(economy_money_PATH, economy_money_CONTENT);
-        de_GER.getFile().addDefault(idn_command_usage_PATH, idn_command_usage_CONTENT);
-        de_GER.getFile().addDefault(idn_command_view_PATH, idn_command_view_CONTENT);
-        de_GER.getFile().addDefault(idn_command_recreate_PATH, idn_command_recreate_CONTENT);
-        de_GER.getFile().addDefault(language_command_usage_PATH, language_command_usage_CONTENT);
-        de_GER.getFile().addDefault(language_command_info_PATH, language_command_info_CONTENT);
-        de_GER.getFile().addDefault(language_command_set_PATH, language_command_set_CONTENT);
-        de_GER.getFile().addDefault(language_already_set_PATH, language_already_set_CONTENT);
-        de_GER.getFile().addDefault(teamchat_usage_PATH, teamchat_usage_CONTENT);
-        de_GER.getFile().addDefault(economy_not_enough_money_PATH, economy_not_enough_money_CONTENT);
-        de_GER.getFile().addDefault(economy_bank_account_creation_PATH, economy_bank_account_creation_CONTENT);
-        de_GER.getFile().options().copyDefaults(true);
-        de_GER.saveFile();
+        deGER.setupFile();
+        this.getLogger().info(SystemMessagesManager.loading_deGER_yml);
+        deGER.getFile().options().header(FileHeaderManager.DE_header);
+        deGER.getFile().addDefault(default_prefix_PATH, default_prefix_CONTENT);
+        deGER.getFile().addDefault(staff_prefix_PATH, staff_prefix_CONTENT);
+        deGER.getFile().addDefault(insufficient_permissions_PATH, insufficient_permissions_CONTENT);
+        deGER.getFile().addDefault(something_went_wrong_PATH, something_went_wrong_CONTENT);
+        deGER.getFile().addDefault(economy_money_PATH, economy_money_CONTENT);
+        deGER.getFile().addDefault(idn_command_usage_PATH, idn_command_usage_CONTENT);
+        deGER.getFile().addDefault(idn_command_view_PATH, idn_command_view_CONTENT);
+        deGER.getFile().addDefault(idn_command_recreate_PATH, idn_command_recreate_CONTENT);
+        deGER.getFile().addDefault(language_command_usage_PATH, language_command_usage_CONTENT);
+        deGER.getFile().addDefault(language_command_info_PATH, language_command_info_CONTENT);
+        deGER.getFile().addDefault(language_command_set_PATH, language_command_set_CONTENT);
+        deGER.getFile().addDefault(language_already_set_PATH, language_already_set_CONTENT);
+        deGER.getFile().addDefault(teamchat_usage_PATH, teamchat_usage_CONTENT);
+        deGER.getFile().addDefault(economy_not_enough_money_PATH, economy_not_enough_money_CONTENT);
+        deGER.getFile().addDefault(economy_bank_account_creation_PATH, economy_bank_account_creation_CONTENT);
+        deGER.getFile().options().copyDefaults(true);
+        deGER.saveFile();
     }
 
     private void loadCommands() {
-        system.info(SystemMessagesManager.loading_commands);
+        this.getLogger().info(SystemMessagesManager.loading_commands);
         Objects.requireNonNull(this.getCommand("idn")).setExecutor(new COMMAND_idn());
         Objects.requireNonNull(this.getCommand("language")).setExecutor(new COMMAND_language());
         Objects.requireNonNull(this.getCommand("staff")).setExecutor(new COMMAND_staff());
@@ -186,13 +181,13 @@ public final class Core extends JavaPlugin {
     }
 
     private void loadEvents() {
-        system.info(SystemMessagesManager.loading_events);
+        this.getLogger().info(SystemMessagesManager.loading_events);
         Bukkit.getPluginManager().registerEvents(new IDN(), this);
         Bukkit.getPluginManager().registerEvents(new PlayerFirstJoinEvent(), this);
     }
 
     private void loadAPIs() {
-        system.info(SystemMessagesManager.loading_apis);
+        this.getLogger().info(SystemMessagesManager.loading_apis);
         Bukkit.getPluginManager().registerEvents(new HeadDatabaseAPI(), this);
         LuckPermsAPI.loadLuckPermsAPI();
     }
@@ -201,19 +196,15 @@ public final class Core extends JavaPlugin {
         String ECO_bank_account_creation_PATH = FilePathManager.ECO_bank_account_creation_PATH;
         Double ECO_bank_account_creation_CONTENT = FileStringManager.ECO_bank_creation_price_CONTENT;
         Economy.setupFile();
-        system.info(SystemMessagesManager.loading_economy);
-        Economy.getFile().addDefault(ECO_bank_account_creation_PATH, ECO_bank_account_creation_CONTENT);
+        this.getLogger().info(SystemMessagesManager.loading_economy);
+        Economy.getFile().set(ECO_bank_account_creation_PATH, ECO_bank_account_creation_CONTENT);
         Economy.saveFile();
     }
 
     private void loadPermissions() {
         Permissions.setupFile();
-        system.info(SystemMessagesManager.loading_permissions);
+        this.getLogger().info(SystemMessagesManager.loading_permissions);
         Permissions.saveFile();
-    }
-
-    public Timer getTimer() {
-        return timer;
     }
 
 }

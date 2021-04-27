@@ -8,7 +8,6 @@ public class SystemMessagesManager {
 
     /* -------------------------------------------------------------------------------------------------------------- */
 
-    public static String loading_configuration_yml = defaultPrefix + "§2Loading resource §econfiguration.yml§2...";
     public static String loading_client_languages = defaultPrefix + "§2Loading resource §eclientLanguages.yml§2...";
     public static String loading_enUK_yml = defaultPrefix + "§2Loading resource §eenUK.yml§2...";
     public static String loading_deGER_yml = defaultPrefix + "§2Loading resource §edeGER.yml§2...";

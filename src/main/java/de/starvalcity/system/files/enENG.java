@@ -7,13 +7,13 @@ import org.bukkit.configuration.file.YamlConfiguration;
 import java.io.File;
 import java.io.IOException;
 
-public class en_ENG {
+public class enENG {
 
     private static File file;
     private static FileConfiguration englishLanguageFile;
 
     public static void setupFile() {
-        file = new File(Core.getPlugin().getDataFolder(), "en_ENG.yml");
+        file = new File(Core.getPlugin().getDataFolder(), "enENG.yml");
 
         if (!file.exists()) {
             try {

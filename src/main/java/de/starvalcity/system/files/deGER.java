@@ -1,20 +1,19 @@
 package de.starvalcity.system.files;
 
 import de.starvalcity.system.basepackage.Core;
-import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 
 import java.io.File;
 import java.io.IOException;
 
-public class de_GER {
+public class deGER {
 
     private static File file;
     private static FileConfiguration germanLanguageFile;
 
     public static void setupFile() {
-        file = new File(Core.getPlugin().getDataFolder(), "de_GER.yml");
+        file = new File(Core.getPlugin().getDataFolder(), "deGER.yml");
 
         if (!file.exists()) {
             try {
