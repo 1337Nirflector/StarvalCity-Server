@@ -6,6 +6,8 @@ import de.starvalcity.system.files.Economy;
 import org.bukkit.Sound;
 import org.bukkit.entity.Player;
 
+import java.util.UUID;
+
 public class EconomyManager {
 
     double money;
@@ -24,6 +26,10 @@ public class EconomyManager {
     }
 
     public static void setPlayerMoney(Player player, double money) {
+        Economy.getFile().set(player.getName(), money);
+    }
+
+    public static void setNewbieMoney(Player player, double money) {
         Economy.getFile().set(player.getName(), money);
     }
 

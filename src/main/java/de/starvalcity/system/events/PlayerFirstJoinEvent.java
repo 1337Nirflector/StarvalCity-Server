@@ -1,7 +1,9 @@
 package de.starvalcity.system.events;
 
 import de.starvalcity.system.basepackage.LanguageManager;
+import de.starvalcity.system.features.EconomyManager;
 import de.starvalcity.system.files.ClientLanguages;
+import de.starvalcity.system.files.Economy;
 import me.arcaniax.hdb.api.HeadDatabaseAPI;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
@@ -26,6 +28,7 @@ public class PlayerFirstJoinEvent implements Listener {
         Player player = playerJoinEvent.getPlayer();
         if (!player.hasPlayedBefore()) {
             openNewbieGUI(player);
+            EconomyManager.setNewbieMoney(player, 100.00);
         }
     }
 
