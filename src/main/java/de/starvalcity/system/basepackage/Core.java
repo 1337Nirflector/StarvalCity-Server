@@ -2,11 +2,6 @@ package de.starvalcity.system.basepackage;
 
 import de.starvalcity.system.api.HeadDatabaseAPI;
 import de.starvalcity.system.api.LuckPermsAPI;
-import de.starvalcity.system.commands.economy.COMMAND_money;
-import de.starvalcity.system.commands.player.COMMAND_idn;
-import de.starvalcity.system.commands.player.COMMAND_language;
-import de.starvalcity.system.commands.staff.COMMAND_staff;
-import de.starvalcity.system.commands.staff.COMMAND_staffchat;
 import de.starvalcity.system.events.PlayerFirstJoinEvent;
 import de.starvalcity.system.features.EconomyManager;
 import de.starvalcity.system.files.*;
@@ -14,9 +9,6 @@ import de.starvalcity.system.generations.IDN;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
-
-import java.util.Objects;
-import java.util.logging.Logger;
 
 public final class Core extends JavaPlugin {
 
@@ -172,12 +164,6 @@ public final class Core extends JavaPlugin {
 
     private void loadCommands() {
         this.getLogger().info(SystemMessagesManager.loading_commands);
-        Objects.requireNonNull(this.getCommand("idn")).setExecutor(new COMMAND_idn());
-        Objects.requireNonNull(this.getCommand("language")).setExecutor(new COMMAND_language());
-        Objects.requireNonNull(this.getCommand("staff")).setExecutor(new COMMAND_staff());
-        Objects.requireNonNull(this.getCommand("staffchat")).setExecutor(new COMMAND_staffchat());
-
-        Objects.requireNonNull(this.getCommand("money")).setExecutor(new COMMAND_money());
     }
 
     private void loadEvents() {
