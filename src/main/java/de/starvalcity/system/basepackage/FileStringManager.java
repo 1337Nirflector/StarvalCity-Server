@@ -19,6 +19,7 @@ public class FileStringManager {
     public static String GER_frequent_messages_requested_targetplayer_null_CONTENT = "§4Der angegebene Spieler existiert nicht!";
     public static String GER_frequent_messages_something_went_wrong_CONTENT = "§4Kritischer Systemfehler! Bitte " +
             "kontaktiere einen §bDeveloper§4 oder einen §cAdministrator§4!";
+    public static String GER_frequent_messages_too_many_arguments_CONTENT = "§4Zu viele Befehlsargumente!";
 
     // Befehlsnachrichten
     public static String GER_command_messages_money_command_CONTENT = "§2Dein Bargeld§7:§f ";
@@ -54,6 +55,7 @@ public class FileStringManager {
     public static String ENG_frequent_messages_requested_targetplayer_null_CONTENT = "§4The requested target player does not exist!";
     public static String ENG_frequent_messages_something_went_wrong_CONTENT = "§4Critical error! Please report this " +
             "error to a §bDeveloper§4 or an §cAdministrator§4!";
+    public static String ENG_frequent_messages_too_many_arguments_CONTENT = "§4Too many command arguments!";
 
     // Command messages
     public static String ENG_command_messages_money_command_CONTENT = "§2Your balance§7:§f ";

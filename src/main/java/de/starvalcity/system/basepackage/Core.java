@@ -70,6 +70,8 @@ public final class Core extends JavaPlugin {
         String requested_targetplayer_null_CONTENT = FileStringManager.ENG_frequent_messages_requested_targetplayer_null_CONTENT;
         String something_went_wrong_PATH = FilePathManager.ENG_frequent_messages_something_went_wrong_PATH;
         String something_went_wrong_CONTENT = FileStringManager.ENG_frequent_messages_something_went_wrong_CONTENT;
+        String too_many_arguments_PATH = FilePathManager.ENG_frequent_messages_too_many_arguments_PATH;
+        String too_many_arguments_CONTENT = FileStringManager.ENG_frequent_messages_too_many_arguments_CONTENT;
         String economy_money_PATH = FilePathManager.ENG_command_messages_money_command_PATH;
         String economy_money_CONTENT = FileStringManager.ENG_command_messages_money_command_CONTENT;
         String idn_command_usage_PATH = FilePathManager.ENG_command_messages_idn_command_usage_PATH;
@@ -90,6 +92,8 @@ public final class Core extends JavaPlugin {
         String staffchat_usage_CONTENT = FileStringManager.ENG_command_messages_staffchat_usage_CONTENT;
         String uuid_usage_PATH = FilePathManager.ENG_command_messages_uuid_usage_PATH;
         String uuid_usage_CONTENT = FileStringManager.ENG_command_messages_uuid_usage_CONTENT;
+        String uuid_command_PATH = FilePathManager.ENG_command_messages_uuid_command_PATH;
+        String uuid_command_CONTENT = FileStringManager.ENG_command_messages_uuid_CONTENT;
         String economy_not_enough_money_PATH = FilePathManager.ENG_economy_messages_not_enough_money_PATH;
         String economy_not_enough_money_CONTENT = FileStringManager.ENG_economy_messages_not_enough_money_CONTENT;
         String economy_bank_account_creation_PATH = FilePathManager.ENG_economy_messages_bank_account_creation_PATH;
@@ -102,6 +106,7 @@ public final class Core extends JavaPlugin {
         enENG.getFile().addDefault(requested_targetplayer_PATH, requested_targetplayer_CONTENT);
         enENG.getFile().addDefault(requested_targetplayer_null_PATH, requested_targetplayer_null_CONTENT);
         enENG.getFile().addDefault(something_went_wrong_PATH, something_went_wrong_CONTENT);
+        enENG.getFile().addDefault(too_many_arguments_PATH, too_many_arguments_CONTENT);
         enENG.getFile().addDefault(economy_money_PATH, economy_money_CONTENT);
         enENG.getFile().addDefault(idn_command_usage_PATH, idn_command_usage_CONTENT);
         enENG.getFile().addDefault(idn_command_view_PATH, idn_command_view_CONTENT);
@@ -112,6 +117,7 @@ public final class Core extends JavaPlugin {
         enENG.getFile().addDefault(language_already_set_PATH, language_already_set_CONTENT);
         enENG.getFile().addDefault(staffchat_usage_PATH, staffchat_usage_CONTENT);
         enENG.getFile().addDefault(uuid_usage_PATH, uuid_usage_CONTENT);
+        enENG.getFile().addDefault(uuid_command_PATH, uuid_command_CONTENT);
         enENG.getFile().addDefault(economy_not_enough_money_PATH, economy_not_enough_money_CONTENT);
         enENG.getFile().addDefault(economy_bank_account_creation_PATH, economy_bank_account_creation_CONTENT);
         enENG.getFile().options().copyDefaults(true);
@@ -131,6 +137,8 @@ public final class Core extends JavaPlugin {
         String requested_targetplayer_null_CONTENT = FileStringManager.GER_frequent_messages_requested_targetplayer_null_CONTENT;
         String something_went_wrong_PATH = FilePathManager.GER_frequent_messages_something_went_wrong_PATH;
         String something_went_wrong_CONTENT = FileStringManager.GER_frequent_messages_something_went_wrong_CONTENT;
+        String too_many_arguments_PATH = FilePathManager.GER_frequent_messages_too_many_arguments_PATH;
+        String too_many_arguments_CONTENT = FileStringManager.GER_frequent_messages_too_many_arguments_CONTENT;
         String economy_money_PATH = FilePathManager.GER_command_messages_money_command_PATH;
         String economy_money_CONTENT = FileStringManager.GER_command_messages_money_command_CONTENT;
         String idn_command_usage_PATH = FilePathManager.GER_command_messages_idn_command_usage_PATH;
@@ -151,6 +159,8 @@ public final class Core extends JavaPlugin {
         String teamchat_usage_CONTENT = FileStringManager.GER_command_messages_staffchat_usage_CONTENT;
         String uuid_usage_PATH = FilePathManager.GER_command_messages_uuid_usage_PATH;
         String uuid_usage_CONTENT = FileStringManager.GER_command_messages_uuid_usage_CONTENT;
+        String uuid_command_PATH = FilePathManager.GER_command_messages_uuid_command_PATH;
+        String uuid_command_CONTENT = FileStringManager.GER_command_messages_uuid_CONTENT;
         String economy_not_enough_money_PATH = FilePathManager.GER_economy_messages_not_enough_money_PATH;
         String economy_not_enough_money_CONTENT = FileStringManager.GER_economy_messages_not_enough_money_CONTENT;
         String economy_bank_account_creation_PATH = FilePathManager.GER_economy_messages_bank_account_creation_PATH;
@@ -164,6 +174,7 @@ public final class Core extends JavaPlugin {
         deGER.getFile().addDefault(requested_targetplayer_PATH, requested_targetplayer_CONTENT);
         deGER.getFile().addDefault(requested_targetplayer_null_PATH, requested_targetplayer_null_CONTENT);
         deGER.getFile().addDefault(something_went_wrong_PATH, something_went_wrong_CONTENT);
+        deGER.getFile().addDefault(too_many_arguments_PATH, too_many_arguments_CONTENT);
         deGER.getFile().addDefault(economy_money_PATH, economy_money_CONTENT);
         deGER.getFile().addDefault(idn_command_usage_PATH, idn_command_usage_CONTENT);
         deGER.getFile().addDefault(idn_command_view_PATH, idn_command_view_CONTENT);
@@ -174,6 +185,7 @@ public final class Core extends JavaPlugin {
         deGER.getFile().addDefault(language_already_set_PATH, language_already_set_CONTENT);
         deGER.getFile().addDefault(teamchat_usage_PATH, teamchat_usage_CONTENT);
         deGER.getFile().addDefault(uuid_usage_PATH, uuid_usage_CONTENT);
+        deGER.getFile().addDefault(uuid_command_PATH, uuid_command_CONTENT);
         deGER.getFile().addDefault(economy_not_enough_money_PATH, economy_not_enough_money_CONTENT);
         deGER.getFile().addDefault(economy_bank_account_creation_PATH, economy_bank_account_creation_CONTENT);
         deGER.getFile().options().copyDefaults(true);

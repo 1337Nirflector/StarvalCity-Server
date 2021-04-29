@@ -20,6 +20,7 @@ public class FilePathManager {
     public static String GER_frequent_messages_requested_targetplayer_PATH = "Vielmalige_Nachrichten.Angegebener_Spieler";
     public static String GER_frequent_messages_requested_targetplayer_null_PATH = "Vielmalige_Nachrichten.Angegebener_Spieler_existiert_nicht";
     public static String GER_frequent_messages_something_went_wrong_PATH = "Vielmalige_Nachrichten.Kritischer_Fehler";
+    public static String GER_frequent_messages_too_many_arguments_PATH = "Vielmalige_Nachrichten.Zu_viele_Argumente";
 
     // Befehlsnachrichten
     public static String GER_command_messages_idn_command_usage_PATH = "Befehlsnachrichten.IDN_Nutzung";
@@ -51,6 +52,7 @@ public class FilePathManager {
     public static String ENG_frequent_messages_requested_targetplayer_PATH = "Frequent_Messages.Requested_targetplayer";
     public static String ENG_frequent_messages_requested_targetplayer_null_PATH = "Frequent_Messages.Requested_targetplayer_does_not_exist";
     public static String ENG_frequent_messages_something_went_wrong_PATH = "Frequent_Messages.Critical_Error";
+    public static String ENG_frequent_messages_too_many_arguments_PATH = "Frequent_Messages.Too_many_arguments";
 
     // Command messages
     public static String ENG_command_messages_idn_command_usage_PATH = "Command_messages.IDN_usage";
