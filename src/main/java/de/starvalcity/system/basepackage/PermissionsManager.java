@@ -39,6 +39,7 @@ public class PermissionsManager {
     public static String staff_info = "staff.info";
     public static String staff_join = "staff.join";
     public static String staff_leave = "staff.leave";
+    public static String uuid_general = "uuid.general";
 
     /* -------------------------------------------------------------------------------------------------------------- */
 
