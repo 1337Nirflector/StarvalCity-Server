@@ -2,6 +2,7 @@ package de.starvalcity.system.basepackage;
 
 import de.starvalcity.system.api.HeadDatabaseAPI;
 import de.starvalcity.system.api.LuckPermsAPI;
+import de.starvalcity.system.commands.COMMAND_uuid;
 import de.starvalcity.system.events.PlayerFirstJoinEvent;
 import de.starvalcity.system.features.EconomyManager;
 import de.starvalcity.system.files.*;
@@ -194,6 +195,7 @@ public final class Core extends JavaPlugin {
 
     private void loadCommands() {
         this.getLogger().info(SystemMessagesManager.loading_commands);
+        this.getCommand("uuid").setExecutor(new COMMAND_uuid());
     }
 
     private void loadEvents() {

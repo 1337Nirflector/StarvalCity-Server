@@ -12,4 +12,3 @@ commands:
   uuid:
     description: Displays the UUID of a specific player
     usage: /uuid <Player name>
-
