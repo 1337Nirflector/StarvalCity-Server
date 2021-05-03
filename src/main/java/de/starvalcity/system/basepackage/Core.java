@@ -89,8 +89,8 @@ public final class Core extends JavaPlugin {
         String language_command_set_CONTENT = FileStringManager.ENG_command_messages_language_command_set_CONTENT;
         String language_already_set_PATH = FilePathManager.ENG_command_messages_language_already_set_PATH;
         String language_already_set_CONTENT = FileStringManager.ENG_command_messages_language_already_set_CONTENT;
-        String staffchat_usage_PATH = FilePathManager.ENG_command_messages_staffchat_usage_PATH;
-        String staffchat_usage_CONTENT = FileStringManager.ENG_command_messages_staffchat_usage_CONTENT;
+        String staffchat_usage_PATH = FilePathManager.ENG_command_messages_staff_usage_PATH;
+        String staffchat_usage_CONTENT = FileStringManager.ENG_command_messages_staff_usage_CONTENT;
         String uuid_usage_PATH = FilePathManager.ENG_command_messages_uuid_usage_PATH;
         String uuid_usage_CONTENT = FileStringManager.ENG_command_messages_uuid_usage_CONTENT;
         String uuid_command_PATH = FilePathManager.ENG_command_messages_uuid_command_PATH;
@@ -156,8 +156,8 @@ public final class Core extends JavaPlugin {
         String language_command_set_CONTENT = FileStringManager.GER_command_messages_language_command_set_CONTENT;
         String language_already_set_PATH = FilePathManager.GER_command_messages_language_already_set_PATH;
         String language_already_set_CONTENT = FileStringManager.GER_command_messages_language_already_set_CONTENT;
-        String teamchat_usage_PATH = FilePathManager.GER_command_messages_staffchat_usage_PATH;
-        String teamchat_usage_CONTENT = FileStringManager.GER_command_messages_staffchat_usage_CONTENT;
+        String teamchat_usage_PATH = FilePathManager.GER_command_messages_staff_usage_PATH;
+        String teamchat_usage_CONTENT = FileStringManager.GER_command_messages_staff_usage_CONTENT;
         String uuid_usage_PATH = FilePathManager.GER_command_messages_uuid_usage_PATH;
         String uuid_usage_CONTENT = FileStringManager.GER_command_messages_uuid_usage_CONTENT;
         String uuid_command_PATH = FilePathManager.GER_command_messages_uuid_command_PATH;

@@ -31,7 +31,8 @@ public class FilePathManager {
     public static String GER_command_messages_language_command_set_PATH = "Befehlsnachrichten.Language_Set";
     public static String GER_command_messages_language_already_set_PATH = "Befehlsnachrichten.Language_Sprache_bereits_gesetzt";
     public static String GER_command_messages_money_command_PATH = "Befehlsnachrichten.Wirtschaft.Bargeld";
-    public static String GER_command_messages_staffchat_usage_PATH = "Befehlsnachrichten.TeamChat_Nutzung";
+    public static String GER_command_messages_staff_usage_PATH = "Befehlsnachrichten.Team_Nutzung";
+    public static String GER_command_messages_staff_already_PATH = "Befehlsnachrichten.Team_bereits_beigetreten";
     public static String GER_command_messages_uuid_usage_PATH = "Befehlsnachrichten.UUID_Nutzung";
     public static String GER_command_messages_uuid_command_PATH = "Befehlsnachrichten.UUID";
 
@@ -63,7 +64,8 @@ public class FilePathManager {
     public static String ENG_command_messages_language_command_set_PATH = "Command_messages.Language_set";
     public static String ENG_command_messages_language_already_set_PATH = "Command_messages.Language_already_set";
     public static String ENG_command_messages_money_command_PATH = "Command_messages.Economy_money";
-    public static String ENG_command_messages_staffchat_usage_PATH = "Command_messages.StaffChat_usage";
+    public static String ENG_command_messages_staff_usage_PATH = "Command_messages.Staff_usage";
+    public static String ENG_command_messages_staff_already_PATH = "Command_messages.Staff_already_in_staff_mode";
     public static String ENG_command_messages_uuid_usage_PATH = "Command_messages.UUID_usage";
     public static String ENG_command_messages_uuid_command_PATH = "Command_messages.UUID";
 

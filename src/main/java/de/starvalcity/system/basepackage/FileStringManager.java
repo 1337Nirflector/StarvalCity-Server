@@ -30,7 +30,8 @@ public class FileStringManager {
     public static String GER_command_messages_language_command_info_CONTENT = "§2Aktuelles Sprachpaket:§e German";
     public static String GER_command_messages_language_command_set_CONTENT = "§2Sprachpaket erfolgreich gesetzt!";
     public static String GER_command_messages_language_already_set_CONTENT = "§4Sprachpaket bereits gesetzt!";
-    public static String GER_command_messages_staffchat_usage_CONTENT = "§4Nutzung: §7/teamchat <Nachricht>";
+    public static String GER_command_messages_staff_usage_CONTENT = "§4Nutzung: §7/staff <join; quit>";
+    public static String GER_command_messages_staff_already_CONTENT = "§4Du bist bereits im §eTeam-Modus!";
     public static String GER_command_messages_uuid_usage_CONTENT = "§4Nutzung: §7/uuid <Spielername>";
     public static String GER_command_messages_uuid_CONTENT = "§2Die §eUniqueID§2 ist:§e ";
 
@@ -66,7 +67,9 @@ public class FileStringManager {
     public static String ENG_command_messages_language_command_info_CONTENT = "§2Current language:§e English";
     public static String ENG_command_messages_language_command_set_CONTENT = "§2Language successfully set!";
     public static String ENG_command_messages_language_already_set_CONTENT = "§4Language already set!";
-    public static String ENG_command_messages_staffchat_usage_CONTENT = "§4Usage: §7/staffchat <Message>";
+    public static String ENG_command_messages_staff_already_CONTENT = "§4You are already in §eStaff Mode!";
+    public static String ENG_command_messages_staff_usage_CONTENT = "§4Usage: §7/staff <join; quit>";
+
     public static String ENG_command_messages_uuid_usage_CONTENT = "§4Usage: §7/uuid <Player name>";
     public static String ENG_command_messages_uuid_CONTENT = "§2The §eUniqueID§2 is:§e ";
 

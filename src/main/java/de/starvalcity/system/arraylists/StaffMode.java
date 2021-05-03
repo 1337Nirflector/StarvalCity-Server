@@ -6,6 +6,8 @@ import java.util.UUID;
 public class StaffMode {
 
     public static ArrayList<UUID> staffMembers = new ArrayList<>();
+    public static ArrayList<UUID> englishStaff = new ArrayList<>();
+    public static ArrayList<UUID> germanStaff = new ArrayList<>();
 
     public static void setStaffMember(UUID player) {
         staffMembers.add(player);
