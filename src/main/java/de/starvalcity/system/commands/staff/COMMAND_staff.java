@@ -21,6 +21,8 @@ public class COMMAND_staff implements CommandExecutor {
     String GER_already_in_staff_mode = FilePathManager.GER_command_messages_staff_already_PATH;
     String ENG_insufficient_permissions = FilePathManager.ENG_frequent_messages_insufficient_permissions_PATH;
     String GER_insufficient_permissions = FilePathManager.GER_frequent_messages_insufficient_permissions_PATH;
+    String ENG_staff_mode_command = FilePathManager.ENG_command_messages_staff_joined_PATH;
+    String GER_staff_mode_command = FilePathManager.GER_command_messages_staff_joined_PATH;
     String ENG_staff_mode_usage = FilePathManager.ENG_command_messages_staff_usage_PATH;
     String GER_staff_mode_usage = FilePathManager.GER_command_messages_staff_usage_PATH;
 
@@ -58,15 +60,35 @@ public class COMMAND_staff implements CommandExecutor {
                         if (StaffMode.staffMembers.contains(player.getUniqueId())) {
                             if (LanguageManager.englishPlayers.contains(player.getUniqueId())) {
                                 player.sendMessage(enENG.getFile().getString(ENG_already_in_staff_mode));
-                                // System Logger already in staff mode
                             } else {
                                 player.sendMessage(deGER.getFile().getString(GER_already_in_staff_mode));
-                                // System Logger already in staff mode
                             }
                             player.playSound(player.getLocation(), Sound.BLOCK_NOTE_BLOCK_BASS, 1, 1);
                         } else {
                             if (LanguageManager.englishPlayers.contains(player.getUniqueId())) {
                                 StaffMode.englishStaff.add(player.getUniqueId());
+                                player.sendMessage(enENG.getFile().getString(ENG_staff_mode_command));
+                            } else {
+                                StaffMode.germanStaff.add(player.getUniqueId());
+                                player.sendMessage(deGER.getFile().getString(GER_staff_mode_command));
+                            }
+                            player.playSound(player.getLocation(), Sound.BLOCK_NOTE_BLOCK_PLING, 1, 1);
+                        }
+                    } else {
+                        if (LanguageManager.englishPlayers.contains(player.getUniqueId())) {
+                            player.sendMessage(enENG.getFile().getString(ENG_insufficient_permissions));
+                        } else {
+                            player.sendMessage(deGER.getFile().getString(GER_insufficient_permissions));
+                        }
+                        player.playSound(player.getLocation(), Sound.BLOCK_NOTE_BLOCK_BASS, 1, 1);
+                        SystemLogger.logPlayerNoPermissions(player);
+                    }
+                } else if (strings[0].equalsIgnoreCase("leave")) {
+                    if (player.hasPermission(PermissionsManager.staff_leave)) {
+                        if (StaffMode.staffMembers.contains(player.getUniqueId())) {
+                            if (LanguageManager.englishPlayers.contains(player.getUniqueId())) {
+                                StaffMode.englishStaff.remove(player.getUniqueId());
+
                             }
                         }
                     }

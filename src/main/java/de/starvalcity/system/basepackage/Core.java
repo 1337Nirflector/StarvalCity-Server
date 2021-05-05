@@ -89,8 +89,10 @@ public final class Core extends JavaPlugin {
         String language_command_set_CONTENT = FileStringManager.ENG_command_messages_language_command_set_CONTENT;
         String language_already_set_PATH = FilePathManager.ENG_command_messages_language_already_set_PATH;
         String language_already_set_CONTENT = FileStringManager.ENG_command_messages_language_already_set_CONTENT;
-        String staffchat_usage_PATH = FilePathManager.ENG_command_messages_staff_usage_PATH;
-        String staffchat_usage_CONTENT = FileStringManager.ENG_command_messages_staff_usage_CONTENT;
+        String staff_already_joined_PATH = FilePathManager.ENG_command_messages_staff_joined_PATH;
+        String staff_already_joined_CONTENT= FileStringManager.ENG_command_messages_staff_already_CONTENT;
+        String staff_usage_PATH = FilePathManager.ENG_command_messages_staff_usage_PATH;
+        String staff_usage_CONTENT = FileStringManager.ENG_command_messages_staff_usage_CONTENT;
         String uuid_usage_PATH = FilePathManager.ENG_command_messages_uuid_usage_PATH;
         String uuid_usage_CONTENT = FileStringManager.ENG_command_messages_uuid_usage_CONTENT;
         String uuid_command_PATH = FilePathManager.ENG_command_messages_uuid_command_PATH;
@@ -116,7 +118,8 @@ public final class Core extends JavaPlugin {
         enENG.getFile().addDefault(language_command_info_PATH, language_command_info_CONTENT);
         enENG.getFile().addDefault(language_command_set_PATH, language_command_set_CONTENT);
         enENG.getFile().addDefault(language_already_set_PATH, language_already_set_CONTENT);
-        enENG.getFile().addDefault(staffchat_usage_PATH, staffchat_usage_CONTENT);
+        enENG.getFile().addDefault(staff_already_joined_PATH, staff_already_joined_CONTENT);
+        enENG.getFile().addDefault(staff_usage_PATH, staff_usage_CONTENT);
         enENG.getFile().addDefault(uuid_usage_PATH, uuid_usage_CONTENT);
         enENG.getFile().addDefault(uuid_command_PATH, uuid_command_CONTENT);
         enENG.getFile().addDefault(economy_not_enough_money_PATH, economy_not_enough_money_CONTENT);
@@ -156,8 +159,10 @@ public final class Core extends JavaPlugin {
         String language_command_set_CONTENT = FileStringManager.GER_command_messages_language_command_set_CONTENT;
         String language_already_set_PATH = FilePathManager.GER_command_messages_language_already_set_PATH;
         String language_already_set_CONTENT = FileStringManager.GER_command_messages_language_already_set_CONTENT;
-        String teamchat_usage_PATH = FilePathManager.GER_command_messages_staff_usage_PATH;
-        String teamchat_usage_CONTENT = FileStringManager.GER_command_messages_staff_usage_CONTENT;
+        String team_already_joined_PATH = FilePathManager.GER_command_messages_staff_joined_PATH;
+        String team_already_joined_CONTENT = FileStringManager.GER_command_messages_staff_already_CONTENT;
+        String team_usage_PATH = FilePathManager.GER_command_messages_staff_usage_PATH;
+        String team_usage_CONTENT = FileStringManager.GER_command_messages_staff_usage_CONTENT;
         String uuid_usage_PATH = FilePathManager.GER_command_messages_uuid_usage_PATH;
         String uuid_usage_CONTENT = FileStringManager.GER_command_messages_uuid_usage_CONTENT;
         String uuid_command_PATH = FilePathManager.GER_command_messages_uuid_command_PATH;
@@ -184,7 +189,8 @@ public final class Core extends JavaPlugin {
         deGER.getFile().addDefault(language_command_info_PATH, language_command_info_CONTENT);
         deGER.getFile().addDefault(language_command_set_PATH, language_command_set_CONTENT);
         deGER.getFile().addDefault(language_already_set_PATH, language_already_set_CONTENT);
-        deGER.getFile().addDefault(teamchat_usage_PATH, teamchat_usage_CONTENT);
+        deGER.getFile().addDefault(team_already_joined_PATH, team_already_joined_CONTENT);
+        deGER.getFile().addDefault(team_usage_PATH, team_usage_CONTENT);
         deGER.getFile().addDefault(uuid_usage_PATH, uuid_usage_CONTENT);
         deGER.getFile().addDefault(uuid_command_PATH, uuid_command_CONTENT);
         deGER.getFile().addDefault(economy_not_enough_money_PATH, economy_not_enough_money_CONTENT);
