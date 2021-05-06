@@ -96,6 +96,8 @@ public final class Core extends JavaPlugin {
         String staff_left_CONTENT = FileStringManager.ENG_command_messages_staff_left_CONTENT;
         String staff_already_joined_PATH = FilePathManager.ENG_command_messages_staff_joined_PATH;
         String staff_already_joined_CONTENT= FileStringManager.ENG_command_messages_staff_already_CONTENT;
+        String staff_info_PATH = FilePathManager.ENG_command_messages_staff_info_PATH;
+        String staff_info_CONTENT = FileStringManager.ENG_command_messages_staff_info_CONTENT;
         String staff_usage_PATH = FilePathManager.ENG_command_messages_staff_usage_PATH;
         String staff_usage_CONTENT = FileStringManager.ENG_command_messages_staff_usage_CONTENT;
         String uuid_usage_PATH = FilePathManager.ENG_command_messages_uuid_usage_PATH;
@@ -127,6 +129,7 @@ public final class Core extends JavaPlugin {
         enENG.getFile().addDefault(staff_joined_PATH, staff_joined_CONTENT);
         enENG.getFile().addDefault(staff_left_PATH, staff_left_CONTENT);
         enENG.getFile().addDefault(staff_already_joined_PATH, staff_already_joined_CONTENT);
+        enENG.getFile().addDefault(staff_info_PATH, staff_info_CONTENT);
         enENG.getFile().addDefault(staff_usage_PATH, staff_usage_CONTENT);
         enENG.getFile().addDefault(uuid_usage_PATH, uuid_usage_CONTENT);
         enENG.getFile().addDefault(uuid_command_PATH, uuid_command_CONTENT);
@@ -173,6 +176,8 @@ public final class Core extends JavaPlugin {
         String team_left_CONTENT = FileStringManager.GER_command_messages_staff_left_CONTENT;
         String team_already_joined_PATH = FilePathManager.GER_command_messages_staff_joined_PATH;
         String team_already_joined_CONTENT = FileStringManager.GER_command_messages_staff_already_CONTENT;
+        String team_info_PATH = FilePathManager.GER_command_messages_staff_info_PATH;
+        String team_info_CONTENT = FileStringManager.GER_command_messages_staff_info_CONTENT;
         String team_usage_PATH = FilePathManager.GER_command_messages_staff_usage_PATH;
         String team_usage_CONTENT = FileStringManager.GER_command_messages_staff_usage_CONTENT;
         String uuid_usage_PATH = FilePathManager.GER_command_messages_uuid_usage_PATH;
@@ -204,6 +209,7 @@ public final class Core extends JavaPlugin {
         deGER.getFile().addDefault(team_joined_PATH, team_joined_CONTENT);
         deGER.getFile().addDefault(team_left_PATH, team_left_CONTENT);
         deGER.getFile().addDefault(team_already_joined_PATH, team_already_joined_CONTENT);
+        deGER.getFile().addDefault(team_info_PATH, team_info_CONTENT);
         deGER.getFile().addDefault(team_usage_PATH, team_usage_CONTENT);
         deGER.getFile().addDefault(uuid_usage_PATH, uuid_usage_CONTENT);
         deGER.getFile().addDefault(uuid_command_PATH, uuid_command_CONTENT);
