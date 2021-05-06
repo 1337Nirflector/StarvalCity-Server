@@ -1,4 +1,5 @@
 de\starvalcity\system\files\Economy.class
+de\starvalcity\system\commands\staff\COMMAND_staff.class
 de\starvalcity\system\api\HeadDatabaseAPI.class
 de\starvalcity\system\events\PlayerFirstJoinEvent.class
 de\starvalcity\system\generations\IDN.class

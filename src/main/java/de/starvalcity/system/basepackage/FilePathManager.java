@@ -26,15 +26,20 @@ public class FilePathManager {
     public static String GER_command_messages_idn_command_usage_PATH = "Befehlsnachrichten.IDN_Nutzung";
     public static String GER_command_messages_idn_command_view_PATH = "Befehlsnachrichten.IDN_Anzeigen";
     public static String GER_command_messages_idn_command_recreate_PATH = "Befehlsnachrichten.IDN_Neu_Erstellen";
+
     public static String GER_command_messages_language_command_usage_PATH = "Befehlsnachrichten.Language_Nutzung";
     public static String GER_command_messages_language_command_info_PATH = "Befehlsnachrichten.Language_Info";
     public static String GER_command_messages_language_command_set_PATH = "Befehlsnachrichten.Language_Set";
     public static String GER_command_messages_language_already_set_PATH = "Befehlsnachrichten.Language_Sprache_bereits_gesetzt";
+
     public static String GER_command_messages_money_command_PATH = "Befehlsnachrichten.Wirtschaft.Bargeld";
+
     public static String GER_command_messages_staff_usage_PATH = "Befehlsnachrichten.Team_Nutzung";
     public static String GER_command_messages_staff_already_PATH = "Befehlsnachrichten.Team_Modus_bereits_beigetreten";
+    public static String GER_command_messages_staff_info_PATH = "Befehlsnachrichten.Team-Modus_info";
     public static String GER_command_messages_staff_joined_PATH = "Befehlsnachrichten.Team_Modus_beigetreten";
     public static String GER_command_messages_staff_left_PATH = "Befehlsnachrichten.Team_Modus_verlassen";
+
     public static String GER_command_messages_uuid_usage_PATH = "Befehlsnachrichten.UUID_Nutzung";
     public static String GER_command_messages_uuid_command_PATH = "Befehlsnachrichten.UUID";
 
@@ -61,15 +66,20 @@ public class FilePathManager {
     public static String ENG_command_messages_idn_command_usage_PATH = "Command_messages.IDN_usage";
     public static String ENG_command_messages_idn_command_view_PATH = "Command_messages.IDN_view";
     public static String ENG_command_messages_idn_command_recreate_PATH = "Command_messages.IDN_recreate";
+
     public static String ENG_command_messages_language_command_usage_PATH = "Command_messages.Language_usage";
     public static String ENG_command_messages_language_command_info_PATH = "Command_messages.Language_info";
     public static String ENG_command_messages_language_command_set_PATH = "Command_messages.Language_set";
     public static String ENG_command_messages_language_already_set_PATH = "Command_messages.Language_already_set";
+
     public static String ENG_command_messages_money_command_PATH = "Command_messages.Economy_money";
+
     public static String ENG_command_messages_staff_usage_PATH = "Command_messages.Staff_usage";
     public static String ENG_command_messages_staff_already_PATH = "Command_messages.Staff_already_in_staff_mode";
+    public static String ENG_command_messages_staff_info_PATH = "Command_messages.Staff_info";
     public static String ENG_command_messages_staff_joined_PATH = "Command_messages.Staff_joined";
     public static String ENG_command_messages_staff_left_PATH = "Command_messages.Staff_left";
+
     public static String ENG_command_messages_uuid_usage_PATH = "Command_messages.UUID_usage";
     public static String ENG_command_messages_uuid_command_PATH = "Command_messages.UUID";
 

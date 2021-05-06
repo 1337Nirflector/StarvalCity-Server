@@ -23,15 +23,22 @@ public class FileStringManager {
 
     // Befehlsnachrichten
     public static String GER_command_messages_money_command_CONTENT = "§2Dein Bargeld§7:§f ";
+
     public static String GER_command_messages_idn_command_usage_CONTENT = "§4Nutzung: §7/idn <view; recreate>";
     public static String GER_command_messages_idn_command_view_CONTENT = "§2Deine IDN lautet:§e ";
     public static String GER_command_messages_idn_command_recreate_CONTENT = "§2Deine IDN wurde §aerfolgreich §2neu erstellt!";
+
     public static String GER_command_messages_language_command_usage_CONTENT = "§4Nutzung: §7/language <info; set>";
     public static String GER_command_messages_language_command_info_CONTENT = "§2Aktuelles Sprachpaket:§e German";
     public static String GER_command_messages_language_command_set_CONTENT = "§2Sprachpaket erfolgreich gesetzt!";
     public static String GER_command_messages_language_already_set_CONTENT = "§4Sprachpaket bereits gesetzt!";
+
+    public static String GER_command_messages_staff_info_CONTENT = "§2Alle Spieler im §eTeam-Modus:§6 ";
+    public static String GER_command_messages_staff_joined_CONTENT = "§2Du hast den §eTeam-Modus§a betreten!";
+    public static String GER_command_messages_staff_left_CONTENT = "§2Du hast den §eTeam-Modus§c verlassen!";
     public static String GER_command_messages_staff_usage_CONTENT = "§4Nutzung: §7/staff <join; quit>";
     public static String GER_command_messages_staff_already_CONTENT = "§4Du bist bereits im §eTeam-Modus!";
+
     public static String GER_command_messages_uuid_usage_CONTENT = "§4Nutzung: §7/uuid <Spielername>";
     public static String GER_command_messages_uuid_CONTENT = "§2Die §eUniqueID§2 ist:§e ";
 
@@ -60,13 +67,19 @@ public class FileStringManager {
 
     // Command messages
     public static String ENG_command_messages_money_command_CONTENT = "§2Your balance§7:§f ";
+
     public static String ENG_command_messages_idn_command_usage_CONTENT = "§4Usage: §7/idn <view; recreate>";
     public static String ENG_command_messages_idn_command_view_CONTENT = "§2Your IDN is:§e ";
     public static String ENG_command_messages_idn_command_recreate_CONTENT = "§2Your IDN has been §asuccessfully§2 recreated!";
+
     public static String ENG_command_messages_language_command_usage_CONTENT = "§4Usage: §7/language <info; set>";
     public static String ENG_command_messages_language_command_info_CONTENT = "§2Current language:§e English";
     public static String ENG_command_messages_language_command_set_CONTENT = "§2Language successfully set!";
     public static String ENG_command_messages_language_already_set_CONTENT = "§4Language already set!";
+
+    public static String ENG_command_messages_staff_info_CONTENT = "§2All players in §eStaff-Mode:§6 ";
+    public static String ENG_command_messages_staff_joined_CONTENT = "§2You successfully §ajoined §eStaff-Mode!";
+    public static String ENG_command_messages_staff_left_CONTENT = "§2You successfully§c left§e Staff-Mode!";
     public static String ENG_command_messages_staff_already_CONTENT = "§4You are already in §eStaff Mode!";
     public static String ENG_command_messages_staff_usage_CONTENT = "§4Usage: §7/staff <join; quit>";
 

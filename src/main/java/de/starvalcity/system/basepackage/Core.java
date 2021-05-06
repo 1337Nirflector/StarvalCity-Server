@@ -3,6 +3,7 @@ package de.starvalcity.system.basepackage;
 import de.starvalcity.system.api.HeadDatabaseAPI;
 import de.starvalcity.system.api.LuckPermsAPI;
 import de.starvalcity.system.commands.COMMAND_uuid;
+import de.starvalcity.system.commands.staff.COMMAND_staff;
 import de.starvalcity.system.events.PlayerFirstJoinEvent;
 import de.starvalcity.system.features.EconomyManager;
 import de.starvalcity.system.files.*;
@@ -89,6 +90,10 @@ public final class Core extends JavaPlugin {
         String language_command_set_CONTENT = FileStringManager.ENG_command_messages_language_command_set_CONTENT;
         String language_already_set_PATH = FilePathManager.ENG_command_messages_language_already_set_PATH;
         String language_already_set_CONTENT = FileStringManager.ENG_command_messages_language_already_set_CONTENT;
+        String staff_joined_PATH = FilePathManager.ENG_command_messages_staff_joined_PATH;
+        String staff_joined_CONTENT = FileStringManager.ENG_command_messages_staff_joined_CONTENT;
+        String staff_left_PATH = FilePathManager.ENG_command_messages_staff_left_PATH;
+        String staff_left_CONTENT = FileStringManager.ENG_command_messages_staff_left_CONTENT;
         String staff_already_joined_PATH = FilePathManager.ENG_command_messages_staff_joined_PATH;
         String staff_already_joined_CONTENT= FileStringManager.ENG_command_messages_staff_already_CONTENT;
         String staff_usage_PATH = FilePathManager.ENG_command_messages_staff_usage_PATH;
@@ -103,6 +108,7 @@ public final class Core extends JavaPlugin {
         String economy_bank_account_creation_CONTENT = FileStringManager.ENG_economy_messages_bank_account_creation_CONTENT;
         enENG.setupFile();
         this.getLogger().info(SystemMessagesManager.loading_enUK_yml);
+        enENG.getFile().options().header(FileHeaderManager.EN_header);
         enENG.getFile().addDefault(default_prefix_PATH, default_prefix_CONTENT);
         enENG.getFile().addDefault(staff_prefix_PATH, staff_prefix_CONTENT);
         enENG.getFile().addDefault(insufficient_permissions_PATH, insufficient_permissions_CONTENT);
@@ -118,6 +124,8 @@ public final class Core extends JavaPlugin {
         enENG.getFile().addDefault(language_command_info_PATH, language_command_info_CONTENT);
         enENG.getFile().addDefault(language_command_set_PATH, language_command_set_CONTENT);
         enENG.getFile().addDefault(language_already_set_PATH, language_already_set_CONTENT);
+        enENG.getFile().addDefault(staff_joined_PATH, staff_joined_CONTENT);
+        enENG.getFile().addDefault(staff_left_PATH, staff_left_CONTENT);
         enENG.getFile().addDefault(staff_already_joined_PATH, staff_already_joined_CONTENT);
         enENG.getFile().addDefault(staff_usage_PATH, staff_usage_CONTENT);
         enENG.getFile().addDefault(uuid_usage_PATH, uuid_usage_CONTENT);
@@ -159,6 +167,10 @@ public final class Core extends JavaPlugin {
         String language_command_set_CONTENT = FileStringManager.GER_command_messages_language_command_set_CONTENT;
         String language_already_set_PATH = FilePathManager.GER_command_messages_language_already_set_PATH;
         String language_already_set_CONTENT = FileStringManager.GER_command_messages_language_already_set_CONTENT;
+        String team_joined_PATH = FilePathManager.GER_command_messages_staff_joined_PATH;
+        String team_joined_CONTENT = FileStringManager.GER_command_messages_staff_joined_CONTENT;
+        String team_left_PATH = FilePathManager.GER_command_messages_staff_left_PATH;
+        String team_left_CONTENT = FileStringManager.GER_command_messages_staff_left_CONTENT;
         String team_already_joined_PATH = FilePathManager.GER_command_messages_staff_joined_PATH;
         String team_already_joined_CONTENT = FileStringManager.GER_command_messages_staff_already_CONTENT;
         String team_usage_PATH = FilePathManager.GER_command_messages_staff_usage_PATH;
@@ -189,6 +201,8 @@ public final class Core extends JavaPlugin {
         deGER.getFile().addDefault(language_command_info_PATH, language_command_info_CONTENT);
         deGER.getFile().addDefault(language_command_set_PATH, language_command_set_CONTENT);
         deGER.getFile().addDefault(language_already_set_PATH, language_already_set_CONTENT);
+        deGER.getFile().addDefault(team_joined_PATH, team_joined_CONTENT);
+        deGER.getFile().addDefault(team_left_PATH, team_left_CONTENT);
         deGER.getFile().addDefault(team_already_joined_PATH, team_already_joined_CONTENT);
         deGER.getFile().addDefault(team_usage_PATH, team_usage_CONTENT);
         deGER.getFile().addDefault(uuid_usage_PATH, uuid_usage_CONTENT);
@@ -202,6 +216,7 @@ public final class Core extends JavaPlugin {
     private void loadCommands() {
         this.getLogger().info(SystemMessagesManager.loading_commands);
         this.getCommand("uuid").setExecutor(new COMMAND_uuid());
+        this.getCommand("staff").setExecutor(new COMMAND_staff());
     }
 
     private void loadEvents() {

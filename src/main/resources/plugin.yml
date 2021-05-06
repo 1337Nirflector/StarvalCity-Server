@@ -9,6 +9,9 @@ softdepend:
 description: StarvalCity ServerScript
 
 commands:
+  staff:
+    description: Joins or leaves the staff mode
+    usage: /staff <join; leave; info>
   uuid:
     description: Displays the UUID of a specific player
     usage: /uuid <Player name>
