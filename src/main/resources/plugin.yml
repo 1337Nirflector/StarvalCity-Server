@@ -1,17 +1,9 @@
 name: StarvalCityScript
 authors: [Nirflection, Donaris, Stormy_The_Fox, sYnTaX]
 main: de.starvalcity.system.basepackage.Core
-version: 1.1.2
+version: 1.0.0
 api-version: 1.13
 softdepend:
   - HeadDatabase
   - LuckPerms
 description: StarvalCity ServerScript
-
-commands:
-  staff:
-    description: Joins or leaves the staff mode
-    usage: /staff <join; leave; info>
-  uuid:
-    description: Displays the UUID of a specific player
-    usage: /uuid <Player name>
