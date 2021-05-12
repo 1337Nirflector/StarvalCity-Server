@@ -6,23 +6,43 @@ import java.util.logging.Logger;
 
 public class Core extends JavaPlugin {
 
-    public static Core instance;
-    public static Logger system;
+    public static Logger serverLogger;
+    public static Core server;
+
+    public static Core getPlugin() {
+        return server;
+    }
 
     @Override
     public void onEnable() {
-        system.info(SystemMessagesManager.startupMessage);
+        serverLogger.info(SystemMessagesManager.startupMessage);
 
     }
 
     @Override
     public void onDisable() {
-        system.info(SystemMessagesManager.shutdownMessage);
+        serverLogger.info(SystemMessagesManager.shutdownMessage);
 
     }
 
-    public Core getInstance() {
-        return instance;
+    private void loadEnglishMessages() {
+
+    }
+
+    private void loadGermanMessages() {
+
+    }
+
+    private void loadCommands() {
+
+    }
+
+    private void loadEvents() {
+
+    }
+
+    private void loadDependencies() {
+
     }
 
 }
