@@ -2,8 +2,6 @@ package de.starvalcity.system.corepackage;
 
 import de.starvalcity.system.filespackage.SystemMessagesManager;
 import de.starvalcity.system.permissionspackage.PermissionsManager;
-import org.bukkit.entity.Player;
-import org.bukkit.permissions.PermissionAttachment;
 import org.bukkit.plugin.java.JavaPlugin;
 import java.util.logging.Logger;
 
@@ -20,7 +18,12 @@ public class Core extends JavaPlugin {
     @Override
     public void onEnable() {
         serverLogger.info(SystemMessagesManager.startupMessage);
-
+        this.loadEnglishMessages();
+        this.loadGermanMessages();;
+        this.loadCommands();
+        this.loadEvents();
+        this.loadDependencies();
+        this.loadLogger();
     }
 
     @Override
@@ -30,23 +33,32 @@ public class Core extends JavaPlugin {
     }
 
     private void loadEnglishMessages() {
+        serverLogger.info(SystemMessagesManager.loadingEnglishMessages);
 
     }
 
     private void loadGermanMessages() {
+        serverLogger.info(SystemMessagesManager.loadingGermanMessages);
 
     }
 
     private void loadCommands() {
+        serverLogger.info(SystemMessagesManager.loadingCommands);
 
     }
 
     private void loadEvents() {
+        serverLogger.info(SystemMessagesManager.loadingEvents);
 
     }
 
     private void loadDependencies() {
+        serverLogger.info(SystemMessagesManager.loadingDependencies);
 
+    }
+
+    private void loadLogger() {
+        serverLogger.info(SystemMessagesManager.loadingLogger);
     }
 
 }
