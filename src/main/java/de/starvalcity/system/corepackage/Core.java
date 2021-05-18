@@ -39,13 +39,15 @@ public class Core extends JavaPlugin {
     }
 
     private void loadMySQLDatabase() {
+        serverLogger.info(SystemMessagesManager.loadingMySQLDatabase);
         try {
             mySQL.connect();
         } catch (ClassNotFoundException | SQLException sqlException) {
+            serverLogger.severe(SystemMessagesManager.mySQLDatabaseLoadingError);
             sqlException.printStackTrace();
         }
         if (mySQL.isConnected()) {
-
+            serverLogger.info(SystemMessagesManager.mySQLDatabaseLoadingSuccess);
         }
     }
 

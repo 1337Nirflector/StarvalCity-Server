@@ -48,8 +48,6 @@ public class PermissionsManager extends Core {
         PermissionAttachment permissionAttachment = player.addAttachment(plugin);
         PermissionsManager.userPermissions.put(player.getUniqueId(), permissionAttachment);
         PermissionsManager.setPermission(player.getUniqueId());
-
-
     }
 
     public static void setPermission(UUID uuid) {
