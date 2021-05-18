@@ -1,14 +1,18 @@
 package de.starvalcity.system.corepackage;
 
+import de.starvalcity.system.database.sql.MySQL;
 import de.starvalcity.system.filespackage.SystemMessagesManager;
 import de.starvalcity.system.permissionspackage.PermissionsManager;
 import org.bukkit.plugin.java.JavaPlugin;
+
+import java.sql.SQLException;
 import java.util.logging.Logger;
 
 public class Core extends JavaPlugin {
 
     public static Logger serverLogger;
     public static Core plugin;
+    public MySQL mySQL;
     public static PermissionsManager permissionsManager;
 
     public static Core getPlugin() {
@@ -18,6 +22,8 @@ public class Core extends JavaPlugin {
     @Override
     public void onEnable() {
         serverLogger.info(SystemMessagesManager.startupMessage);
+        this.mySQL = new MySQL();
+        this.loadMySQLDatabase();
         this.loadEnglishMessages();
         this.loadGermanMessages();;
         this.loadCommands();
@@ -30,6 +36,17 @@ public class Core extends JavaPlugin {
     public void onDisable() {
         serverLogger.info(SystemMessagesManager.shutdownMessage);
 
+    }
+
+    private void loadMySQLDatabase() {
+        try {
+            mySQL.connect();
+        } catch (ClassNotFoundException | SQLException sqlException) {
+            sqlException.printStackTrace();
+        }
+        if (mySQL.isConnected()) {
+
+        }
     }
 
     private void loadEnglishMessages() {
