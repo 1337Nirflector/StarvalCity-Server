@@ -20,4 +20,7 @@ public class SystemMessagesManager {
     public static String mySQLDatabaseLoadingError = "§4Error while loading MySQL database! Incorrect login or" +
             " inactive database!";
 
+    /* Console command messages */
+    public static String playerRelatedCommand = "§4This command can only be executed by a §eplayer§4!";
+
 }

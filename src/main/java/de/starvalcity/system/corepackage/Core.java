@@ -1,11 +1,13 @@
 package de.starvalcity.system.corepackage;
 
+import de.starvalcity.commands.staff.CMD_staffMode;
 import de.starvalcity.system.database.sql.MySQL;
 import de.starvalcity.system.filespackage.SystemMessagesManager;
 import de.starvalcity.system.permissionspackage.PermissionsManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.sql.SQLException;
+import java.util.Objects;
 import java.util.logging.Logger;
 
 public class Core extends JavaPlugin {
@@ -63,7 +65,7 @@ public class Core extends JavaPlugin {
 
     private void loadCommands() {
         serverLogger.info(SystemMessagesManager.loadingCommands);
-
+        Objects.requireNonNull(this.getCommand("staff")).setExecutor(new CMD_staffMode(this));
     }
 
     private void loadEvents() {
