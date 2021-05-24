@@ -82,4 +82,18 @@ public class PermissionsManager extends Core {
             }
         }
     }
+
+    public static void unsetPermission(UUID uuid) {
+        PermissionAttachment permissionAttachment = PermissionsManager.userPermissions.remove(uuid);
+
+        for (String groups : permissionsFile.getConfigurationSection("Groups").getKeys(false)) {
+            for (String permissions : permissionsFile.getStringList("Groups." + groups + ".permissions")) {
+                permissionAttachment.unsetPermission(permissions);
+            }
+        }
+    }
+
+    public static PermissionAttachment getPermission(UUID uuid) {
+        return PermissionsManager.userPermissions.get(uuid);
+    }
 }
