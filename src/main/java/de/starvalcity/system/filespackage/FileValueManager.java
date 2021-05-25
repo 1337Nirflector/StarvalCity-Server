@@ -8,16 +8,24 @@ public class FileValueManager {
     /*----------------------------------------------------------------------------------------------------------------*/
     /* File: deGER.yml */
 
+    // Vermehrte Nachrichten \\
+    public static String GER_insufficient_permissions_VALUE = defaultPrefix_VALUE + "§4Unzureichende Rechte!";
+
     // Befehle \\
-    public static String GER_already_in_staff_mode_VALUE = defaultPrefix + "§4Du bist bereits im §bTeam-Modus§4!";
-    public static String GER_joined_staff_mode_VALUE = defaultPrefix + "§2Du bist nun im §bTeam-Modus§2!";
+    public static String GER_staff_mode_usage_VALUE = defaultPrefix_VALUE + "§4Nutzung: §7/staff <join; leave>";
+    public static String GER_joined_staff_mode_VALUE = defaultPrefix_VALUE + "§2Du bist nun im §bTeam-Modus§2!";
+    public static String GER_left_staff_mode_VALUE = defaultPrefix_VALUE + "§2Du bist nun §4nicht mehr §2im §bTeam-Modus§2!";
 
     /*----------------------------------------------------------------------------------------------------------------*/
     /* File: enENG.yml */
 
+    // Frequent messages \\
+    public static String ENG_insufficient_permissions_VALUE = defaultPrefix_VALUE + "§4Insufficient permissions!";
+
     // Commands \\
-    public static String ENG_already_in_staff_mode_VALUE = defaultPrefix + "§4You are already in §bStaff-Mode§4!";
-    public static String ENG_joined_staff_mode_VALUE = defaultPrefix + "§2You joined §bStaff-Mode§2!";
+    public static String ENG_staff_mode_usage_VALUE = defaultPrefix_VALUE + "§4Usage: §7/staff <join; leave>";
+    public static String ENG_joined_staff_mode_VALUE = defaultPrefix_VALUE + "§2You joined §bStaff-Mode§2!";
+    public static String ENG_left_staff_mode_VALUE = defaultPrefix_VALUE + "§2You are §4no longer§2 in §bStaff-Mode§2!";
 
     /*----------------------------------------------------------------------------------------------------------------*/
 

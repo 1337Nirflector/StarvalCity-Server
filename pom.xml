@@ -116,25 +116,9 @@
             <id>jitpack.io</id>
             <url>https://jitpack.io</url>
         </repository>
-
-        <!-- HeadDatabase Repository -->
-
-        <repository>
-            <id>HeadDatabase-API</id>
-            <url>https://mvn.intellectualsites.com/content/repositories/thirdparty/</url>
-        </repository>
     </repositories>
 
     <dependencies>
-
-        <!-- HeadDatabase API -->
-
-        <dependency>
-            <groupId>me.arcaniax</groupId>
-            <artifactId>HeadDatabase-API</artifactId>
-            <version>1.1.0</version>
-            <scope>provided</scope>
-        </dependency>
 
         <!-- LuckPerms API -->
 

@@ -9,9 +9,6 @@ import java.util.*;
 
 public class PermissionsManager extends Core {
 
-    public PermissionsManager(Core plugin) {
-    }
-
     public static FileConfiguration permissionsFile;
 
     public static List<String> groups = new ArrayList<>();
@@ -61,7 +58,7 @@ public class PermissionsManager extends Core {
     public static String system_player = "system.player";
 
     /* General permissions */
-    public static String staff_mode_use = "staff.mode.use";
+    public static String staff_mode_use = "staffmode.use";
 
     /*---------------------------------------------------------------------------------------------------------------*/
     // Functions \\

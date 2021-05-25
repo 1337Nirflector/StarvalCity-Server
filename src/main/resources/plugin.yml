@@ -1,9 +1,18 @@
 name: StarvalCityScript
 authors: [Nirflection, Donaris, Stormy_The_Fox, sYnTaX]
-main: de.starvalcity.system.basepackage.Core
-version: 1.0.0
-api-version: 1.13
+main: de.starvalcity.system.corepackage.Core
+version: ${project.version}
+api-version: 1.16
 softdepend:
-  - HeadDatabase
   - LuckPerms
 description: StarvalCity ServerScript
+
+commands:
+  staff:
+    description: Joins or leaves the Staff-Mode
+    usage: /staff
+
+permissions:
+  staffmode.use:
+    description: General Staff-Mode permission
+    default: op

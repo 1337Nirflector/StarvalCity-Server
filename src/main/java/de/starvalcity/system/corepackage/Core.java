@@ -1,85 +1,60 @@
 package de.starvalcity.system.corepackage;
 
-import de.starvalcity.commands.staff.CMD_staffMode;
+import de.starvalcity.commands.staff.StaffModeCOMMAND;
+import de.starvalcity.files.deGER;
 import de.starvalcity.system.database.sql.MySQL;
+import de.starvalcity.system.filespackage.FilePathManager;
+import de.starvalcity.system.filespackage.FileValueManager;
 import de.starvalcity.system.filespackage.SystemMessagesManager;
-import de.starvalcity.system.permissionspackage.PermissionsManager;
+import org.bukkit.Bukkit;
+import org.bukkit.command.CommandExecutor;
+import org.bukkit.command.ConsoleCommandSender;
+import org.bukkit.plugin.Plugin;
+import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import java.sql.SQLException;
 import java.util.Objects;
-import java.util.logging.Logger;
 
 public class Core extends JavaPlugin {
 
-    public static Logger serverLogger;
     public static Core plugin;
-    public MySQL mySQL;
-    public static PermissionsManager permissionsManager;
+    public static Plugin pl;
+    public static MySQL mySQL;
+
+    public ConsoleCommandSender consoleCommandSender = getServer().getConsoleSender();
+    public PluginManager pluginManager = Bukkit.getPluginManager();
+
+    @Override
+    public void onEnable() {
+        plugin = this;
+        pl = this;
+        mySQL = new MySQL("localhost", "starvalcity", "root", "", 3306);
+        consoleCommandSender.sendMessage(SystemMessagesManager.startupMessage);
+        initializeFiles();
+        registerEvents();
+        getCommand("staff").setExecutor((CommandExecutor) new StaffModeCOMMAND());
+    }
+
+    @Override
+    public void onDisable() {
+        consoleCommandSender.sendMessage(SystemMessagesManager.shutdownMessage);
+    }
 
     public static Core getPlugin() {
         return plugin;
     }
 
-    @Override
-    public void onEnable() {
-        serverLogger.info(SystemMessagesManager.startupMessage);
-        this.mySQL = new MySQL();
-        this.loadMySQLDatabase();
-        this.loadEnglishMessages();
-        this.loadGermanMessages();;
-        this.loadCommands();
-        this.loadEvents();
-        this.loadDependencies();
-        this.loadLogger();
+    private void initializeFiles() {
+        deGER.setupFile();
+        String GER_insufficient_permissions_PATH = FilePathManager.GER_insufficient_permissions_PATH;
+        String GER_insufficient_permissions_VALUE = FileValueManager.GER_insufficient_permissions_VALUE;
+        deGER.getFile().addDefault(GER_insufficient_permissions_PATH, GER_insufficient_permissions_VALUE);
+        deGER.getFile().options().copyDefaults(true);
+        deGER.saveFile();
     }
 
-    @Override
-    public void onDisable() {
-        serverLogger.info(SystemMessagesManager.shutdownMessage);
+    private void registerEvents() {
 
-    }
-
-    private void loadMySQLDatabase() {
-        serverLogger.info(SystemMessagesManager.loadingMySQLDatabase);
-        try {
-            mySQL.connect();
-        } catch (ClassNotFoundException | SQLException sqlException) {
-            serverLogger.severe(SystemMessagesManager.mySQLDatabaseLoadingError);
-            sqlException.printStackTrace();
-        }
-        if (mySQL.isConnected()) {
-            serverLogger.info(SystemMessagesManager.mySQLDatabaseLoadingSuccess);
-        }
-    }
-
-    private void loadEnglishMessages() {
-        serverLogger.info(SystemMessagesManager.loadingEnglishMessages);
-
-    }
-
-    private void loadGermanMessages() {
-        serverLogger.info(SystemMessagesManager.loadingGermanMessages);
-
-    }
-
-    private void loadCommands() {
-        serverLogger.info(SystemMessagesManager.loadingCommands);
-        Objects.requireNonNull(this.getCommand("staff")).setExecutor(new CMD_staffMode(this));
-    }
-
-    private void loadEvents() {
-        serverLogger.info(SystemMessagesManager.loadingEvents);
-
-    }
-
-    private void loadDependencies() {
-        serverLogger.info(SystemMessagesManager.loadingDependencies);
-
-    }
-
-    private void loadLogger() {
-        serverLogger.info(SystemMessagesManager.loadingLogger);
     }
 
 }

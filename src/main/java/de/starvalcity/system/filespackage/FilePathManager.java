@@ -9,16 +9,22 @@ public class FilePathManager {
     /*----------------------------------------------------------------------------------------------------------------*/
     /* File: deGER.yml */
 
+    // Vermehrte Nachrichten \\
+    public static String GER_insufficient_permissions_PATH = "Vermehrte_Nachrichten.Unzureichende_Rechte";
+
     // Befehle \\
-    public static String GER_already_in_staff_mode_PATH = "Befehlsnachrichten.Bereits_im_Team-Modus";
+    public static String GER_staff_mode_usage_PATH = "Befehlsnachrichten.Team-Modus_Nutzung";
     public static String GER_joined_staff_mode_PATH = "Befehlsnachrichten.Team-Modus_beigetreten";
     public static String GER_left_staff_mode_PATH = "Befehlsnachrichten.Team-Modus_verlassen";
 
     /*----------------------------------------------------------------------------------------------------------------*/
     /* File: enENG.yml */
 
+    // Frequent messages \\
+    public static String ENG_insufficient_permissions_PATH = "Frequent_messages.Insufficient_permissions";
+
     // Commands \\
-    public static String ENG_already_in_staff_mode_PATH = "Command_messages.Already_in_Staff-Mode";
+    public static String ENG_staff_mode_usage_PATH = "Command_messages.Staff_Mode_usage";
     public static String ENG_joined_staff_mode_PATH = "Command_messages.Joined_Staff-Mode";
     public static String ENG_left_staff_mode_PATH = "Command_messages.Left_Staff-Mode";
 

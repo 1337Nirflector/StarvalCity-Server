@@ -17,8 +17,8 @@ public class SystemMessagesManager {
 
     /* Database messages */
     public static String mySQLDatabaseLoadingSuccess = "§2MySQL database successfully connected!";
-    public static String mySQLDatabaseLoadingError = "§4Error while loading MySQL database! Incorrect login or" +
-            " inactive database!";
+    public static String mySQLDatabaseLoadingError = "§4Error while loading MySQL database!§b ";
+    public static String mySQLDatabaseDisconnectSuccess = "§2MySQL database successfully disconnected!";
 
     /* Console command messages */
     public static String playerRelatedCommand = "§4This command can only be executed by a §eplayer§4!";
