@@ -64,33 +64,5 @@ public class PermissionsManager extends Core {
     // Functions \\
 
     /* Core Functions */
-    public static void setupPermissions(Player player) {
-        PermissionAttachment permissionAttachment = player.addAttachment(plugin);
-        PermissionsManager.userPermissions.put(player.getUniqueId(), permissionAttachment);
-        PermissionsManager.setPermission(player.getUniqueId());
-    }
 
-    public static void setPermission(UUID uuid) {
-        PermissionAttachment permissionAttachment = PermissionsManager.userPermissions.get(uuid);
-
-        for (String groups : permissionsFile.getConfigurationSection("Groups").getKeys(false)) {
-            for (String permissions : permissionsFile.getStringList("Groups." + groups + ".permissions")) {
-                permissionAttachment.setPermission(permissions, true);
-            }
-        }
-    }
-
-    public static void unsetPermission(UUID uuid) {
-        PermissionAttachment permissionAttachment = PermissionsManager.userPermissions.remove(uuid);
-
-        for (String groups : permissionsFile.getConfigurationSection("Groups").getKeys(false)) {
-            for (String permissions : permissionsFile.getStringList("Groups." + groups + ".permissions")) {
-                permissionAttachment.unsetPermission(permissions);
-            }
-        }
-    }
-
-    public static PermissionAttachment getPermission(UUID uuid) {
-        return PermissionsManager.userPermissions.get(uuid);
-    }
 }

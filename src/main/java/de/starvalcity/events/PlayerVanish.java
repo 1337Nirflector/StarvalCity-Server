@@ -17,13 +17,6 @@ public class PlayerVanish implements Listener {
         Player player = playerVanishEvent.getPlayer();
         UUID playerUniqueId = player.getUniqueId();
 
-        if (VanishHandler.getVanishedPlayers().contains(playerUniqueId)) {
-            for (Player onlinePlayer : Bukkit.getOnlinePlayers()) {
-                playerVanishEvent.getPlayer().hidePlayer(Core.getPlugin(), onlinePlayer);
-            }
-        }
-        for (Player onlinePlayer : Bukkit.getOnlinePlayers()) {
-            onlinePlayer.hidePlayer(Core.getPlugin(), playerVanishEvent.getPlayer());
-        }
+
     }
 }
