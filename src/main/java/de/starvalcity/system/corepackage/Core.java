@@ -1,6 +1,8 @@
 package de.starvalcity.system.corepackage;
 
 import de.starvalcity.commands.staff.StaffModeCOMMAND;
+import de.starvalcity.events.PlayerJoin;
+import de.starvalcity.events.PlayerVanish;
 import de.starvalcity.files.deGER;
 import de.starvalcity.system.database.sql.MySQL;
 import de.starvalcity.system.filespackage.FilePathManager;
@@ -54,7 +56,8 @@ public class Core extends JavaPlugin {
     }
 
     private void registerEvents() {
-
+        pluginManager.registerEvents(new PlayerJoin(), this);
+        pluginManager.registerEvents(new PlayerVanish(), this);
     }
 
 }
