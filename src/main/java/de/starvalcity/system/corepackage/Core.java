@@ -20,25 +20,27 @@ import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.sql.SQLException;
 import java.util.UUID;
 
 public class Core extends JavaPlugin {
 
     public static Core plugin;
     public static Plugin pl;
-    public static MySQL mySQL;
 
     public ConsoleCommandSender consoleCommandSender = getServer().getConsoleSender();
+    public MySQL mySQL;
     public PluginManager pluginManager = Bukkit.getPluginManager();
 
     @Override
     public void onEnable() {
         plugin = this;
         pl = this;
-        mySQL = new MySQL("localhost", "starvalcity", "root", "", 3306);
+        this.mySQL = new MySQL();
         consoleCommandSender.sendMessage(SystemMessagesManager.startupMessage);
         initializeFiles();
         registerEvents();
+        loadDatabase();
         getCommand("onlineplayers").setExecutor((CommandExecutor) new OnlinePlayersCOMMAND());
         getCommand("staff").setExecutor((CommandExecutor) new StaffModeCOMMAND());
     }
@@ -46,6 +48,7 @@ public class Core extends JavaPlugin {
     @Override
     public void onDisable() {
         consoleCommandSender.sendMessage(SystemMessagesManager.shutdownMessage);
+        mySQL.disconnect();
     }
 
     public static Core getPlugin() {
@@ -64,6 +67,18 @@ public class Core extends JavaPlugin {
     private void registerEvents() {
         pluginManager.registerEvents(new PlayerJoin(), this);
         pluginManager.registerEvents(new PlayerVanish(), this);
+    }
+
+    private void loadDatabase() {
+        try {
+            mySQL.connect();
+        } catch (ClassNotFoundException | SQLException exception) {
+            exception.printStackTrace();
+            consoleCommandSender.sendMessage(SystemMessagesManager.mySQLDatabaseLoadingError);
+        }
+        if (mySQL.isConnected()) {
+            consoleCommandSender.sendMessage(SystemMessagesManager.mySQLDatabaseLoadingSuccess);
+        }
     }
 
     public void setupPermissions(Player player) {
