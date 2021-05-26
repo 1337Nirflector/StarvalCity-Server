@@ -19,4 +19,8 @@ public class Logger {
         Core.getPlugin().getLogger().info("§cThe player§e " + commandSender.getName() + "§c tried to use a" +
                 " command but failed with: §6error code §b2 §6- §bCommand Disabled");
     }
+
+    public static void logPlayerRelatedCommand() {
+        Core.getPlugin().getLogger().info("§cThis command can only be executed by a §eplayer§c!");
+    }
 }

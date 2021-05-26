@@ -58,6 +58,8 @@ public class PermissionsManager extends Core {
     public static String system_player = "system.player";
 
     /* General permissions */
+    public static String onlineplayers_use = "onlineplayers.use";
+
     public static String staff_mode_use = "staffmode.use";
 
     /*---------------------------------------------------------------------------------------------------------------*/

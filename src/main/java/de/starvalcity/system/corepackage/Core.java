@@ -1,5 +1,6 @@
 package de.starvalcity.system.corepackage;
 
+import de.starvalcity.commands.OnlinePlayersCOMMAND;
 import de.starvalcity.commands.staff.StaffModeCOMMAND;
 import de.starvalcity.events.PlayerJoin;
 import de.starvalcity.events.PlayerVanish;
@@ -38,6 +39,7 @@ public class Core extends JavaPlugin {
         consoleCommandSender.sendMessage(SystemMessagesManager.startupMessage);
         initializeFiles();
         registerEvents();
+        getCommand("onlineplayers").setExecutor((CommandExecutor) new OnlinePlayersCOMMAND());
         getCommand("staff").setExecutor((CommandExecutor) new StaffModeCOMMAND());
     }
 

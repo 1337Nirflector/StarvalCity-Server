@@ -8,6 +8,7 @@ import de.starvalcity.handlers.StaffHandler;
 import de.starvalcity.system.corepackage.Core;
 import de.starvalcity.system.filespackage.FilePathManager;
 import de.starvalcity.system.filespackage.SystemMessagesManager;
+import de.starvalcity.system.loggerpackage.Logger;
 import de.starvalcity.system.permissionspackage.PermissionsManager;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -25,7 +26,7 @@ public class StaffModeCOMMAND implements CommandExecutor {
     @Override
     public boolean onCommand(@NotNull CommandSender commandSender, @NotNull Command command, @NotNull String s, @NotNull String[] strings) {
         if (commandSender instanceof ConsoleCommandSender) {
-            this.sendPlayerRelatedToLogger();
+            Logger.logPlayerRelatedCommand();
         }
         if (commandSender instanceof Player) {
             Player player = (Player) commandSender;
@@ -77,9 +78,5 @@ public class StaffModeCOMMAND implements CommandExecutor {
             }
         }
         return true;
-    }
-
-    private void sendPlayerRelatedToLogger() {
-        Core.getPlugin().getLogger().severe(SystemMessagesManager.playerRelatedCommand);
     }
 }
