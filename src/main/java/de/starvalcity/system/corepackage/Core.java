@@ -1,12 +1,11 @@
 package de.starvalcity.system.corepackage;
 
 import de.starvalcity.commands.OnlinePlayersCOMMAND;
+import de.starvalcity.commands.staff.IPCOMMAND;
 import de.starvalcity.commands.staff.StaffModeCOMMAND;
 import de.starvalcity.events.PlayerJoin;
-import de.starvalcity.events.PlayerSQLJoin;
-import de.starvalcity.events.PlayerSQLKillEvent;
-import de.starvalcity.events.PlayerVanish;
 import de.starvalcity.files.deGER;
+import de.starvalcity.files.enENG;
 import de.starvalcity.files.permissions;
 import de.starvalcity.system.database.sql.MySQL;
 import de.starvalcity.system.database.sql.SQLManager;
@@ -46,6 +45,8 @@ public final class Core extends JavaPlugin {
         initializeFiles();
         registerEvents();
         loadDatabase();
+        consoleCommandSender.sendMessage(SystemMessagesManager.loadingCommands);
+        getCommand("ip").setExecutor((CommandExecutor) new IPCOMMAND());
         getCommand("onlineplayers").setExecutor((CommandExecutor) new OnlinePlayersCOMMAND());
         getCommand("staff").setExecutor((CommandExecutor) new StaffModeCOMMAND());
     }
@@ -54,6 +55,7 @@ public final class Core extends JavaPlugin {
     public void onDisable() {
         consoleCommandSender.sendMessage(SystemMessagesManager.shutdownMessage);
         mySQL.disconnect();
+        consoleCommandSender.sendMessage(SystemMessagesManager.mySQLDatabaseDisconnectSuccess);
     }
 
     public static Core getPlugin() {
@@ -61,22 +63,94 @@ public final class Core extends JavaPlugin {
     }
 
     private void initializeFiles() {
+        consoleCommandSender.sendMessage(SystemMessagesManager.loadingEnglishMessages);
+        consoleCommandSender.sendMessage(SystemMessagesManager.loadingGermanMessages);
         deGER.setupFile();
+        enENG.setupFile();
+        /*------------------------------------------------------------------------------------------------------------*/
         String GER_insufficient_permissions_PATH = FilePathManager.GER_insufficient_permissions_PATH;
         String GER_insufficient_permissions_VALUE = FileValueManager.GER_insufficient_permissions_VALUE;
+        String GER_requested_targetplayer_PATH = FilePathManager.GER_requested_targetplayer_PATH;
+        String GER_requested_targetplayer_VALUE = FileValueManager.GER_requested_targetplayer_VALUE;
+        String GER_requested_targetplayer_null_PATH = FilePathManager.GER_requested_targetplayer_null_PATH;
+        String GER_requested_targetplayer_null_VALUE = FileValueManager.GER_requested_targetplayer_null_VALUE;
+        String GER_ip_usage_PATH = FilePathManager.GER_ip_usage_PATH;
+        String GER_ip_usage_VALUE = FileValueManager.GER_ip_usage_VALUE;
+        String GER_ip_own_PATH = FilePathManager.GER_ip_own_PATH;
+        String GER_ip_own_VALUE = FileValueManager.GER_ip_own_VALUE;
+        String GER_ip_other_PATH = FilePathManager.GER_ip_other_PATH;
+        String GER_ip_other_VALUE = FileValueManager.GER_ip_other_VALUE;
+        String GER_onlineplayers_usage_PATH = FilePathManager.GER_onlineplayers_usage_PATH;
+        String GER_onlineplayers_usage_VALUE = FileValueManager.GER_onlineplayers_usage_VALUE;
+        String GER_onlineplayers_command_PATH = FilePathManager.GER_onlineplayers_usage_PATH;
+        String GER_onlineplayers_command_VALUE = FileValueManager.GER_onlineplayers_command_VALUE;
+        String GER_staff_mode_usage_PATH = FilePathManager.GER_staff_mode_usage_PATH;
+        String GER_staff_mode_usage_VALUE = FileValueManager.GER_staff_mode_usage_VALUE;
+        String GER_joined_staff_mode_PATH = FilePathManager.GER_joined_staff_mode_PATH;
+        String GER_joined_staff_mode_VALUE = FileValueManager.GER_joined_staff_mode_VALUE;
+        String GER_left_staff_mode_PATH = FilePathManager.GER_left_staff_mode_PATH;
+        String GER_left_staff_mode_VALUE = FileValueManager.GER_left_staff_mode_VALUE;
+        /*------------------------------------------------------------------------------------------------------------*/
+        String ENG_insufficient_permissions_PATH = FilePathManager.ENG_insufficient_permissions_PATH;
+        String ENG_insufficient_permissions_VALUE = FileValueManager.ENG_insufficient_permissions_VALUE;
+        String ENG_requested_targetplayer_PATH = FilePathManager.ENG_requested_targetplayer_PATH;
+        String ENG_requested_targetplayer_VALUE = FileValueManager.ENG_requested_targetplayer_VALUE;
+        String ENG_requested_targetplayer_null_PATH = FilePathManager.ENG_requested_targetplayer_null_PATH;
+        String ENG_requested_targetplayer_null_VALUE = FileValueManager.ENG_requested_targetplayer_null_VALUE;
+        String ENG_ip_usage_PATH = FilePathManager.ENG_ip_usage_PATH;
+        String ENG_ip_usage_VALUE = FileValueManager.ENG_ip_usage_VALUE;
+        String ENG_ip_own_PATH = FilePathManager.ENG_ip_own_PATH;
+        String ENG_ip_own_VALUE = FileValueManager.ENG_ip_own_VALUE;
+        String ENG_ip_other_PATH = FilePathManager.ENG_ip_other_PATH;
+        String ENG_ip_other_VALUE = FileValueManager.ENG_ip_other_VALUE;
+        String ENG_onlineplayers_usage_PATH = FilePathManager.ENG_onlineplayers_usage_PATH;
+        String ENG_onlineplayers_usage_VALUE = FileValueManager.ENG_onlineplayers_usage_VALUE;
+        String ENG_onlineplayers_command_PATH = FilePathManager.ENG_onlineplayers_command_PATH;
+        String ENG_onlineplayers_command_VALUE = FileValueManager.ENG_onlineplayers_command_VALUE;
+        String ENG_staff_mode_usage_PATH = FilePathManager.ENG_staff_mode_usage_PATH;
+        String ENG_staff_mode_usage_VALUE = FileValueManager.ENG_staff_mode_usage_VALUE;
+        String ENG_joined_staff_mode_PATH = FilePathManager.ENG_joined_staff_mode_PATH;
+        String ENG_joined_staff_mode_VALUE = FileValueManager.ENG_joined_staff_mode_VALUE;
+        String ENG_left_staff_mode_PATH = FilePathManager.ENG_left_staff_mode_PATH;
+        String ENG_left_staff_mode_VALUE = FileValueManager.ENG_left_staff_mode_VALUE;
+        /*------------------------------------------------------------------------------------------------------------*/
         deGER.getFile().addDefault(GER_insufficient_permissions_PATH, GER_insufficient_permissions_VALUE);
+        deGER.getFile().addDefault(GER_requested_targetplayer_PATH, GER_requested_targetplayer_VALUE);
+        deGER.getFile().addDefault(GER_requested_targetplayer_null_PATH, GER_requested_targetplayer_null_VALUE);
+        deGER.getFile().addDefault(GER_ip_usage_PATH, GER_ip_usage_VALUE);
+        deGER.getFile().addDefault(GER_ip_own_PATH, GER_ip_own_VALUE);
+        deGER.getFile().addDefault(GER_ip_other_PATH, GER_ip_other_VALUE);
+        deGER.getFile().addDefault(GER_onlineplayers_usage_PATH, GER_onlineplayers_usage_VALUE);
+        deGER.getFile().addDefault(GER_onlineplayers_command_PATH, GER_onlineplayers_command_VALUE);
+        deGER.getFile().addDefault(GER_staff_mode_usage_PATH, GER_staff_mode_usage_VALUE);
+        deGER.getFile().addDefault(GER_joined_staff_mode_PATH, GER_joined_staff_mode_VALUE);
+        deGER.getFile().addDefault(GER_left_staff_mode_PATH, GER_left_staff_mode_VALUE);
+        /*------------------------------------------------------------------------------------------------------------*/
+        enENG.getFile().addDefault(ENG_insufficient_permissions_PATH, ENG_insufficient_permissions_VALUE);
+        enENG.getFile().addDefault(ENG_requested_targetplayer_PATH, ENG_requested_targetplayer_VALUE);
+        enENG.getFile().addDefault(ENG_requested_targetplayer_null_PATH, ENG_requested_targetplayer_null_VALUE);
+        enENG.getFile().addDefault(ENG_ip_usage_PATH, ENG_ip_usage_VALUE);
+        enENG.getFile().addDefault(ENG_ip_own_PATH, ENG_ip_own_VALUE);
+        enENG.getFile().addDefault(ENG_ip_other_PATH, ENG_ip_other_VALUE);
+        enENG.getFile().addDefault(ENG_onlineplayers_usage_PATH, ENG_onlineplayers_usage_VALUE);
+        enENG.getFile().addDefault(ENG_onlineplayers_command_PATH, ENG_onlineplayers_command_VALUE);
+        enENG.getFile().addDefault(ENG_staff_mode_usage_PATH, ENG_staff_mode_usage_VALUE);
+        enENG.getFile().addDefault(ENG_joined_staff_mode_PATH, ENG_joined_staff_mode_VALUE);
+        enENG.getFile().addDefault(ENG_left_staff_mode_PATH, ENG_left_staff_mode_VALUE);
+        /*------------------------------------------------------------------------------------------------------------*/
         deGER.getFile().options().copyDefaults(true);
+        enENG.getFile().options().copyDefaults(true);
         deGER.saveFile();
+        enENG.saveFile();
     }
 
     private void registerEvents() {
+        consoleCommandSender.sendMessage(SystemMessagesManager.loadingEvents);
         pluginManager.registerEvents(new PlayerJoin(), this);
-        pluginManager.registerEvents(new PlayerSQLJoin(), this);
-        pluginManager.registerEvents(new PlayerSQLKillEvent(), this);
-        pluginManager.registerEvents(new PlayerVanish(), this);
     }
 
     private void loadDatabase() {
+        consoleCommandSender.sendMessage(SystemMessagesManager.loadingMySQLDatabase);
         try {
             mySQL.connect();
         } catch (ClassNotFoundException | SQLException exception) {

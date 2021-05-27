@@ -56,6 +56,9 @@ public class PermissionsManager {
     public static String system_player = "system.player";
 
     /* General permissions */
+    public static String ip_own = "ip.own";
+    public static String ip_other = "ip.other";
+
     public static String onlineplayers_use = "onlineplayers.use";
 
     public static String staff_mode_use = "staffmode.use";

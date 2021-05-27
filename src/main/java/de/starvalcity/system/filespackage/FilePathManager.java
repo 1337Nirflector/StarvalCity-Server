@@ -11,8 +11,14 @@ public class FilePathManager {
 
     // Vermehrte Nachrichten \\
     public static String GER_insufficient_permissions_PATH = "Vermehrte_Nachrichten.Unzureichende_Rechte";
+    public static String GER_requested_targetplayer_PATH = "Vermehrte_Nachrichten.Angegebener_Zielspieler";
+    public static String GER_requested_targetplayer_null_PATH = "Vermehrte_Nachrichten.Angegebener_Zielspieler_nicht_gefunden";
 
     // Befehle \\
+    public static String GER_ip_usage_PATH = "Befehlsnachrichten.IP_Nutzung";
+    public static String GER_ip_own_PATH = "Befehlsnachrichten.Eigene_IP";
+    public static String GER_ip_other_PATH = "Befehlsnachrichten.Zielspieler_IP";
+
     public static String GER_onlineplayers_usage_PATH = "Befehlsnachrichten.Online_Players_Nutzung";
     public static String GER_onlineplayers_command_PATH = "Befehlsnachrichten.Online_Players_Befehl";
 
@@ -25,8 +31,14 @@ public class FilePathManager {
 
     // Frequent messages \\
     public static String ENG_insufficient_permissions_PATH = "Frequent_messages.Insufficient_permissions";
+    public static String ENG_requested_targetplayer_PATH = "Frequent_messages.Requested_targetplayer";
+    public static String ENG_requested_targetplayer_null_PATH = "Frequent_messages.Requested_targetplayer_not_found";
 
     // Commands \\
+    public static String ENG_ip_usage_PATH = "Command_messages.IP_usage";
+    public static String ENG_ip_own_PATH = "Command_messages.Own_IP";
+    public static String ENG_ip_other_PATH = "Command_messages.Targetplayer_IP";
+
     public static String ENG_onlineplayers_usage_PATH = "Command_messages.Online_Players_usage";
     public static String ENG_onlineplayers_command_PATH = "Command_messages.Online_Players_command";
 
