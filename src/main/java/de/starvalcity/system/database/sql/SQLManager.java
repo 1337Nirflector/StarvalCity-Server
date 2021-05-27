@@ -45,8 +45,32 @@ public class SQLManager {
 
     public void addPoints(UUID uniqueId, int points) {
         try {
-            PreparedStatement preparedStatement = plugin.mySQL.getConnection().prepareStatement()
+            PreparedStatement preparedStatement = plugin.mySQL.getConnection().prepareStatement("UPDATE playerpoints " +
+                    "SET POINTS=? WHERE UUID=?");
+            preparedStatement.setInt(1, getPoints(uniqueId) + points);
+            preparedStatement.setString(2, uniqueId.toString());
+            preparedStatement.executeUpdate();
+        } catch (SQLException sqlException) {
+            sqlException.printStackTrace();
         }
+    }
+
+    public int getPoints(UUID uniqueId) {
+        try {
+            PreparedStatement preparedStatement = plugin.mySQL.getConnection().prepareStatement("SELECT POINTS FROM " +
+                    "playerpoints WHERE UUID=?");
+            preparedStatement.setString(1, uniqueId.toString());
+            ResultSet resultSet = preparedStatement.executeQuery();
+            int points = 0;
+
+            if (resultSet.next()) {
+                points = resultSet.getInt("POINTS");
+                return points;
+            }
+        } catch (SQLException sqlException) {
+            sqlException.printStackTrace();
+        }
+        return 0;
     }
 
     public boolean exists(UUID uniqueId) {

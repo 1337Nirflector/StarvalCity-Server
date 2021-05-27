@@ -8,11 +8,17 @@ softdepend:
 description: StarvalCity ServerScript
 
 commands:
+  onlineplayers:
+    description: Displays all current online players
+    usage: /onlineplayers
   staff:
     description: Joins or leaves the Staff-Mode
     usage: /staff
 
 permissions:
+  onlineplayers.use:
+    description: General onlineplayers permission
+    default: op
   staffmode.use:
     description: General Staff-Mode permission
     default: op

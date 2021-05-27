@@ -1,13 +1,11 @@
 package de.starvalcity.system.permissionspackage;
 
-import de.starvalcity.system.corepackage.Core;
 import org.bukkit.configuration.file.FileConfiguration;
-import org.bukkit.entity.Player;
 import org.bukkit.permissions.PermissionAttachment;
 
 import java.util.*;
 
-public class PermissionsManager extends Core {
+public class PermissionsManager {
 
     public static FileConfiguration permissionsFile;
 

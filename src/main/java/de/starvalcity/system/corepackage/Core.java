@@ -3,10 +3,13 @@ package de.starvalcity.system.corepackage;
 import de.starvalcity.commands.OnlinePlayersCOMMAND;
 import de.starvalcity.commands.staff.StaffModeCOMMAND;
 import de.starvalcity.events.PlayerJoin;
+import de.starvalcity.events.PlayerSQLJoin;
+import de.starvalcity.events.PlayerSQLKillEvent;
 import de.starvalcity.events.PlayerVanish;
 import de.starvalcity.files.deGER;
 import de.starvalcity.files.permissions;
 import de.starvalcity.system.database.sql.MySQL;
+import de.starvalcity.system.database.sql.SQLManager;
 import de.starvalcity.system.filespackage.FilePathManager;
 import de.starvalcity.system.filespackage.FileValueManager;
 import de.starvalcity.system.filespackage.SystemMessagesManager;
@@ -23,13 +26,14 @@ import org.bukkit.plugin.java.JavaPlugin;
 import java.sql.SQLException;
 import java.util.UUID;
 
-public class Core extends JavaPlugin {
+public final class Core extends JavaPlugin {
 
     public static Core plugin;
     public static Plugin pl;
 
     public ConsoleCommandSender consoleCommandSender = getServer().getConsoleSender();
     public MySQL mySQL;
+    public SQLManager mySQLData;
     public PluginManager pluginManager = Bukkit.getPluginManager();
 
     @Override
@@ -37,6 +41,7 @@ public class Core extends JavaPlugin {
         plugin = this;
         pl = this;
         this.mySQL = new MySQL();
+        this.mySQLData = new SQLManager(this);
         consoleCommandSender.sendMessage(SystemMessagesManager.startupMessage);
         initializeFiles();
         registerEvents();
@@ -66,6 +71,8 @@ public class Core extends JavaPlugin {
 
     private void registerEvents() {
         pluginManager.registerEvents(new PlayerJoin(), this);
+        pluginManager.registerEvents(new PlayerSQLJoin(), this);
+        pluginManager.registerEvents(new PlayerSQLKillEvent(), this);
         pluginManager.registerEvents(new PlayerVanish(), this);
     }
 
@@ -78,6 +85,7 @@ public class Core extends JavaPlugin {
         }
         if (mySQL.isConnected()) {
             consoleCommandSender.sendMessage(SystemMessagesManager.mySQLDatabaseLoadingSuccess);
+            mySQLData.createTable();
         }
     }
 
