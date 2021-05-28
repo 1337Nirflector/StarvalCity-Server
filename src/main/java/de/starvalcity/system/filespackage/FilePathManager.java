@@ -47,6 +47,12 @@ public class FilePathManager {
     public static String ENG_left_staff_mode_PATH = "Command_messages.Left_Staff-Mode";
 
     /*----------------------------------------------------------------------------------------------------------------*/
+    /* File: MySQL.yml */
 
-
+    // Fields \\
+    public static String MySQL_host = "MySQL_information.host";
+    public static String MySQL_port = "MySQL_information.port";
+    public static String MySQL_database = "MySQL_information.database";
+    public static String MySQL_username = "MySQL_information.username";
+    public static String MySQL_password = "MySQL_information.password";
 }

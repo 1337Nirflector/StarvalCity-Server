@@ -16,6 +16,10 @@ public class SystemMessagesManager {
     public static String shutdownMessage = "§4Disabling §6StarvalCity§2 system ...";
 
     /* Database messages */
+    public static String h2DatabaseLoadingSuccess = "§2H2 database successfully connected!";
+    public static String h2DatabaseLoadingError = "§4Error while loading H2 database!§b ";
+    public static String h2DatabaseDisconnectSuccess = "§2H2 database successfully disconnected!";
+
     public static String mySQLDatabaseLoadingSuccess = "§2MySQL database successfully connected!";
     public static String mySQLDatabaseLoadingError = "§4Error while loading MySQL database!§b ";
     public static String mySQLDatabaseDisconnectSuccess = "§2MySQL database successfully disconnected!";

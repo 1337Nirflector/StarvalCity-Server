@@ -48,6 +48,16 @@ public class FileValueManager {
     public static String ENG_left_staff_mode_VALUE = defaultPrefix_VALUE + "§2You are §4no longer§2 in §bStaff-Mode§2!";
 
     /*----------------------------------------------------------------------------------------------------------------*/
+    /* File: MySQL.yml */
+
+    // Fields \\
+    public static String MySQL_host = "localhost";
+    public static String MySQL_port = "3306";
+    public static String MySQL_database = "test";
+    public static String MySQL_username = "root";
+    public static String MySQL_password = "";
+
+    /*------------------------------------------------------------------------------------------------------------*/
 
 }
 

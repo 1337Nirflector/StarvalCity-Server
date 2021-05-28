@@ -3,6 +3,7 @@ package de.starvalcity.system.corepackage;
 import de.starvalcity.commands.OnlinePlayersCOMMAND;
 import de.starvalcity.commands.staff.IPCOMMAND;
 import de.starvalcity.commands.staff.StaffModeCOMMAND;
+import de.starvalcity.events.PlayerFirstJoin;
 import de.starvalcity.events.PlayerJoin;
 import de.starvalcity.files.deGER;
 import de.starvalcity.files.enENG;
@@ -29,9 +30,9 @@ public final class Core extends JavaPlugin {
 
     public static Core plugin;
     public static Plugin pl;
+    public MySQL mySQL;
 
     public ConsoleCommandSender consoleCommandSender = getServer().getConsoleSender();
-    public MySQL mySQL;
     public SQLManager mySQLData;
     public PluginManager pluginManager = Bukkit.getPluginManager();
 
@@ -146,6 +147,7 @@ public final class Core extends JavaPlugin {
 
     private void registerEvents() {
         consoleCommandSender.sendMessage(SystemMessagesManager.loadingEvents);
+        pluginManager.registerEvents(new PlayerFirstJoin(), this);
         pluginManager.registerEvents(new PlayerJoin(), this);
     }
 
@@ -159,7 +161,6 @@ public final class Core extends JavaPlugin {
         }
         if (mySQL.isConnected()) {
             consoleCommandSender.sendMessage(SystemMessagesManager.mySQLDatabaseLoadingSuccess);
-            mySQLData.createTable();
         }
     }
 

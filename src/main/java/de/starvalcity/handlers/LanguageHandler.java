@@ -15,6 +15,11 @@ public class LanguageHandler {
         return englishPlayers;
     }
 
+    public static void setDefaultLanguage(Player player) {
+        UUID playerUniqueId = player.getUniqueId();
+        germanPlayers.add(playerUniqueId);
+    }
+
     public static void setEnglishPlayer(Player player) {
         UUID playerUniqueId = player.getUniqueId();
         englishPlayers.add(playerUniqueId);
