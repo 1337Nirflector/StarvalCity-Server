@@ -21,7 +21,8 @@ public class SystemMessagesManager {
     public static String h2DatabaseDisconnectSuccess = "§2H2 database successfully disconnected!";
 
     public static String mySQLDatabaseLoadingSuccess = "§2MySQL database successfully connected!";
-    public static String mySQLDatabaseLoadingError = "§4Error while loading MySQL database!§b ";
+    public static String mySQLDatabaseLoadingError = "§4Error while loading MySQL database! Check if" +
+            " you are really using a database and if all login information are correct!§b ";
     public static String mySQLDatabaseDisconnectSuccess = "§2MySQL database successfully disconnected!";
 
     /* Console command messages */

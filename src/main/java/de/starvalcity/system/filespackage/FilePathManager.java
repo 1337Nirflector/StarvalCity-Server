@@ -19,6 +19,9 @@ public class FilePathManager {
     public static String GER_ip_own_PATH = "Befehlsnachrichten.Eigene_IP";
     public static String GER_ip_other_PATH = "Befehlsnachrichten.Zielspieler_IP";
 
+    public static String GER_language_usage_PATH = "Befehlsnachrichten.Sprache_Nutzung";
+    public static String GER_language_set_PATH = "Befehlsnachrichten.Sprache_gesetzt";
+
     public static String GER_onlineplayers_usage_PATH = "Befehlsnachrichten.Online_Players_Nutzung";
     public static String GER_onlineplayers_command_PATH = "Befehlsnachrichten.Online_Players_Befehl";
 
@@ -38,6 +41,9 @@ public class FilePathManager {
     public static String ENG_ip_usage_PATH = "Command_messages.IP_usage";
     public static String ENG_ip_own_PATH = "Command_messages.Own_IP";
     public static String ENG_ip_other_PATH = "Command_messages.Targetplayer_IP";
+
+    public static String ENG_language_usage_PATH = "Command_messages.Language_usage";
+    public static String ENG_language_set_PATH = "Command_messages.Language_set";
 
     public static String ENG_onlineplayers_usage_PATH = "Command_messages.Online_Players_usage";
     public static String ENG_onlineplayers_command_PATH = "Command_messages.Online_Players_command";

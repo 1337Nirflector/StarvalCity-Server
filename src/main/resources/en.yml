@@ -1,0 +1,8 @@
+ErrorMessages:
+  "PlayerRelated": "§4This command can only be executed by a player!"
+  "NotEnoughArguments": "§4Invalid usage!"
+  "LanguageNotFound": "§4Language could not be found!"
+
+SuccessMessages:
+  "LanguageSet": "§4Language set!"
+

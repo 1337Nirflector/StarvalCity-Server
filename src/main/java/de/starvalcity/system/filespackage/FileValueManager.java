@@ -19,6 +19,9 @@ public class FileValueManager {
     public static String GER_ip_own_VALUE = defaultPrefix_VALUE + "§2Deine IP:§e ";
     public static String GER_ip_other_VALUE = defaultPrefix_VALUE + "§2IP:§e ";
 
+    public static String GER_language_usage_VALUE = defaultPrefix_VALUE + "§4Nutzung: §7/language <English; German>";
+    public static String GER_language_set_VALUE = defaultPrefix_VALUE + "§2Sprachpaket erfolgreich gesetzt!";
+
     public static String GER_onlineplayers_usage_VALUE = defaultPrefix_VALUE + "§4Nutzung: §7/onlineplayers";
     public static String GER_onlineplayers_command_VALUE = defaultPrefix_VALUE + "§2Online Spieler:§e ";
 
@@ -40,6 +43,9 @@ public class FileValueManager {
     public static String ENG_ip_own_VALUE = defaultPrefix_VALUE + "§2Your IP:§e ";
     public static String ENG_ip_other_VALUE = defaultPrefix_VALUE + "§2IP:§e ";
 
+    public static String ENG_language_usage_VALUE = defaultPrefix_VALUE + "§4Usage: §7/language <English; German>";
+    public static String ENG_language_set_VALUE = defaultPrefix_VALUE + "§2Language successfully set!";
+
     public static String ENG_onlineplayers_usage_VALUE = defaultPrefix_VALUE + "§4Usage: §7/onlineplayers";
     public static String ENG_onlineplayers_command_VALUE = defaultPrefix_VALUE + "§2Online players:§e ";
 
@@ -48,16 +54,6 @@ public class FileValueManager {
     public static String ENG_left_staff_mode_VALUE = defaultPrefix_VALUE + "§2You are §4no longer§2 in §bStaff-Mode§2!";
 
     /*----------------------------------------------------------------------------------------------------------------*/
-    /* File: MySQL.yml */
-
-    // Fields \\
-    public static String MySQL_host = "localhost";
-    public static String MySQL_port = "3306";
-    public static String MySQL_database = "test";
-    public static String MySQL_username = "root";
-    public static String MySQL_password = "";
-
-    /*------------------------------------------------------------------------------------------------------------*/
 
 }
 

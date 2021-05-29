@@ -1,0 +1,8 @@
+ErrorMessages:
+  "PlayerRelated": "§4Dieser Befehl kann nur von einem Spieler genutzt werden!"
+  "NotEnoughArguments": "§4Falsche Nutzung!"
+  "LanguageNotFound": "§4Sprachpaket nicht gefunden!";
+
+SuccessMessages:
+  "Language": "§2Sprachpaket gesetzt!";
+

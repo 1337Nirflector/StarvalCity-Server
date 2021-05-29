@@ -59,6 +59,8 @@ public class PermissionsManager {
     public static String ip_own = "ip.own";
     public static String ip_other = "ip.other";
 
+    public static String language_use = "language.use";
+
     public static String onlineplayers_use = "onlineplayers.use";
 
     public static String staff_mode_use = "staffmode.use";

@@ -8,15 +8,9 @@ softdepend:
 description: StarvalCity ServerScript
 
 commands:
-  ip:
-    description: Displays an IP address of a specific player
-    usage: /ip [Player]
-  onlineplayers:
-    description: Displays all current online players
-    usage: /onlineplayers
-  staff:
-    description: Joins or leaves the Staff-Mode
-    usage: /staff
+  language:
+    description: Changes the language
+    usage: /language <en; de>
 
 permissions:
   ip.own:
@@ -24,6 +18,9 @@ permissions:
     default: op
   ip.other:
     description: Allows viewing other IP addresses
+    default: op
+  language.use:
+    description: General language permission
     default: op
   onlineplayers.use:
     description: General onlineplayers permission
