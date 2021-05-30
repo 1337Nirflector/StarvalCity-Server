@@ -9,6 +9,7 @@ import de.starvalcity.files.permissions;
 import de.starvalcity.handlers.LanguageHandler;
 import de.starvalcity.system.database.sql.MySQL;
 import de.starvalcity.system.database.sql.SQLManager;
+import de.starvalcity.system.filespackage.FileManager;
 import de.starvalcity.system.filespackage.FilePathManager;
 import de.starvalcity.system.filespackage.FileValueManager;
 import de.starvalcity.system.filespackage.SystemMessagesManager;
@@ -43,7 +44,7 @@ public final class Core extends JavaPlugin {
         this.mySQLData = new SQLManager(this);
         consoleCommandSender.sendMessage(SystemMessagesManager.startupMessage);
         messagesConfiguration.setupFile();
-        LanguageHandler.loadMessages();
+        FileManager.initializeFiles();
         initializeFiles();
         registerEvents();
         loadDatabase();

@@ -1,0 +1,8 @@
+ErrorMessages:
+  "PlayerRelated": "§cThis befehel is for players!"
+  "NotEnoughArguments": "§cNot enough argumente!"
+  "LanguageNotFound": "Locale nicht existinginingignginging"
+
+SuccessMessages:
+  "Language": "§2Locale geseetttetset!"
+
